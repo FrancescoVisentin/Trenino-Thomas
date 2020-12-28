@@ -41,7 +41,7 @@ private:
 
 Regional::Regional(bool origin, int train_type, vector<int> arrival_time)
 {
-    if(origin = 0)
+    if(origin == 0)
     {
         position = 0;
     }
@@ -55,7 +55,7 @@ Regional::Regional(bool origin, int train_type, vector<int> arrival_time)
 
 HighV::HighV(bool origin, int train_type, vector<int> arrival_time)
 {
-    if(origin = 0)
+    if(origin == 0)
     {
         position = 0;
     }
@@ -69,7 +69,7 @@ HighV::HighV(bool origin, int train_type, vector<int> arrival_time)
 
 HighV_s::HighV_s(bool origin, int train_type, vector<int> arrival_time)
 {
-    if(origin = 0)
+    if(origin == 0)
     {
         position = 0;
     }
