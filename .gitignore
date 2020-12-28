@@ -1,0 +1,7 @@
+#ignora mio compilatore
+.vscode/
+
+# ignora eseguibili
+*.exe
+*.out
+*.app
