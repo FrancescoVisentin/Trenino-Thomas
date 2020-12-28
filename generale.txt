@@ -31,7 +31,7 @@ simulation
                 controlla_partenza_nuovi_treni(); //scansiona treni_totali e vede se ci sono treni che devono partire ora
                 controllo_arrivo_treni_instazione(); //controlla ritardo, controlla stazione piena
                 controlla_distanza_treni(); //aggiorna velocità
-                controlla_partenza_treni_dalla_stazione() //vedi sotto
+                controlla_partenza_treni_dalla_stazione(); //vedi sotto
 
                 wait(1 minuto)
             }
@@ -66,7 +66,7 @@ cosa deve sapere?
     -posizione rispetto all'origine.
     -ritardo
     -velocità
-    -stazioni in cui deve sostare
+    -devo fermarmi poi?
     -orari arrivo 
 
 
