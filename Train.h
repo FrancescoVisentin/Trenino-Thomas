@@ -1,82 +1,38 @@
+#ifndef Train_h
+#define Train_h
+
 #include <vector>
 using namespace std;
 
 class Train 
 {
-private:
+protected:    
+    Train(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances);
     int position;
     int delay;
-    int velocity;
+    const int velocity;
 };
 
 class Regional : public Train
 {
 public:
-    Regional(bool origin, int train_type, vector<int> arrival_time);
-private:
-    int position;
-    int delay;
-    const int velocity = 160;
+    Regional(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances);
 };
 
 class HighV : public Train
 {
 public:
-    HighV(bool origin, int train_type, vector<int> arrival_time);
-private:
-    int position;
-    int delay;
-    const int velocity = 240;
+    HighV(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances);
 };
 
 class HighV_s : public Train
 {
 public:
-    HighV_s(bool origin, int train_type, vector<int> arrival_time);
-private:
-    int position;
-    int delay;
-    const int velocity = 300;
+    HighV_s(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances);
 };
 
-Regional::Regional(bool origin, int train_type, vector<int> arrival_time)
-{
-    if(origin == 0)
-    {
-        position = 0;
-    }
-    else
-    {
-        vector<int> a = get_distances();
-        position = a.back();        //devo inserire l'ultimo valore del vector distanze
-    }
-    delay = 0;
-}
+int whatVelocity(int train_type);
+void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int velocity);
 
-HighV::HighV(bool origin, int train_type, vector<int> arrival_time)
-{
-    if(origin == 0)
-    {
-        position = 0;
-    }
-    else
-    {
-        vector<int> a = get_distances();
-        position = a.back();        //devo inserire l'ultimo valore del vector distanze
-    }
-    delay = 0;
-}
 
-HighV_s::HighV_s(bool origin, int train_type, vector<int> arrival_time)
-{
-    if(origin == 0)
-    {
-        position = 0;
-    }
-    else
-    {
-        vector<int> a = get_distances();
-        position = a.back();        //devo inserire l'ultimo valore del vector distanze
-    }
-    delay = 0;
-}
+#endif /* endif of: Train_h */
