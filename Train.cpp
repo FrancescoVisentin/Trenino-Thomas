@@ -32,7 +32,7 @@ Train::Train(bool origin, int train_type, vector<int> arrival_times, bool statio
         distances.push_back(stations_distances.at(i+1)-stations_distances.at(i));
     }
     
-    checkArrivalTimes(arrival_times, distances, velocity);      //controllo che gli orari di arrivo della timetable abbiano senso
+    checkArrivalTimes(arrival_times, distances, velocity, stations_distances.size());      //controllo che gli orari di arrivo della timetable abbiano senso
     
     vector<int> segnalation_points;     //questo vettore conterrà tutti i punti in cui il treno dovrà inviare un segnale alla prossima stazione
     for(int i=0; i<stations_distances.size(); i++)
@@ -55,13 +55,51 @@ int whatVelocity(int train_type)        //fornisce la velocità massima in base 
         {return 300;}
 }
 
-void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int velocity)   //controllo che gli orari di arrivo della timetable abbiano senso  
+void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int velocity, int num_of_stations)   //controllo che gli orari di arrivo della timetable abbiano senso  
 {
-    for(int i=0; i<arrival_times.size()-1; i++)
+    if(arrival_times.size() == num_of_stations)
     {
-        if((arrival_times.at(i+1) - arrival_times.at(i)) < (distances.at(i)/velocity)*60)
+        for(int i=0; i<arrival_times.size()-1; i++)
         {
-            arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);     //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < (distances.at(i)/velocity)*60)       //se l'orario è scorretto lo imposto al minimo possibile
+            {
+                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);     
+            }
+        }
+    }
+    else if(arrival_times.size() < num_of_stations)
+    {   
+        for(int i=0; i<arrival_times.size()-1; i++)
+        {
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < (distances.at(i)/velocity)*60)       //se l'orario è scorretto lo imposto al minimo possibile
+            {
+                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);     
+            }
+        }
+        
+        int first_exces_station = arrival_times.size();       //memoriazzia la posizione nel vector della prima stazione mancante (SISTEMARE CONTATORE i)
+        
+        for(int i = first_exces_station; i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
+        {
+            arrival_times.push_back(((distances.at(i)/velocity)*60)+10);
+        }
+    }
+    else
+    {
+        int last_exces_station = arrival_times.size()-1;        //memorizza la posizione nel vector dell'ultima stazione in eccesso
+
+        while(last_exces_station == num_of_stations)        //elimina tutte le stazioni in eccesso
+        {
+            arrival_times.pop_back();
+            last_exces_station --;
+        }
+
+        for(int i=0; i<arrival_times.size()-1; i++)
+        {
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < (distances.at(i)/velocity)*60)       //se l'orario è scorretto lo imposto al minimo possibile
+            {
+                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);     
+            }
         }
     }
 }

@@ -32,7 +32,7 @@ public:
 };
 
 int whatVelocity(int train_type);
-void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int velocity);
+void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int velocity, int num_of_stations);
 
 
 #endif /* endif of: Train_h */
