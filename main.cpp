@@ -6,7 +6,9 @@ int main()
     std::fstream stations {"line_description.txt", std::ios_base::in};
 
     Simulation sim {timetable, stations};
-    sim.simulate();
+    //sim.simulate();
+
+    std::cout<<"non sono esploso\n";
 
     timetable.close();
     stations.close();

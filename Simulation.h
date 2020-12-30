@@ -3,6 +3,7 @@
 
 #include "Train.h"
 #include "Station.h"
+#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -28,7 +29,7 @@ class Simulation
         void simulate();
 
         //dealloca tutto quello che è rimasto in giro(non dovrebbe servire).
-        ~Simulation();//DA FARE
+        ~Simulation(){};//DA FARE
 
     private:
         std::vector<Train*> trains;
