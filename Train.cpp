@@ -81,7 +81,7 @@ void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int ve
         
         for(int i = first_exces_station; i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
-            arrival_times.push_back(((distances.at(i)/velocity)*60)+10);
+            arrival_times.push_back(((distances.at(i-1)/velocity)*60)+10);
         }
     }
     else
