@@ -33,17 +33,16 @@ void Simulation::parse_line(std::istream& line)
         std::getline(line,s);
         std::istringstream stream (s);
 
-        std::string name{""};
-        for(std::string ss; stream >> ss;)
-            name = name + ss + " ";
-        name.pop_back();
-
-        bool station_type {0};
+        std::string name {s};
+        bool station_type {false};
         int distance {0};
-        if(stream.peek() != EOF)
+
+        int  position = s.find_first_of("01");
+        if(position != std::string::npos)
         {
-            stream >> station_type;
-            stream >> distance;
+            name = s.substr(0,position-1);
+            station_type = stoi(s.substr(position,1));
+            distance = stoi(s.substr(position+2, std::string::npos));
         }
 
         switch (station_type)
