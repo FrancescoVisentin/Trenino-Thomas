@@ -1,19 +1,19 @@
 #include "Train.h"
 
 
-Regional::Regional(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances)
+Regional::Regional(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
         : Train(origin, train_type, arrival_times, stations_type, stations_distances)
 {}
 
-HighV::HighV(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances)
+HighV::HighV(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
         : Train(origin, train_type, arrival_times, stations_type, stations_distances)
 {}
 
-HighV_s::HighV_s(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances)
+HighV_s::HighV_s(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
         : Train(origin, train_type, arrival_times, stations_type, stations_distances)
 {}
 
-Train::Train(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances)
+Train::Train(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
         : velocity{whatVelocity(train_type)}
 {
     if(origin == 0)         //se l'origine è 0 la posizione è al km 0
@@ -26,10 +26,36 @@ Train::Train(bool origin, int train_type, vector<int> arrival_times, bool statio
     }
     delay = 0;              //ritardo iniziale nullo
     
+
+
+
     vector<int> distances;          //questo vettore conterrà tutte le distanze tra le varie stazioni
-    for(int i=0; i<stations_distances.size()-1; i++)
+    if(train_type == 1)
     {
-        distances.push_back(stations_distances.at(i+1)-stations_distances.at(i));
+        for(int i=0; i<stations_distances.size()-1; i++)
+        {
+            int offset1 = 1;
+            while((i+offset1 < stations_distances.size()) && (station_distances.at(i+offset1) < 0))
+            {
+                offset1++;
+            }
+            distances.push_back(stations_distances.at(i+offset1)-stations_distances.at(i));
+        }
+    }
+    else
+    {
+        for(int i=0; i<stations_distances.size()-1; i++)
+        {
+            if(stations_type.at(i) == 0)
+            {
+                int offset2 = 1;
+                while(((i+offset2) < stations_type.size()) && (station_distances.at(i+offset2) < 0) && (stations_type.at(i+offset2) != 0))
+                {
+                    offset2++;
+                }
+                distances.push_back(stations_distances.at(i+offset2)-stations_distances.at(i));
+            }
+        }
     }
     
     checkArrivalTimes(arrival_times, distances, velocity, stations_distances.size());      //controllo che gli orari di arrivo della timetable abbiano senso
@@ -55,11 +81,15 @@ int whatVelocity(int train_type)        //fornisce la velocità massima in base 
         {return 300;}
 }
 
-void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int velocity, int num_of_stations)   //controllo che gli orari di arrivo della timetable abbiano senso  
+void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int velocity, int num_of_stations, vector<bool> stations_type)   //controllo che gli orari di arrivo della timetable abbiano senso  
 {
     if(arrival_times.size() == num_of_stations)
     {
-        for(int i=0; i<arrival_times.size()-1; i++)
+        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        {
+            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);     
+        }
+        for(int i=1; i<arrival_times.size()-1; i++)
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (distances.at(i)/velocity)*60)       //se l'orario è scorretto lo imposto al minimo possibile
             {
@@ -71,9 +101,9 @@ void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int ve
     {   
         for(int i=0; i<arrival_times.size()-1; i++)
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (distances.at(i)/velocity)*60)       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);     
+                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);
             }
         }
         

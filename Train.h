@@ -7,7 +7,7 @@ using namespace std;
 class Train 
 {
 protected:    
-    Train(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances);
+    Train(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
     int position;
     int delay;
     const int velocity;
@@ -16,19 +16,19 @@ protected:
 class Regional : public Train
 {
 public:
-    Regional(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances);
+    Regional(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
 };
 
 class HighV : public Train
 {
 public:
-    HighV(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances);
+    HighV(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
 };
 
 class HighV_s : public Train
 {
 public:
-    HighV_s(bool origin, int train_type, vector<int> arrival_times, bool stations_type, vector<int> stations_distances);
+    HighV_s(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
 };
 
 int whatVelocity(int train_type);
