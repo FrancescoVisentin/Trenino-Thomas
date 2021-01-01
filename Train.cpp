@@ -28,6 +28,11 @@ Train::Train(bool origin, int train_type, vector<int> arrival_times, vector<bool
 
     int num_of_principal_stations = countPrincipalStations(stations_type);
 
+    if(origin == 1)
+    {
+        invertStations(stations_distances, stations_type);
+    }
+
     checkTwentyKilometres(stations_distances, stations_type, arrival_times, train_type);        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
     stations_distances1 = stations_distances;
     stations_type1 = stations_type;
@@ -66,6 +71,24 @@ int countPrincipalStations(vector<bool>& stations_type)
         }
     }
     return num_of_principal_stations;
+}
+
+void invertStations(vector<int>& stations_distances, vector<bool>& stations_type)
+{
+    vector<int> tmp;
+    int last = stations_distances.back();
+    for(int i=stations_distances.size()-1; i>=0; i--)
+    {
+        tmp.push_back(last-stations_distances.at(i));
+    }
+    stations_distances = tmp;
+    
+    vector<bool> tmp1;
+    for(int i=stations_type.size()-1; i>=0; i--)
+    {
+        tmp1.push_back(stations_type.at(i));
+    }
+    stations_type = tmp1;
 }
 
 void checkTwentyKilometres(vector<int>& stations_distances, vector<bool>& stations_type, vector<int>& arrival_times, int train_type)
@@ -158,7 +181,7 @@ void checkArrivalTimes(int num_of_all_stations, int num_of_principal_stations, v
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);     
+                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;     
             }
         }
     }
@@ -172,7 +195,7 @@ void checkArrivalTimes(int num_of_all_stations, int num_of_principal_stations, v
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)         
             {
-                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);            //vale dalla terza stazione in poi
+                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
             }
         }
         
@@ -196,7 +219,7 @@ void checkArrivalTimes(int num_of_all_stations, int num_of_principal_stations, v
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);            //vale dalla terza stazione in poi    
+                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi    
             }
         }
     }

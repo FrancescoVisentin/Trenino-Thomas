@@ -38,6 +38,7 @@ public:
 
 int whatVelocity(int train_type);
 int countPrincipalStations(vector<bool>& stations_type);
+void invertStations(vector<int>& stations_distances, vector<bool>& stations_type);
 void checkTwentyKilometres(vector<int>& stations_distances, vector<bool>& stations_type, vector<int>& arrival_times, int train_type);
 void createDistances(vector<int>& stations_distances, vector<bool>& stations_type, vector<int>& distances, int train_type);
 void checkArrivalTimes(int num_of_all_stations, int num_of_principal_stations, vector<bool>& stations_type, vector<int>& distances, vector<int>& arrival_times, int velocity, int train_type);
