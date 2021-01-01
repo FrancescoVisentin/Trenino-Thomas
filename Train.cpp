@@ -25,94 +25,24 @@ Train::Train(bool origin, int train_type, vector<int> arrival_times, vector<bool
         position = stations_distances.back();
     }
     delay = 0;              //ritardo iniziale nullo
+
+    int num_of_principal_stations = countPrincipalStations(stations_type);
+
+    checkTwentyKilometres(stations_distances, stations_type, arrival_times, train_type);        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
+    stations_distances1 = stations_distances;
+    stations_type1 = stations_type;
+
+    vector<int> distances;
+    createDistances(stations_distances, stations_type, distances, train_type);      //creo il vettore Distances che contiene le distanze tra le varie stazioni
+    distances1 = distances;
     
+    checkArrivalTimes(stations_distances.size(), num_of_principal_stations, stations_type, distances, arrival_times, velocity, train_type);     //controllo che gli orari di arrivo della timetable abbiano senso
+                                                                                                                                                //e che siano in giusta quantità
+    arrival_times1 = arrival_times;
 
-    /*
-    l'idea è la seguente:
-    voglio che il vettore distances contenga le distanze tra stazioni che sono effettivamente corrette.
-    Se una stazione è sbagliata la rimuovo quindi la rimuovo da tutti e tre i vettori. VIENE QUINDI GIA' RIMOSSO ANCHE 
-    IL CORRISPETTIVO TEMPO DI ARRIVO DA ARRIVAL_TIMES.
-
-    infatti:
-    -nei treni regionali che fermano in tutte le stazioni gli indici dei corrispettivi dati nei tre vettori concidono ed,
-     al massimo, se arrival_times è più corto degli altri, non serve nemmeno rimuovere la stazione rotta da li.
-
-     -nei treni veloci può essere presente un offset. questo offeset è dato dal numero di stazioni locali che si trovano all'interno
-      (rispettivamente) di stations_distances ed stations_type. io conto quindi quante stazioni secondarie (non nulle) trovo e quello sarà
-      l'offset che mi permette di lavorare su arrival_times correttamente
-
-    Ora dovresti avere:
-     -stations_distances ed stations_type corretti e tutti con stazioni validi.
-     -arrival_times con tempi relativi a stazioni valide MA NON CORRETTI.
-
-    Dovrebbe bastar aggiustare check_arrival_times compito che le affido volentieri.
-    BUON ANNO, spero che il tutto abbia senso, dimmi se ho scritto stronzate <3
-
-    */
-    vector<int> distances;     //SPOSTARE MEMBRO     //questo vettore conterrà tutte le distanze tra le varie stazioni
-    if(train_type == 1)
-    {
-        //rimuovo eventuali stazioni smarze.
-        for(int i = 0; i < stations_distances.size(); i++) // lo passo tutto perchè c++ non implementa nemmeno una cazzo di
-        {                                                  // ricerca binaria che restetuisce l'indirizzo e non ho palle di scriverla io
-            if(stations_distances[i] == -1)
-            {
-                stations_distances.erase(stations_distances.begin() + i);
-                stations_type.erase(stations_type.begin() + i);
-
-                if(i < arrival_times.size())
-                    arrival_times.erase(arrival_times.begin() + i);
-            }
-        }
-    
-        //distances tra tutte le stazioni.
-        for(int i=0; i<stations_distances.size()-1; i++)
-            distances.push_back(stations_distances.at(i+1)-stations_distances.at(i));
-    }
-    else
-    {
-        int skipped_stations {0}; //è il numero di stazioni secondarie che rappresenta l'offset tra il vettore arrival_times ed i vettori stations_distances/times
-        for(int i = 0; i < stations_distances.size(); i++)
-        {
-            if(stations_type[i] == 1 && stations_distances[i] != -1) skipped_stations++; //rappresenta l'offset tra il vet
-
-            if(stations_distances[i] == -1)
-            {
-                if(stations_type[i] == 0 && (i-skipped_stations) < arrival_times.size())
-                    arrival_times.erase(arrival_times.begin()+ (i-skipped_stations));
-                
-                
-                stations_distances.erase(stations_distances.begin() + i);
-                stations_type.erase(stations_type.begin() + i);
-            }
-        }
-
-        //QUI NON HO PRATICAMENTE TOCCATO NIENTE, ho solo rimosso condizione ridondante.
-        for(int i=0; i<stations_distances.size()-1; i++)
-        {
-            if(stations_type.at(i) == 0)
-            {
-                int offset2 = 1;
-                while(((i+offset2) < stations_type.size()) && (stations_type.at(i+offset2) != 0))
-                {
-                    offset2++;
-                }
-                distances.push_back(stations_distances.at(i+offset2)-stations_distances.at(i));
-            }
-        }
-    }
-    
-    checkArrivalTimes(arrival_times, distances, velocity, stations_distances.size());      //controllo che gli orari di arrivo della timetable abbiano senso
-    
-    vector<int> segnalation_points;     //questo vettore conterrà tutti i punti in cui il treno dovrà inviare un segnale alla prossima stazione
-    for(int i=0; i<stations_distances.size(); i++)
-    {
-        segnalation_points.push_back(stations_distances.at(i)-20);
-        if(segnalation_points.back()<0)     //se ci sono stazioni a meno di 20km dall'origine allora inivieranno il segnale al km 0
-        {
-            segnalation_points.at(i) = 0; 
-        }
-    }
+    vector<int> segnalation_points;
+    createSegnalationPoints(stations_distances, segnalation_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
+    segnalation_points1 = segnalation_points;
 }
 
 int whatVelocity(int train_type)        //fornisce la velocità massima in base al tipo di treno
@@ -125,8 +55,99 @@ int whatVelocity(int train_type)        //fornisce la velocità massima in base 
         {return 300;}
 }
 
-void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int velocity, int num_of_stations, vector<bool> stations_type)   //controllo che gli orari di arrivo della timetable abbiano senso  
+int countPrincipalStations(vector<bool>& stations_type)
 {
+    int num_of_principal_stations = 0;
+    for(int i=0; i<stations_type.size(); i++)
+    {
+        if(stations_type.at(i) == 0)
+        {
+            num_of_principal_stations++;
+        }
+    }
+    return num_of_principal_stations;
+}
+
+void checkTwentyKilometres(vector<int>& stations_distances, vector<bool>& stations_type, vector<int>& arrival_times, int train_type)
+{    
+    if(train_type == 1)
+    {
+        for(int i=0; i<stations_distances.size(); i++)
+        {
+            if(stations_distances.at(i) == -1)          //nelle stazioni non valide elimino i corrispettivi: distanze, tipi di stazione, tempi di arrivo
+            {
+                stations_distances.erase(stations_distances.begin() + i);
+                stations_type.erase(stations_type.begin() + i);
+
+                if(i < arrival_times.size())            //elimino il tempo di arrivo solo se è presente inizialmente
+                {
+                    arrival_times.erase(arrival_times.begin() + i);
+                }
+            }  
+        }
+    }
+    else
+    {
+        int skipped_stations {0};           //contiene le stazioni valide secondarie(saltate dai treni veloci)
+        for(int i=0; i< stations_distances.size(); i++)
+        {
+            if(stations_type.at(i) == 1 && stations_distances.at(i) != -1)
+            {
+                skipped_stations++;
+            }
+            if(stations_distances.at(i) == -1)      //nelle stazioni non valide elimino i corrispettivi: distanze, tipi di stazione, tempi di arrivo
+            {
+                stations_distances.erase(stations_distances.begin() + i);
+                stations_type.erase(stations_type.begin() + i);
+                
+                if(stations_type.at(i) == 0 && (i-skipped_stations) < arrival_times.size())     //elimino il tempo di arrivo solo se è principale(non li tolgo anche 
+                                                                                                //con le secondarie perchè non ci sono inizialemente)
+                {
+                    arrival_times.erase(arrival_times.begin() + (i-skipped_stations));
+                }
+            }
+        }
+    }
+}
+
+void createDistances(vector<int>& stations_distances, vector<bool>& stations_type, vector<int>& distances, int train_type)
+{
+    if(train_type == 1)
+    {
+        for(int i=0; i<stations_distances.size()-1; i++)        //aggiungo tutte le distanze tra due stazioni successive
+        {
+            distances.push_back(stations_distances.at(i+1)-stations_distances.at(i));
+        }
+    }
+    else
+    {
+        for(int i=0; i<stations_distances.size()-1; i++)        //aggiungo tutte le distanze tra due stazioni successive
+        {
+            if(stations_type.at(i) == 0)        //aggiungo tutte le distanze tra due stazioni principali successive
+            {
+                int offset = 1;
+                while(((i+offset) < stations_type.size()) && (stations_type.at(i+offset) != 0))
+                {
+                    offset++;
+                }
+                distances.push_back(stations_distances.at(i+offset)-stations_distances.at(i));
+            }
+        }
+    }
+}
+
+void checkArrivalTimes(int num_of_all_stations, int num_of_principal_stations, vector<bool>& stations_type, vector<int>& distances, vector<int>& arrival_times, int velocity, int train_type)   //controllo che gli orari di arrivo della timetable abbiano senso  
+{
+    int num_of_stations;
+    if(train_type == 1)     //imposto il numero di stazioni utili in base al treno
+    {
+        num_of_stations = num_of_all_stations;
+    }
+    else
+    {
+        num_of_stations = num_of_principal_stations;
+    }
+    
     if(arrival_times.size() == num_of_stations)
     {
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
@@ -135,7 +156,7 @@ void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int ve
         }
         for(int i=1; i<arrival_times.size()-1; i++)
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (distances.at(i)/velocity)*60)       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
                 arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);     
             }
@@ -143,37 +164,48 @@ void checkArrivalTimes(vector<int>& arrival_times, vector<int> distances, int ve
     }
     else if(arrival_times.size() < num_of_stations)
     {   
-        for(int i=0; i<arrival_times.size()-1; i++)
+        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+        }
+        for(int i=1; i<arrival_times.size()-1; i++)             //se l'orario è scorretto lo imposto al minimo possibile
+        {
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)         
             {
-                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);
+                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);            //vale dalla terza stazione in poi
             }
         }
         
-        int first_exces_station = arrival_times.size();       //memoriazzia la posizione nel vector della prima stazione mancante (SISTEMARE CONTATORE i)
-        
-        for(int i = first_exces_station; i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
+        for(int i = arrival_times.size(); i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
             arrival_times.push_back(((distances.at(i-1)/velocity)*60)+10);
         }
     }
     else
     {
-        int last_exces_station = arrival_times.size()-1;        //memorizza la posizione nel vector dell'ultima stazione in eccesso
-
-        while(last_exces_station == num_of_stations)        //elimina tutte le stazioni in eccesso
+        while(arrival_times.size() == num_of_stations)        //elimina tutte le stazioni in eccesso
         {
             arrival_times.pop_back();
-            last_exces_station --;
         }
 
+        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        {
+            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+        }
         for(int i=0; i<arrival_times.size()-1; i++)
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (distances.at(i)/velocity)*60)       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);     
+                arrival_times.at(i+1) = ((distances.at(i)/velocity)*60);            //vale dalla terza stazione in poi    
             }
         }
+    }
+}
+
+void createSegnalationPoints(vector<int>& stations_distances, vector<int>& segnalation_points)
+{
+    for(int i=1; i<stations_distances.size(); i++)          //aggiungo posizioni a 20 km prima di ogni stazione
+    {
+        segnalation_points.push_back(stations_distances.at(i)-20);
     }
 }
