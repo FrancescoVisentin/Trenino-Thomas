@@ -201,7 +201,7 @@ void checkArrivalTimes(int num_of_all_stations, int num_of_principal_stations, v
         
         for(int i = arrival_times.size(); i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
-            arrival_times.push_back(((distances.at(i-1)/velocity)*60)+10);
+            arrival_times.push_back((((distances.at(i-1)-10)/velocity)*60)+23);
         }
     }
     else
