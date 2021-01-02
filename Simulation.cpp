@@ -3,13 +3,31 @@
 //costruttore
 Simulation::Simulation(std::istream& timetables, std::istream& line)
 {
-    parse_line(line);
+    parse_line(line); //inizializza "Stations"
     parse_timetable(timetables); //inizializza "trains"
+}
+
+//distruttore
+Simulation::~Simulation()
+{
+    //elimino tutte le scansioni salvate
+    for(int i = 0; i < stations.size(); i++)
+        delete stations[i];
+
+    //elimino eventuali treni rimasti in circolo. Non dovrebbe essere mai necessario.
+    for(int i = 0; i < trains.size(); i++)
+        delete trains[i];
 }
 
 
 void Simulation::simulate()
 {
+    if(!ready) 
+    {
+        std::cout<<"Impossibile effettuare simulazione.\nInvocazione di reset_simulation richiesta.\n";
+        return; //Sto tentando di effettuare più simulazioni su un oggetto che non è stato "resettato".
+    }
+
     //Ogni iterazione del ciclo rappresenta un minuto.
     //Quando "trains" è vuoto non sono più presenti treni in circolo e la simulazione termina.
     while(trains.size() > 0)
@@ -21,17 +39,48 @@ void Simulation::simulate()
         
         time++;
     }
+
+    ready = false; //è necessario "resettare" l'oggetto.
 }
+
+
+void Simulation::reset_simulation(std::istream& timetables, std::istream& line)
+{
+    if(!ready)
+    {
+        for(int i = 0; i < stations.size(); i++)
+            delete stations[i];
+
+        for(int i = 0; i < trains.size(); i++)
+            delete trains[i];
+
+        //riporto l'oggetto al suo stato iniziale.
+        stations.clear();
+        trains.clear();
+        stations_distances.clear();
+        stations_type.clear();
+        time = 0;
+        ready = true;
+
+        parse_line(line);
+        parse_timetable(timetables);
+    }
+}
+
+
+/*
+*   Implementazione delle funzioni private usate nel codice.
+*/
 
 
 void Simulation::parse_line(std::istream& line)
 {
+    //leggo il file una riga alla volta. Se i dati sono validi creo una nuova stazione.
     while(line.peek() != EOF)
     {
         //estraggo una riga da line_description.txt
         std::string s{""};
         std::getline(line,s);
-        std::istringstream stream (s);
 
         std::string name {s};
         bool station_type {false};
@@ -45,25 +94,31 @@ void Simulation::parse_line(std::istream& line)
             distance = stoi(s.substr(position+2, std::string::npos));
         }
 
-        switch (station_type)
-        {
-            case 0:
-            {       
-                Stazione_locale* new_station = new Stazione_locale{name, distance, station_type};
-                stations.push_back(new_station);
-                break;
-            }
-            case 1: 
-            {   
-                Stazione_principale* new_station = new Stazione_principale{name, distance, station_type};
-                stations.push_back(new_station);
-                break;
-            }
-        }
-
         stations_distances.push_back(distance);
         stations_type.push_back(station_type);
-        
+
+        if(stations_distances.size() >= 2) //ho già almeno due stazioni create.
+        {
+            if(distance - stations_distances[stations_distances.size()-2] < MIN_DISTANCE) //ultime due troppo vicine.
+                stations_distances.back() = INVALID_STATION;
+        }
+
+        if(distance != INVALID_STATION)
+            switch (station_type)
+            {
+                case S_LOCALE:
+                {   
+                    Stazione_locale* new_station = new Stazione_locale{name, distance};
+                    stations.push_back(new_station);
+                    break;
+                }
+                case S_PRINCIPALE: 
+                {   
+                    Stazione_principale* new_station = new Stazione_principale{name, distance};
+                    stations.push_back(new_station);
+                    break;
+                }
+            }
     }   
 }
 
@@ -93,19 +148,19 @@ void Simulation::parse_timetable(std::istream& timetables)
 
         switch (train_type)
         {
-            case 1 :
+            case T_REGIONALE :
             {
-                Regional* new_train = new Regional{origin, train_type, arrival_times,stations_type,stations_distances};
+                Regional* new_train = new Regional{origin, train_type, arrival_times, stations_type, stations_distances};
                 trains.push_back(new_train);
                 break;
             }
-            case 2 :
+            case T_VELOCE :
             {
-                HighV* new_train = new HighV{origin, train_type, arrival_times,stations_type,stations_distances};
+                HighV* new_train = new HighV{origin, train_type, arrival_times,stations_type, stations_distances};
                 trains.push_back(new_train);
                 break;
             }
-            case 3 :
+            case T_SUPER :
             {
                 HighV_s* new_train = new HighV_s{origin, train_type, arrival_times,stations_type,stations_distances};
                 trains.push_back(new_train);
