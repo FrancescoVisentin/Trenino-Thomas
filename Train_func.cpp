@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-//helper functions
+//functions
 
 int Train::start_time()
 {

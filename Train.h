@@ -6,8 +6,8 @@ using namespace std;
 
 class Train 
 {
-public:
-    //helper funcions
+public: 
+    //funcions
     int start_time();
     bool isRegional();
     bool isRunning();
