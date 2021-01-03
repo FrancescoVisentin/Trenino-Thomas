@@ -1,6 +1,5 @@
 #include "Train.h"
 
-
 Regional::Regional(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
         : Train(origin, train_type, arrival_times, stations_type, stations_distances)
 {}
@@ -14,17 +13,18 @@ HighV_s::HighV_s(bool origin, int train_type, vector<int> arrival_times, vector<
 {}
 
 Train::Train(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
-        : velocity{whatVelocity(train_type)}
+        : max_velocity{whatVelocity(train_type)}
 {
-    if(origin == 0)         //se l'origine è 0 la posizione è al km 0
-    {
-        position = 0;
-    }
-    else                    //se l'origine è 1 la posizione è al km massimo dalla stazione di origine
-    {
-        position = stations_distances.back();
-    }
-    delay = 0;              //ritardo iniziale nullo
+    origin1 = origin;
+    train_type1 = train_type;
+    delay = 0;
+    position = -1;
+    //position spostata in start()
+    station_index = 0;
+    running = false;
+    current_velocity = 0;
+    current_station = -1;
+    current_binary = -1;
 
     int num_of_principal_stations = countPrincipalStations(stations_type);
 
@@ -41,7 +41,7 @@ Train::Train(bool origin, int train_type, vector<int> arrival_times, vector<bool
     createDistances(stations_distances, stations_type, distances, train_type);      //creo il vettore Distances che contiene le distanze tra le varie stazioni
     distances1 = distances;
     
-    checkArrivalTimes(stations_distances.size(), num_of_principal_stations, stations_type, distances, arrival_times, velocity, train_type);     //controllo che gli orari di arrivo della timetable abbiano senso
+    checkArrivalTimes(stations_distances.size(), num_of_principal_stations, stations_type, distances, arrival_times, max_velocity, train_type);     //controllo che gli orari di arrivo della timetable abbiano senso
                                                                                                                                                 //e che siano in giusta quantità
     arrival_times1 = arrival_times;
 
@@ -231,4 +231,4 @@ void createSegnalationPoints(vector<int>& stations_distances, vector<int>& segna
     {
         segnalation_points.push_back(stations_distances.at(i)-20);
     }
-}
+} 
