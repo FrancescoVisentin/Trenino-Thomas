@@ -5,6 +5,14 @@ Simulation::Simulation(std::istream& timetables, std::istream& line)
 {
     parse_line(line); //inizializza "Stations"
     parse_timetable(timetables); //inizializza "trains"
+
+    for(int i = 0; i < trains.size(); i++)
+        if(trains[i]->get_origin())
+            backward_trains.push_back(trains[i]);
+        else
+            forward_trains.push_back(trains[i]);
+        
+
 }
 
 //distruttore
@@ -171,3 +179,51 @@ void Simulation::parse_timetable(std::istream& timetables)
 }
 
 
+void Simulation::check_new_trains() //fa partire treni dalla stazione originarie
+{
+    std::vector<int> train_index;
+    for(int i = next_train; i < trains.size(); i++)
+    {
+        if(trains[i]->start_time() <= time)
+        {
+            train_index.push_back(i);
+            next_train++;
+        }
+    }
+
+    //decide chi parte.
+    //controlla da dove parte
+    //  if(stations[?]->can_start(train[i]->orgin(), train[i]->startTime())) //quando un treno può lasciare la stazione
+    //      trains[i]->start(...); //passa eventuali parametri per far capire al treno che è partito.
+}
+
+void Simulation::check_trains_distance()
+{
+    /*
+    4 casi:
+        1) treni fuori dal range 10 km
+        2) treni in transito contemporaneamente
+        3) treno fermo fermo
+        4) treno fermo ma indeciso
+    */
+
+
+    for(int i = 0; i < next_forward; i++)
+    {
+        for(int j = i+1; j < next_forward; j++)
+        {
+            if(std::abs(forward_trains[i]->position() - forward_trains[j]->position()) < 10 )
+            {
+                if(forward_trains[i]->isNearby() || forward_trains[j]->isNearby()) //caso 2 ,3, 4
+                {
+
+                }
+                else // caso 1
+                {
+                    forward_trains[i]->setSpeed(std::min(forward_trains[i].velocity(), forward_trains[j].velocity()));
+                    forward_trains[j]->setSpeed(forward_trains[i].velocity());
+                }
+            }
+        }
+    }
+}

@@ -2,12 +2,13 @@
 #define Simulation_h
 
 #include "Train.h"
-#include "Stazione1.h"  //QUESTA PER ORA ME LA SON FATTA IO
+#include "Stazione.h"  //QUESTA PER ORA ME LA SON FATTA IO
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
 #include <vector>
+#include <cmath>
 
 
 class Simulation
@@ -31,8 +32,10 @@ class Simulation
         //Per poter effettuare nuovamente la stessa simulazione è necessario "resettare" l'oggetto.
         void reset_simulation(std::istream& timetables, std::istream& line);
 
+
         //dealloca memoria occupata dai Train* e Stazione*.
         ~Simulation();
+
 
     private:
         //costanti usate per evitare "magic numbers" nel codice.
@@ -46,11 +49,19 @@ class Simulation
 
 
         std::vector<Train*> trains; //contiene tutti i treni presenti in timetables.txt
+        std::vector<Train*> forward_trains;
+        std::vector<Train*> backward_trains;
         std::vector<Stazione*> stations; //contiene tutti le stazioni presenti in line_description.txt
         std::vector<int> stations_distances;
         std::vector<bool> stations_type;
         int time = 0;
         bool ready = true; //L'oggetto può effettuare una simulazione.
+
+
+        int next_train = 0;
+        int next_forward = 0;
+        int next_backward = 0;
+
 
         //funzioni usate dal costruttore per ricavare i dati dai due file di testo.
         void parse_timetable(std::istream& timetables);
