@@ -69,9 +69,9 @@ class Simulation
 
 
         //funzioni usate da simulate per riprodurre ed analizzare lo stato della linea ferroviaria nel tempo.
-        void check_new_trains(){}; //DA FARE
+        void check_new_trains(); //DA FARE
         void check_incoming_trains(){}; //DA FARE
-        void check_trains_distance(){}; //DA FARE
+        void check_trains_distance(); //DA FARE
         void check_starting_trains(){}; //DA FARE
 };
 

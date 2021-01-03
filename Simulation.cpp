@@ -212,7 +212,7 @@ void Simulation::check_trains_distance()
     {
         for(int j = i+1; j < next_forward; j++)
         {
-            if(std::abs(forward_trains[i]->position() - forward_trains[j]->position()) < 10 )
+            if(std::abs(forward_trains[i]->get_position() - forward_trains[j]->get_position()) < 10 )
             {
                 if(forward_trains[i]->isNearby() || forward_trains[j]->isNearby()) //caso 2 ,3, 4
                 {
@@ -220,8 +220,8 @@ void Simulation::check_trains_distance()
                 }
                 else // caso 1
                 {
-                    forward_trains[i]->setSpeed(std::min(forward_trains[i].velocity(), forward_trains[j].velocity()));
-                    forward_trains[j]->setSpeed(forward_trains[i].velocity());
+                    forward_trains[i]->set_current_velocity(std::min(forward_trains[i]->get_current_velocity(), forward_trains[j]->get_current_velocity()));
+                    forward_trains[j]->set_current_velocity(forward_trains[i]->get_current_velocity());
                 }
             }
         }
