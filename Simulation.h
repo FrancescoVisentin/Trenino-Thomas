@@ -51,14 +51,13 @@ class Simulation
         std::vector<Train*> trains; //contiene tutti i treni presenti in timetables.txt
         std::vector<Train*> forward_trains;
         std::vector<Train*> backward_trains;
+        std::vector<Train*> boxed_trains;
         std::vector<Stazione*> stations; //contiene tutti le stazioni presenti in line_description.txt
         std::vector<int> stations_distances;
         std::vector<bool> stations_type;
         int time = 0;
-        bool ready = true; //L'oggetto può effettuare una simulazione.
+        bool ready = true; //l'oggetto può effettuare una simulazione.
 
-
-        int next_train = 0;
         int next_forward = 0;
         int next_backward = 0;
 
@@ -69,10 +68,20 @@ class Simulation
 
 
         //funzioni usate da simulate per riprodurre ed analizzare lo stato della linea ferroviaria nel tempo.
-        void check_new_trains(); //DA FARE
-        void check_incoming_trains(){}; //DA FARE
-        void check_trains_distance(); //DA FARE
-        void check_starting_trains(){}; //DA FARE
+        void check_trains_distance();
+        void check_box();
+        void check_new_trains();
+        void update_position();
+
+        //funzione usata da check_new_trains()
+        void check_priority(int a, int b, std::vector<Train*>& v);
+
+        //funzioni usate da check_position()
+        void check_position();
+        bool at_station(Train* train, int train_state);
+        bool at_five(Train* train, int train_state);
+        bool at_twenty(Train* train, bool type);
+        bool at_destination(std::vector<Train*>& vec, int index, int& counter);
 };
 
 #endif
