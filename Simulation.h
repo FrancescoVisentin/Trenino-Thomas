@@ -48,7 +48,6 @@ class Simulation
         static const int MIN_DISTANCE = 20; //distanza minima tra due stazioni.
 
 
-        std::vector<Train*> trains; //contiene tutti i treni presenti in timetables.txt
         std::vector<Train*> forward_trains;
         std::vector<Train*> backward_trains;
         std::vector<Train*> boxed_trains;
@@ -63,8 +62,8 @@ class Simulation
 
 
         //funzioni usate dal costruttore per ricavare i dati dai due file di testo.
-        void parse_timetable(std::istream& timetables);
         void parse_line(std::istream& line);
+        void parse_timetable(std::istream& timetables, std::vector<Train*>& vec);
 
 
         //funzioni usate da simulate per riprodurre ed analizzare lo stato della linea ferroviaria nel tempo.
@@ -80,8 +79,9 @@ class Simulation
         void check_position();
         bool at_station(Train* train, int train_state);
         bool at_five(Train* train, int train_state);
-        bool at_twenty(Train* train, bool type);
+        bool at_twenty(Train* train);
         bool at_destination(std::vector<Train*>& vec, int index, int& counter);
+        int get_index(Train* train);
 };
 
 #endif
