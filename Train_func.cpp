@@ -18,7 +18,7 @@ bool Train::isRegional()
 
 bool Train::isRunning()
 {
-    if(running == true)
+    if(state == 1)
     {
         return true;
     }
@@ -48,9 +48,96 @@ void Train::start()
     }
     set_position(pos);
     set_delay(0);
-    running = true;
+    state = 1;
     station_index++;
     set_current_velocity(80);   
-    set_current_station(0);     //devo farmela passare
-    set_current_binary(1);      //devo farmelo passare
+    //set_current_station(0);     //devo farmela passare
+    set_current_rail(1);      //devo farmelo passare
+}
+
+bool Train::has_arrived()
+{
+    if(position >= stations_distances1.back())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool Train::past_station()
+{
+    if((position >= stations_distances1.at(station_index)) && (position < (stations_distances1.at(station_index) + 3)))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    
+}
+
+bool Train::past_five()
+{
+    if((position >= stations_distances1.at(station_index) - 5) && (position < (stations_distances1.at(station_index) - 2)))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool Train::past_twenty()    //cout
+{
+    if((position >= stations_distances1.at(station_index) - 20) && (position < (stations_distances1.at(station_index) - 5)))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    
+}
+
+void Train::update()
+{
+    position = position + (current_velocity/60);
+}
+
+void Train::update_delay(int time)      //da sistemare
+{
+    if(train_type1 == 1)
+    {
+        delay = time - arrival_times1.at(station_index);
+    }
+    else
+    {
+        int arrival_index = station_index - count_prec_secondary();
+        delay = time - arrival_times1.at(arrival_index);
+    }
+    
+}
+
+void Train::update_station_index()
+{
+    //meglio farlo da simulation
+}
+
+int Train::count_prec_secondary()       //da sistemare
+{
+    int c = 0;
+    for(int i=0; i < stations_distances1.at(station_index); i++)
+    {
+        if(stations_type1.at(i) == 1)
+        {
+            c++;
+        }
+    }
+    return c;
 }

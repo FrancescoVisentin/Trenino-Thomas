@@ -21,12 +21,10 @@ Train::Train(bool origin, int train_type, vector<int> arrival_times, vector<bool
     position = -1;
     //position spostata in start()
     station_index = 0;
-    running = false;
+    state = false;
     current_velocity = 0;
-    current_station = -1;
-    current_binary = -1;
-
-    int num_of_principal_stations = countPrincipalStations(stations_type);
+    //current_station = -1;
+    current_rail = -1;
 
     if(origin == 1)
     {
@@ -41,13 +39,15 @@ Train::Train(bool origin, int train_type, vector<int> arrival_times, vector<bool
     createDistances(stations_distances, stations_type, distances, train_type);      //creo il vettore Distances che contiene le distanze tra le varie stazioni
     distances1 = distances;
     
+    int num_of_principal_stations = countPrincipalStations(stations_type);
+    
     checkArrivalTimes(stations_distances.size(), num_of_principal_stations, stations_type, distances, arrival_times, max_velocity, train_type);     //controllo che gli orari di arrivo della timetable abbiano senso
                                                                                                                                                 //e che siano in giusta quantità
     arrival_times1 = arrival_times;
 
-    vector<int> segnalation_points;
-    createSegnalationPoints(stations_distances, segnalation_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
-    segnalation_points1 = segnalation_points;
+    vector<int> signal_points;
+    createSignalPoints(stations_distances, signal_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
+    signal_points1 = signal_points;
 }
 
 int whatVelocity(int train_type)        //fornisce la velocità massima in base al tipo di treno
@@ -225,10 +225,10 @@ void checkArrivalTimes(int num_of_all_stations, int num_of_principal_stations, v
     }
 }
 
-void createSegnalationPoints(vector<int>& stations_distances, vector<int>& segnalation_points)
+void createSegnalationPoints(vector<int>& stations_distances, vector<int>& signal_points)
 {
     for(int i=1; i<stations_distances.size(); i++)          //aggiungo posizioni a 20 km prima di ogni stazione
     {
-        segnalation_points.push_back(stations_distances.at(i)-20);
+        signal_points.push_back(stations_distances.at(i)-20);
     }
 } 
