@@ -40,16 +40,6 @@ bool Train::isRunning()
 void Train::start()
 {
     //il trenino thomas è pronto a schiantarsi
-    int pos = 0;
-    if(origin == 0)         //se l'origine è 0 la posizione è al km 0
-    {
-        pos = 0;
-    }
-    else                    //se l'origine è 1 la posizione è al km massimo dalla stazione di origine
-    {
-        pos = stations_distances.back();
-    }
-    set_position(pos);
     set_delay(0);
     state = 1;
     station_index++;
