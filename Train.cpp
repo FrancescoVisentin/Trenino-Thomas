@@ -1,9 +1,10 @@
 #include "Train.h"
 
-Regional::Regional(bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
+Regional::Regional(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
 //: Train(origin, 1, arrival_times, stations_type, stations_distances)
 {
     origin = ori;
+    train_number = t_number;
     train_type1 = 1;
     delay = 0;
     position = -1;
@@ -13,6 +14,7 @@ Regional::Regional(bool ori, vector<int> arrival_times, vector<bool> stations_ty
     current_velocity = 0;
     current_rail = -1;
     max_velocity = 160;
+    restarted = -1;
 
     if(origin == 1)
     {
@@ -38,10 +40,11 @@ Regional::Regional(bool ori, vector<int> arrival_times, vector<bool> stations_ty
     signal_points1 = signal_points;
 }
 
-HighV::HighV(bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> s_dist)
+HighV::HighV(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> s_dist)
 //: Train(origin, 2, arrival_times, stations_type, stations_distances)
 {
     origin = ori;
+    train_number = t_number;
     train_type1 = 2;
     delay = 0;
     position = -1;
@@ -51,6 +54,7 @@ HighV::HighV(bool ori, vector<int> arrival_times, vector<bool> stations_type, ve
     current_velocity = 0;
     current_rail = -1;
     max_velocity = 240;
+    restarted = -1;
 
     stations_distances = s_dist;
 
@@ -78,10 +82,11 @@ HighV::HighV(bool ori, vector<int> arrival_times, vector<bool> stations_type, ve
     signal_points1 = signal_points;
 }
 
-HighV_s::HighV_s(bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
+HighV_s::HighV_s(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
 //: Train(origin, 3, arrival_times, stations_type, stations_distances)
 {
     origin = ori;
+    train_number = t_number;
     train_type1 = 3;
     delay = 0;
     position = -1;
@@ -91,6 +96,7 @@ HighV_s::HighV_s(bool ori, vector<int> arrival_times, vector<bool> stations_type
     current_velocity = 0;
     current_rail = -1;
     max_velocity = 300;
+    restarted = -1;
 
     if(origin == 1)
     {

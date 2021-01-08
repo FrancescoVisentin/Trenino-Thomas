@@ -13,6 +13,7 @@ public:
     bool isRunning();
     bool isNearby();
     void start();
+    void has_restarted();
     bool has_arrived(int time);
     bool past_station(int time);
     bool past_five();
@@ -80,12 +81,13 @@ protected:
     bool state;           //fermo = -1, box = 0, movimento/transita = 1
     int current_velocity;
     int current_rail;         //-1 se non è su un binario
+    int restarted;
 };
 
 class Regional : public Train
 {
 public:
-    Regional(bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
+    Regional(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
     //int whatVelocity() override;
     void checkTwentyKilometres() override;
     void createDistances(vector<int>& distances) override;
@@ -98,7 +100,7 @@ public:
 class HighV : public Train
 {
 public:
-    HighV(bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
+    HighV(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
     //int whatVelocity() override;
     void checkTwentyKilometres() override;
     void createDistances(vector<int>& distances) override;
@@ -111,7 +113,7 @@ public:
 class HighV_s : public Train
 {
 public:
-    HighV_s(bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
+    HighV_s(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
     //int whatVelocity() override;
     void checkTwentyKilometres() override;
     void createDistances(vector<int>& distances) override;

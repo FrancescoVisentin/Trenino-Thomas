@@ -53,6 +53,11 @@ void Train::start()
     set_current_rail(1);      //devo farmelo passare
 }
 
+void Train::has_restarted()
+{
+    restarted = 0;
+}
+
 bool Train::has_arrived(int time)
 {
     if(position >= stations_distances.back() && state != -1)
@@ -115,6 +120,15 @@ bool Train::past_twenty(int time)
 
 void Train::update()
 {
+    if(restarted >= 0)
+    {
+        restarted++;
+    }
+    if(restarted > 4)
+    {
+        set_current_velocity(max_velocity);
+        restarted = -1;
+    }
     position = position + (current_velocity/60);
 }
 
