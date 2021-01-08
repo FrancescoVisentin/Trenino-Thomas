@@ -9,6 +9,7 @@ class Train
 public: 
     //funcions
     int start_time();
+    int eol();
     virtual bool isRegional() = 0;
     bool isRunning();
     bool isNearby();

@@ -10,6 +10,11 @@ int Train::start_time()
     return arrival_times.at(0);
 }
 
+int Train::eol()
+{
+    return stations_distances.back();
+}
+
 bool Regional::isRegional()
 {
     return true;
