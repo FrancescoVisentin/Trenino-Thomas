@@ -44,7 +44,7 @@ void Train::start()
     state = 1;
     station_index++;
     set_current_velocity(80);   
-    set_current_rail(1);      //devo farmelo passare  ??????????????????????????????????????????????
+    //set_current_rail(1);      //il set penso sia fatto da Station
 }
 
 void Train::has_restarted()
@@ -56,7 +56,7 @@ bool Train::has_arrived(int time)
 {
     if(position >= stations_distances.back() && state != -1)
     {
-        cout << time << ": Il treno [num treno] è arrivato a destinazione con " << delay << " minuti di ritardo"; 
+        cout << time << ": Il treno "<< train_number << " è arrivato a destinazione con " << delay << " minuti di ritardo"; 
         return true;
     }
     else
@@ -72,11 +72,11 @@ bool Train::past_station(int time)
         int mod_delay = prec_delay - delay;
         if(mod_delay < 0)
         {
-            cout << time << " : Il ritardo è aumentato di " << abs(mod_delay) << " minuti.\n";
+            cout << time << " : Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
         }
         else
         {
-            cout << time << " : Il ritardo è diminuito di " << mod_delay << " minuti.\n";
+            cout << time << " : Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
         }
         return true;
     }
@@ -103,7 +103,7 @@ bool Train::past_twenty(int time)
 {
     if((position >= stations_distances.at(station_index) - 20) && (position < (stations_distances.at(station_index) - 5)))
     {
-        cout << time << " : Il treno numero [num treno] è a 20 km dalla prossima stazione"; 
+        cout << time << " : Il treno numero " << train_number << " è a 20 km dalla prossima stazione"; 
         return true;
     }
     else
