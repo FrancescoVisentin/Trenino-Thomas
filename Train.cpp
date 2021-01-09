@@ -1,5 +1,7 @@
 #include "Train.h"
 
+#include <cmath>
+
 Regional::Regional(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
 //: Train(origin, 1, arrival_times, stations_type, stations_distances)
 {
@@ -316,13 +318,13 @@ void Regional::checkArrivalTimes()   //controllo che gli orari di arrivo della t
     {
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);     
+            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);     
         }
         for(int i=1; i<arrival_times.size()-1; i++)
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;     
+                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;     
             }
         }
     }
@@ -330,19 +332,19 @@ void Regional::checkArrivalTimes()   //controllo che gli orari di arrivo della t
     {   
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
         }
         for(int i=1; i<arrival_times.size()-1; i++)             //se l'orario è scorretto lo imposto al minimo possibile
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)         
             {
-                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
+                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
             }
         }
         
         for(int i = arrival_times.size(); i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
-            arrival_times.push_back((((distances.at(i-1)-10)/velocity)*60)+23);
+            arrival_times.push_back(ceil(((distances.at(i-1)-10)/velocity)*60)+23);
         }
     }
     else
@@ -354,13 +356,13 @@ void Regional::checkArrivalTimes()   //controllo che gli orari di arrivo della t
 
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
         }
         for(int i=0; i<arrival_times.size()-1; i++)
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi    
+                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi    
             }
         }
     }
@@ -375,13 +377,13 @@ void HighV::checkArrivalTimes()   //controllo che gli orari di arrivo della time
     {
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);     
+            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);     
         }
         for(int i=1; i<arrival_times.size()-1; i++)
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;     
+                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;     
             }
         }
     }
@@ -389,19 +391,19 @@ void HighV::checkArrivalTimes()   //controllo che gli orari di arrivo della time
     {   
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
         }
         for(int i=1; i<arrival_times.size()-1; i++)             //se l'orario è scorretto lo imposto al minimo possibile
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)         
             {
-                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
+                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
             }
         }
         
         for(int i = arrival_times.size(); i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
-            arrival_times.push_back((((distances.at(i-1)-10)/velocity)*60)+23);
+            arrival_times.push_back(ceil(((distances.at(i-1)-10)/velocity)*60)+23);
         }
     }
     else
@@ -413,13 +415,13 @@ void HighV::checkArrivalTimes()   //controllo che gli orari di arrivo della time
 
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
         }
         for(int i=0; i<arrival_times.size()-1; i++)
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi    
+                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi    
             }
         }
     }
@@ -434,13 +436,13 @@ void HighV_s::checkArrivalTimes()   //controllo che gli orari di arrivo della ti
     {
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);     
+            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);     
         }
         for(int i=1; i<arrival_times.size()-1; i++)
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;     
+                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;     
             }
         }
     }
@@ -448,19 +450,19 @@ void HighV_s::checkArrivalTimes()   //controllo che gli orari di arrivo della ti
     {   
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
         }
         for(int i=1; i<arrival_times.size()-1; i++)             //se l'orario è scorretto lo imposto al minimo possibile
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)         
             {
-                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
+                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
             }
         }
         
         for(int i = arrival_times.size(); i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
-            arrival_times.push_back((((distances.at(i-1)-10)/velocity)*60)+23);
+            arrival_times.push_back(ceil(((distances.at(i-1)-10)/velocity)*60)+23);
         }
     }
     else
@@ -472,13 +474,13 @@ void HighV_s::checkArrivalTimes()   //controllo che gli orari di arrivo della ti
 
         if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
         }
         for(int i=0; i<arrival_times.size()-1; i++)
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = (((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi    
+                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi    
             }
         }
     }

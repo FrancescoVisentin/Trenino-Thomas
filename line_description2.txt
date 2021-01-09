@@ -1,0 +1,14 @@
+Adria 0
+Cavarzere centro 1 15
+Cavarzere 0 27
+Cona Veneta 0 33
+Arzegrande 1 50
+Piove di Sacco 0 76
+Campolongo Maggiore 1 99
+Bojon 1 130
+Campagna Lupia 0 140
+Mira Buse 0 155
+Oriago 1 160
+Oriago Porta Ovest 0 182
+Venezia Mestre 0 210
+Venezia Santa Lucia 0 233
