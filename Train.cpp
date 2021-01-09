@@ -3,12 +3,12 @@
 #include <cmath>
 #include <iostream>
 
-Regional::Regional(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
+Regional::Regional(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, vector<int> s_distances)
 //: Train(origin, 1, arrival_times, stations_type, stations_distances)
 {
     origin = ori;
     train_number = t_number;
-    train_type1 = 1;
+    train_type = 1;
     delay = 0;
     position = -1;
     //position spostata in start()
@@ -19,6 +19,10 @@ Regional::Regional(int t_number, bool ori, vector<int> arrival_times, vector<boo
     max_velocity = 160;
     restarted = -1;
 
+    arrival_times = a_times;
+    stations_distances = s_distances;
+    stations_type = s_type;
+
     if(origin == 1)
     {
         invertStations(stations_distances, stations_type);
@@ -38,17 +42,17 @@ Regional::Regional(int t_number, bool ori, vector<int> arrival_times, vector<boo
                                                                                                                                                 //e che siano in giusta quantità
     //arrival_times1 = arrival_times;
 
-    vector<int> signal_points;
-    createSignalPoints(stations_distances, signal_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
-    signal_points1 = signal_points;
+    vector<int> s_points;
+    createSignalPoints(stations_distances, s_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
+    signal_points = s_points;
 }
 
-HighV::HighV(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> s_dist)
+HighV::HighV(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, vector<int> s_distances)
 //: Train(origin, 2, arrival_times, stations_type, stations_distances)
 {
     origin = ori;
     train_number = t_number;
-    train_type1 = 2;
+    train_type = 2;
     delay = 0;
     position = -1;
     //position spostata in start()
@@ -59,7 +63,9 @@ HighV::HighV(int t_number, bool ori, vector<int> arrival_times, vector<bool> sta
     max_velocity = 240;
     restarted = -1;
 
-    stations_distances = s_dist;
+    arrival_times = a_times;
+    stations_distances = s_distances;
+    stations_type = s_type;;
 
     if(origin == 1)
     {
@@ -80,17 +86,17 @@ HighV::HighV(int t_number, bool ori, vector<int> arrival_times, vector<bool> sta
                                                                                                                                                 //e che siano in giusta quantità
     //arrival_times1 = arrival_times;
 
-    vector<int> signal_points;
-    createSignalPoints(stations_distances, signal_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
-    signal_points1 = signal_points;
+    vector<int> s_points;
+    createSignalPoints(stations_distances, s_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
+    signal_points = s_points;
 }
 
-HighV_s::HighV_s(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)
+HighV_s::HighV_s(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, vector<int> s_distances)
 //: Train(origin, 3, arrival_times, stations_type, stations_distances)
 {
     origin = ori;
     train_number = t_number;
-    train_type1 = 3;
+    train_type = 3;
     delay = 0;
     position = -1;
     //position spostata in start()
@@ -100,6 +106,10 @@ HighV_s::HighV_s(int t_number, bool ori, vector<int> arrival_times, vector<bool>
     current_rail = -1;
     max_velocity = 300;
     restarted = -1;
+
+    arrival_times = a_times;
+    stations_distances = s_distances;
+    stations_type = s_type;
 
     if(origin == 1)
     {
@@ -119,9 +129,9 @@ HighV_s::HighV_s(int t_number, bool ori, vector<int> arrival_times, vector<bool>
                                                                                                                                                 //e che siano in giusta quantità
     //arrival_times1 = arrival_times;
 
-    vector<int> signal_points;
-    createSignalPoints(stations_distances, signal_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
-    signal_points1 = signal_points;
+    vector<int> s_points;
+    createSignalPoints(stations_distances, s_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
+    signal_points = s_points;
 }
 
 /*Train::Train(bool origin, int train_type, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances)

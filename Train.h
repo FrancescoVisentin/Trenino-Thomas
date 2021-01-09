@@ -27,14 +27,14 @@ public:
     //getter
     bool get_origin(){return origin;}
     int get_train_number(){return train_number;}
-    int get_train_type(){return train_type1;}
+    int get_train_type(){return train_type;}
     int get_position(){return position;}
     int get_delay(){return delay;}
     vector<int> get_stations_distances(){return stations_distances;}
     vector<bool> get_stations_type(){return stations_type;}
     vector<int> get_distances(){return distances;}
     vector<int> get_arrival_times(){return arrival_times;}
-    vector<int> get_signal_points(){return signal_points1;}
+    vector<int> get_signal_points(){return signal_points;}
     const int get_max_velocity(){return max_velocity;}
     
     //altri getter
@@ -65,7 +65,7 @@ protected:
     //principali
     int origin;
     int train_number;
-    int train_type1;
+    int train_type;
     double position;       //deve essere modificata in runtime (mi da la posizione da origine o da capolinea)
     int delay;          //deve essere modificata in runtime
     int prec_delay;
@@ -73,7 +73,7 @@ protected:
     vector<bool> stations_type;
     vector<int> distances;
     vector<int> arrival_times;
-    vector<int> signal_points1;
+    vector<int> signal_points;
     int max_velocity;       //non è const perchè non è possibile inizializzare una var. membro tramite 
                             //init. list di un costruttore di una classe 
     
