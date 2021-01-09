@@ -88,7 +88,7 @@ protected:
 class Regional : public Train
 {
 public:
-    Regional(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
+    Regional(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, vector<int> s_distances);
     //int whatVelocity() override;
     void checkTwentyKilometres() override;
     void createDistances(vector<int>& distances) override;
@@ -101,7 +101,7 @@ public:
 class HighV : public Train
 {
 public:
-    HighV(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
+    HighV(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, vector<int> s_distances);
     //int whatVelocity() override;
     void checkTwentyKilometres() override;
     void createDistances(vector<int>& distances) override;
@@ -114,7 +114,7 @@ public:
 class HighV_s : public Train
 {
 public:
-    HighV_s(int t_number, bool ori, vector<int> arrival_times, vector<bool> stations_type, vector<int> stations_distances);
+    HighV_s(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, vector<int> s_distances);
     //int whatVelocity() override;
     void checkTwentyKilometres() override;
     void createDistances(vector<int>& distances) override;
