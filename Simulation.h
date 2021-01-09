@@ -2,7 +2,7 @@
 #define Simulation_h
 
 #include "Train.h"
-#include "Stazione.h"  //QUESTA PER ORA ME LA SON FATTA IO
+#include "Stazione.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -48,8 +48,8 @@ class Simulation
         static const int MIN_DISTANCE = 20; //distanza minima tra due stazioni.
 
 
-        std::vector<Train*> forward_trains;
-        std::vector<Train*> backward_trains;
+        std::vector<Train*> forward_trains; //contiene tutti i treni che partono dall'origne
+        std::vector<Train*> backward_trains; //contiene tutti i treni che partono dal capolinea
         std::vector<Train*> boxed_trains;
         std::vector<Stazione*> stations; //contiene tutti le stazioni presenti in line_description.txt
         std::vector<int> stations_distances;
@@ -57,6 +57,8 @@ class Simulation
         int time = 0;
         bool ready = true; //l'oggetto può effettuare una simulazione.
 
+
+        //indici dei prossimi treni che devono partire
         int next_forward = 0;
         int next_backward = 0;
 
@@ -66,7 +68,7 @@ class Simulation
         void parse_timetable(std::istream& timetables, std::vector<Train*>& vec);
 
 
-        //funzioni usate da simulate per riprodurre ed analizzare lo stato della linea ferroviaria nel tempo.
+        //funzioni usate da simulate() per riprodurre ed analizzare lo stato della linea ferroviaria nel tempo.
         void check_trains_distance();
         void check_box();
         void check_new_trains();
@@ -82,6 +84,7 @@ class Simulation
         bool at_twenty(Train* train);
         bool at_destination(std::vector<Train*>& vec, int index, int& counter);
         int get_index(Train* train);
+        int get_distance(int index, bool origin);
 };
 
 #endif
