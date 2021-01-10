@@ -278,6 +278,12 @@ bool Simulation::at_station(Train* train, int train_state)
             train->set_position(get_distance(station_index, origin));
             train->update_delay(time);
             stations[station_index]->new_stopped_train(train, time);//salva orario d'arrivo per quel treno
+
+            if(train->get_position() >= train->eol())
+            {
+                std::cout<<"\n"<< time << ": IL TRENO "<< train->get_train_number()
+                    <<" è ARRIVATO A DESTINAZIONE con " << train->get_delay() << " minuti di ritardo\n\n";
+            }
         }
         else if(stations[station_index]->can_restart(train, time))//controlla che siano passati minimo 5 minuti e che il treno possa ripartire (algoritmo vecchio?)
         {
@@ -286,6 +292,12 @@ bool Simulation::at_station(Train* train, int train_state)
             train->has_restarted();
             train->set_state(1);
             train->update_index();
+
+            if(train->get_position() < train->eol())
+            {
+                std::cout<< time <<": Il treno " << train->get_train_number()
+                    <<" e' ripartito dalla stazione "<< stations[station_index]->get_name() << "\n"; 
+            }
         }
         
         return true;

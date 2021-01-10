@@ -56,7 +56,6 @@ bool Train::has_arrived(int time)
 {
     if(position >= stations_distances.back() && state != -1)
     {
-        cout <<"\n"<< time << ": IL TRENO "<< train_number << " è ARRIVATO A DESTINAZIONE con " << delay << " minuti di ritardo\n\n"; 
         return true;
     }
     else

@@ -1,3 +1,6 @@
+#ifndef Binario_h
+#define Binario_h
+
 #include<iostream>
 #include<string>
 #include<vector>
@@ -44,3 +47,4 @@ protected:
 	const bool reverse = false;
 };
 
+#endif
