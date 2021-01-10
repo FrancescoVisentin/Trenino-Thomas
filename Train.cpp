@@ -10,7 +10,8 @@ Regional::Regional(int t_number, bool ori, vector<int> a_times, vector<bool> s_t
     train_number = t_number;
     train_type = 1;
     delay = 0;
-    position = -1;
+    position = 0;
+    prec_delay = 0;
     //position spostata in start()
     station_index = 0;
     state = false;
@@ -23,15 +24,15 @@ Regional::Regional(int t_number, bool ori, vector<int> a_times, vector<bool> s_t
     stations_distances = s_distances;
     stations_type = s_type;
 
+            //gestisco le stazioni a distanza minore di 20km da quelle precedenti
+    //stations_distances1 = stations_distances;
+    //stations_type1 = stations_type;
+
     if(origin == 1)
     {
         invertStations(stations_distances, stations_type);
     }
-
-    checkTwentyKilometres();        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
-    //stations_distances1 = stations_distances;
-    //stations_type1 = stations_type;
-
+checkTwentyKilometres();
     vector<int> dist;
     createDistances(dist);      //creo il vettore Distances che contiene le distanze tra le varie stazioni
     distances = dist;
@@ -54,7 +55,8 @@ HighV::HighV(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, v
     train_number = t_number;
     train_type = 2;
     delay = 0;
-    position = -1;
+    position = 0;
+    prec_delay = 0;
     //position spostata in start()
     station_index = 0;
     state = false;
@@ -66,16 +68,16 @@ HighV::HighV(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, v
     arrival_times = a_times;
     stations_distances = s_distances;
     stations_type = s_type;;
-
+    
+    //gestisco le stazioni a distanza minore di 20km da quelle precedenti
+    //stations_distances1 = stations_distances;
+    //stations_type1 = stations_type;
+    
     if(origin == 1)
     {
         invertStations(stations_distances, stations_type);
     }
-
-    checkTwentyKilometres();        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
-    //stations_distances1 = stations_distances;
-    //stations_type1 = stations_type;
-
+checkTwentyKilometres();
     vector<int> dist;
     createDistances(dist);      //creo il vettore Distances che contiene le distanze tra le varie stazioni
     distances = dist;
@@ -98,7 +100,8 @@ HighV_s::HighV_s(int t_number, bool ori, vector<int> a_times, vector<bool> s_typ
     train_number = t_number;
     train_type = 3;
     delay = 0;
-    position = -1;
+    position = 0;
+    prec_delay = 0;
     //position spostata in start()
     station_index = 0;
     state = false;
@@ -111,14 +114,15 @@ HighV_s::HighV_s(int t_number, bool ori, vector<int> a_times, vector<bool> s_typ
     stations_distances = s_distances;
     stations_type = s_type;
 
+
+            //gestisco le stazioni a distanza minore di 20km da quelle precedenti
+    //stations_type1 = stations_type;
+
     if(origin == 1)
     {
         invertStations(stations_distances, stations_type);
     }
-
-    checkTwentyKilometres();        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
-    //stations_type1 = stations_type;
-
+checkTwentyKilometres();
     vector<int> dist;
     createDistances(dist);      //creo il vettore Distances che contiene le distanze tra le varie stazioni
     distances = dist;
@@ -206,7 +210,10 @@ void Train::invertStations(vector<int>& stations_distances, vector<bool>& statio
     int last = stations_distances.back();
     for(int i=stations_distances.size()-1; i>=0; i--)
     {
-        tmp.push_back(last-stations_distances.at(i));
+        if(stations_distances.at(i) == -1)
+            tmp.push_back(-1);
+        else
+            tmp.push_back(last-stations_distances.at(i));
     }
     stations_distances = tmp;
     
@@ -226,11 +233,15 @@ void Regional::checkTwentyKilometres()
         {
             stations_distances.erase(stations_distances.begin() + i);
             stations_type.erase(stations_type.begin() + i);
-
+            
             if(i < arrival_times.size())            //elimino il tempo di arrivo solo se è presente inizialmente
             {
                 arrival_times.erase(arrival_times.begin() + i);
+                for(int j = i; j < arrival_times.size(); j++)
+                    arrival_times[j] = arrival_times[j] - 9;
             }
+
+            i--;
         }  
     } 
 }
@@ -246,14 +257,18 @@ void HighV::checkTwentyKilometres()
         }
         if(stations_distances.at(i) == -1)      //nelle stazioni non valide elimino i corrispettivi: distanze, tipi di stazione, tempi di arrivo
         {
-            stations_distances.erase(stations_distances.begin() + i);
-            stations_type.erase(stations_type.begin() + i);
-            
             if(stations_type.at(i) == 0 && (i-skipped_stations) < arrival_times.size())     //elimino il tempo di arrivo solo se è principale(non li tolgo anche 
                                                                                             //con le secondarie perchè non ci sono inizialemente)
             {
                 arrival_times.erase(arrival_times.begin() + (i-skipped_stations));
+                for(int j = i-skipped_stations; j < arrival_times.size(); j++)
+                    arrival_times[j] = arrival_times[j] - 10;
             }
+
+            stations_distances.erase(stations_distances.begin() + i);
+            stations_type.erase(stations_type.begin() + i);
+
+            i--;
         }
     }
 }
@@ -269,14 +284,17 @@ void HighV_s::checkTwentyKilometres()
         }
         if(stations_distances.at(i) == -1)      //nelle stazioni non valide elimino i corrispettivi: distanze, tipi di stazione, tempi di arrivo
         {
-            stations_distances.erase(stations_distances.begin() + i);
-            stations_type.erase(stations_type.begin() + i);
-            
             if(stations_type.at(i) == 0 && (i-skipped_stations) < arrival_times.size())     //elimino il tempo di arrivo solo se è principale(non li tolgo anche 
                                                                                             //con le secondarie perchè non ci sono inizialemente)
             {
                 arrival_times.erase(arrival_times.begin() + (i-skipped_stations));
+                for(int j = i-skipped_stations; j < arrival_times.size(); j++)
+                    arrival_times[j] = arrival_times[j] - 11;
             }
+
+            stations_distances.erase(stations_distances.begin() + i);
+            stations_type.erase(stations_type.begin() + i);
+            i--;
         }
     }
 }
@@ -327,39 +345,39 @@ void Regional::checkArrivalTimes()   //controllo che gli orari di arrivo della t
     
     if(arrival_times.size() == num_of_stations)
     {
-        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        if((arrival_times.at(1) - arrival_times.at(0)) < ceil((((distances.at(0)-10)*1.)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);
-            cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";  
+            arrival_times.at(1) =  arrival_times.at(0) + ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);   
+            cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";   
         }
         for(int i=1; i<arrival_times.size()-1; i++)
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil((((distances.at(i)-10)*1.)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;
-                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";      
+                arrival_times.at(i+1) = arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);
+                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";   
             }
         }
     }
     else if(arrival_times.size() < num_of_stations)
     {   
-        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        if((arrival_times.at(1) - arrival_times.at(0)) < ceil((((distances.at(0)-10)*1.)/velocity)*60)+8)      //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
-            cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";  
+            arrival_times.at(1) =  arrival_times.at(0) + ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n"; 
         }
         for(int i=1; i<arrival_times.size()-1; i++)             //se l'orario è scorretto lo imposto al minimo possibile
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)         
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil((((distances.at(i)-10)*1.)/velocity)*60)+13)         
             {
-                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
+                arrival_times.at(i+1) =  arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);            //vale dalla terza stazione in poi
                 cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";
             }
         }
         
         for(int i = arrival_times.size(); i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
-            arrival_times.push_back(ceil(((distances.at(i-1)-10)/velocity)*60)+23);
+            arrival_times.push_back(arrival_times.at(i) + ceil((((distances.at(i-1)-10)*1.)/velocity)*60)+23);
             cout << "Nella timetable del treno " << train_number << " sono state aggiunti alcuni orari di arrivo\n";
         }
     }
@@ -371,17 +389,17 @@ void Regional::checkArrivalTimes()   //controllo che gli orari di arrivo della t
             cout << "Nella timetable del treno " << train_number << " sono state eliminati alcuni orari di arrivo\n";
         }
 
-        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        if((arrival_times.at(1) - arrival_times.at(0)) < ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8))       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) =  arrival_times.at(0) + ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
             cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";
         }
         for(int i=0; i<arrival_times.size()-1; i++)
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil((((distances.at(i)-10)*1.)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi    
-                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";
+                arrival_times.at(i+1) = arrival_times.at(i) +  ceil((((distances.at(i)-10)*1.)/velocity)*60)+13;            //vale dalla terza stazione in poi 
+                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";   
             }
         }
     }
@@ -394,39 +412,39 @@ void HighV::checkArrivalTimes()   //controllo che gli orari di arrivo della time
     
     if(arrival_times.size() == num_of_stations)
     {
-        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        if((arrival_times.at(1) - arrival_times.at(0)) < ceil((((distances.at(0)-10)*1.)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);   
+            arrival_times.at(1) =  arrival_times.at(0) + ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);   
             cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";   
         }
         for(int i=1; i<arrival_times.size()-1; i++)
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil((((distances.at(i)-10)*1.)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;
+                arrival_times.at(i+1) = arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);
                 cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";   
             }
         }
     }
     else if(arrival_times.size() < num_of_stations)
     {   
-        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        if((arrival_times.at(1) - arrival_times.at(0)) < ceil((((distances.at(0)-10)*1.)/velocity)*60)+8)      //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) =  arrival_times.at(0) + ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
             cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n"; 
         }
         for(int i=1; i<arrival_times.size()-1; i++)             //se l'orario è scorretto lo imposto al minimo possibile
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)         
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil((((distances.at(i)-10)*1.)/velocity)*60)+13)         
             {
-                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
+                arrival_times.at(i+1) =  arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);            //vale dalla terza stazione in poi
                 cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";
             }
         }
         
         for(int i = arrival_times.size(); i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
-            arrival_times.push_back(ceil(((distances.at(i-1)-10)/velocity)*60)+23);
+            arrival_times.push_back(arrival_times.at(i) + ceil((((distances.at(i-1)-10)*1.)/velocity)*60)+23);
             cout << "Nella timetable del treno " << train_number << " sono state aggiunti alcuni orari di arrivo\n";
         }
     }
@@ -438,16 +456,16 @@ void HighV::checkArrivalTimes()   //controllo che gli orari di arrivo della time
             cout << "Nella timetable del treno " << train_number << " sono state eliminati alcuni orari di arrivo\n";
         }
 
-        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        if((arrival_times.at(1) - arrival_times.at(0)) < ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8))       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) =  arrival_times.at(0) + ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
             cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";
         }
         for(int i=0; i<arrival_times.size()-1; i++)
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil((((distances.at(i)-10)*1.)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi 
+                arrival_times.at(i+1) = arrival_times.at(i) +  ceil((((distances.at(i)-10)*1.)/velocity)*60)+13;            //vale dalla terza stazione in poi 
                 cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";   
             }
         }
@@ -461,39 +479,39 @@ void HighV_s::checkArrivalTimes()   //controllo che gli orari di arrivo della ti
     
     if(arrival_times.size() == num_of_stations)
     {
-        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        if((arrival_times.at(1) - arrival_times.at(0)) < ceil((((distances.at(0)-10)*1.)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);  
+            arrival_times.at(1) =  arrival_times.at(0) + ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);   
             cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";   
         }
         for(int i=1; i<arrival_times.size()-1; i++)
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil((((distances.at(i)-10)*1.)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;    
-                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";  
+                arrival_times.at(i+1) = arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);
+                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";   
             }
         }
     }
     else if(arrival_times.size() < num_of_stations)
     {   
-        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        if((arrival_times.at(1) - arrival_times.at(0)) < ceil((((distances.at(0)-10)*1.)/velocity)*60)+8)      //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
-            cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";
+            arrival_times.at(1) =  arrival_times.at(0) + ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n"; 
         }
         for(int i=1; i<arrival_times.size()-1; i++)             //se l'orario è scorretto lo imposto al minimo possibile
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)         
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil((((distances.at(i)-10)*1.)/velocity)*60)+13)         
             {
-                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
-                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n"; 
+                arrival_times.at(i+1) =  arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);            //vale dalla terza stazione in poi
+                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";
             }
         }
         
         for(int i = arrival_times.size(); i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
-            arrival_times.push_back(ceil(((distances.at(i-1)-10)/velocity)*60)+23);
+            arrival_times.push_back(arrival_times.at(i) + ceil((((distances.at(i-1)-10)*1.)/velocity)*60)+23);
             cout << "Nella timetable del treno " << train_number << " sono state aggiunti alcuni orari di arrivo\n";
         }
     }
@@ -505,17 +523,17 @@ void HighV_s::checkArrivalTimes()   //controllo che gli orari di arrivo della ti
             cout << "Nella timetable del treno " << train_number << " sono state eliminati alcuni orari di arrivo\n";
         }
 
-        if((arrival_times.at(1) - arrival_times.at(0)) < (((distances.at(0)-10)/velocity)*60)+8)       //se l'orario è scorretto lo imposto al minimo possibile
+        if((arrival_times.at(1) - arrival_times.at(0)) < ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8))       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = ceil((((distances.at(0)-10)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
+            arrival_times.at(1) =  arrival_times.at(0) + ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);         //vale solo per l'orario della seconda stazione
             cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";
         }
         for(int i=0; i<arrival_times.size()-1; i++)
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < (((distances.at(i)-10)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil((((distances.at(i)-10)*1.)/velocity)*60)+13)       //se l'orario è scorretto lo imposto al minimo possibile
             {
-                arrival_times.at(i+1) = ceil(((distances.at(i)-10)/velocity)*60)+13;            //vale dalla terza stazione in poi
-                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";     
+                arrival_times.at(i+1) = arrival_times.at(i) +  ceil((((distances.at(i)-10)*1.)/velocity)*60)+13;            //vale dalla terza stazione in poi 
+                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";   
             }
         }
     }

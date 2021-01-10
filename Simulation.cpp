@@ -19,8 +19,9 @@ Simulation::Simulation(std::istream& timetables, std::istream& line)
     for(int i = 0; i < stations_distances.size(); i++)
         if(stations_distances[i] == -1)
         {
-            stations_distances.erase(stations_distances.begin() + 1);
+            stations_distances.erase(stations_distances.begin() + i);
             stations_type.erase(stations_type.begin() + i);
+            i--;
         }
 }
 
@@ -53,6 +54,11 @@ void Simulation::simulate()
     //Quando "trains" è vuoto non sono più presenti treni in circolo e la simulazione termina.
     while(forward_trains.size() > 0 || backward_trains.size() > 0)
     {
+        if(time == 400)
+        {
+            std::cout<<"\n";
+        }
+
         check_box(); //prima libero eventuali treni intrappolati.
         check_position(); //tutti i controlli sulla posizione: se arrivato , se a 20 km, se a 5km, se a 0km dalla stazione.
         check_new_trains();//controlla nuove partenza.
@@ -103,6 +109,7 @@ void Simulation::reset_simulation(std::istream& timetables, std::istream& line)
         {
             stations_distances.erase(stations_distances.begin() + 1);
             stations_type.erase(stations_type.begin() + i);
+            i--;
         }
     }
 }
@@ -143,7 +150,7 @@ void Simulation::parse_line(std::istream& line)
                 stations_distances.back() = INVALID_STATION;
         }
 
-        if(distance != INVALID_STATION)
+        if(stations_distances.back() != INVALID_STATION)
             switch (station_type)
             {
                 case S_LOCALE:
@@ -190,19 +197,19 @@ void Simulation::parse_timetable(std::istream& timetables, std::vector<Train*>& 
         {
             case T_REGIONALE :
             {
-                Regional* new_train = new Regional{origin, train_number, arrival_times, stations_type, stations_distances};
+                Regional* new_train = new Regional{train_number, origin, arrival_times, stations_type, stations_distances};
                 vec.push_back(new_train);
                 break;
             }
             case T_VELOCE :
             {
-                HighV* new_train = new HighV{origin, train_number, arrival_times,stations_type, stations_distances};
+                HighV* new_train = new HighV{train_number, origin, arrival_times,stations_type, stations_distances};
                 vec.push_back(new_train);
                 break;
             }
             case T_SUPER :
             {
-                HighV_s* new_train = new HighV_s{origin, train_number, arrival_times,stations_type,stations_distances};
+                HighV_s* new_train = new HighV_s{train_number, origin, arrival_times,stations_type,stations_distances};
                 vec.push_back(new_train);
                 break;
             }
@@ -223,6 +230,8 @@ void Simulation::check_box()
             boxed_trains[i]->set_state(-1); //un treno che era ai box sicuramente VOLEVA fermarsi ma ha trovato tutto pieno
                                             //allora il suo stato, qunado riparte, sicuramente sarà messo a -1.
             boxed_trains[i]->set_current_velocity(80);
+            boxed_trains.erase(boxed_trains.begin() + i);
+            i--;
         }
         
     }
@@ -241,7 +250,7 @@ void Simulation::check_position()
         if(at_destination(forward_trains, i, next_forward)) continue;
         if(at_station(forward_trains[i], train_state)) continue;
         if(at_five(forward_trains[i],train_state)) continue;
-        if(at_twenty(forward_trains[i])) continue; //(CONTROLLA HANDLE_NEW_TRAIN E STESSO TRENO RIPETUTO)
+        if(at_twenty(forward_trains[i])) continue;
     }
 
     for(int i = 0; i < next_backward; i++)
@@ -251,19 +260,17 @@ void Simulation::check_position()
         if(at_destination(backward_trains, i, next_backward)) continue;
         if(at_station(backward_trains[i], train_state)) continue;
         if(at_five(backward_trains[i],train_state)) continue;
-        if(at_twenty(backward_trains[i])) continue; 
+        if(at_twenty(backward_trains[i])) continue;
     }
 }
 
 
 bool Simulation::at_station(Train* train, int train_state)
 {   
-    if(train_state == -1 && train->past_station(time)) // true se deve fermasi e la posizione del treno è tra: [pos_stazione, pos_stazione +5)
+    if(train_state == -1 && train->past_station()) // true se deve fermasi e la posizione del treno è tra: [pos_stazione, pos_stazione +5)
     {
         int station_index = get_index(train);
         bool origin = train->get_origin();
-
-        (origin) ? station_index++ : station_index--; //l'indice punta già alla stazione successiva, va corretto.
 
         if(train->get_current_velocity() != 0)//non è già stato fermato
         {
@@ -278,6 +285,7 @@ bool Simulation::at_station(Train* train, int train_state)
             train->set_current_velocity(80);
             train->has_restarted();
             train->set_state(1);
+            train->update_index();
         }
         
         return true;
@@ -289,7 +297,7 @@ bool Simulation::at_station(Train* train, int train_state)
 
 bool Simulation::at_five(Train* train, int train_state)
 {
-    if(train->past_five())
+    if(train->get_state() != 1 && train->past_five())
     {
         int station_index = get_index(train);
         bool origin = train->get_origin();
@@ -322,6 +330,9 @@ bool Simulation::at_five(Train* train, int train_state)
             
                     train->set_position(get_distance(station_index, origin) - 5);
                     train->set_current_velocity(0);//treno è fermo. rende
+
+                    std::cout<<time<<":\t\tIl treno "<< train->get_train_number() <<" e' entrato ai box\n";
+
                 }
                 break;
             }
@@ -336,13 +347,17 @@ bool Simulation::at_five(Train* train, int train_state)
 
 bool Simulation::at_twenty(Train* train) //funziona a 20 km
 {
-    if(train->past_twenty(time))
+    if(train->past_twenty())
     {
         int station_index = get_index(train);
         bool origin = train->get_origin();
 
-        int train_state = stations[station_index]->handle_new_train(origin, train); //DEVE FUNZIONARE BENE PASSANDO DUE VOLTE LO STESSO TRENO
+        int train_state = stations[station_index]->handle_new_train(origin, train, time);
         train->set_state(train_state); //-1 se dovrà fermarsi, 0 se andrà nei box, 1 se transiterà
+
+        //se un treno deve transitare "punta" già alla stazione successiva
+        if(train_state == 1)
+            train->update_index();
 
         return true;
     }
@@ -374,7 +389,7 @@ int Simulation::get_index(Train* train)
     }
     else
     {
-        return train->get_station_index() + 1;
+        return train->get_station_index();
     }
 }
 
@@ -420,7 +435,11 @@ void Simulation::check_new_trains() //fa partire treni dalla stazione originarie
         {
             check_priority(next_forward, index, forward_trains);
             forward_trains[next_forward]->start();
+            forward_trains[next_forward]->has_restarted();
             stations[0]->new_departure(false, time);
+
+            std::cout<< time << ": Il treno " << forward_trains[next_forward]->get_train_number()
+                << " e' partito da " << stations[0]->get_name() << "\n";
             next_forward++;
         }
     }
@@ -437,7 +456,11 @@ void Simulation::check_new_trains() //fa partire treni dalla stazione originarie
         {
             check_priority(next_backward, index, backward_trains);
             backward_trains[next_backward]->start();
+            backward_trains[next_backward]->has_restarted();
             stations.back()->new_departure(true, time);
+            
+            std::cout<< time << ": Il treno " << backward_trains[next_backward]->get_train_number()
+                << " e' partito da " << stations.back()->get_name() << "\n";
             next_backward++;
         }    
     }
@@ -453,7 +476,7 @@ void Simulation::check_priority(int a, int b, std::vector<Train*>& v)
         if(v[max_index]->get_train_type() < v[i]->get_train_type())
             max_index = i;
 
-    if(a != max_index) //c'è un massimo diverso
+    if(a != max_index) //c'è un treno più veloce che vuole partire
     {
         Train* temp = v[a];
         v[a] = v[max_index];
@@ -464,16 +487,17 @@ void Simulation::check_priority(int a, int b, std::vector<Train*>& v)
 
 void Simulation::check_trains_distance()
 {
-    std::vector<Train*> moving_trains;
+    std::vector<Train*> moving_trains(0);
     for(int i = 0; i < next_forward; i++)
     {
-        if(forward_trains[i]->isRunning() && forward_trains[i]->get_current_velocity() != 80) //true se è in transito, false se si fermerà
+        if(forward_trains[i]->get_current_velocity() != 80 && forward_trains[i]->get_current_velocity() != 0) //true se è in transito, false se si fermerà
             moving_trains.push_back(forward_trains[i]);
     }   
 
-    for(int i = 0; i < moving_trains.size()-1; i++)
+    int size = moving_trains.size();
+    for(int i = 0; i < size-1; i++)
     {
-        for(int j = i+1; j < moving_trains.size(); j++)
+        for(int j = i+1; j < size; j++)
         {
             double position1 = moving_trains[i]->get_position();
             double position2 = moving_trains[j]->get_position();
@@ -490,18 +514,19 @@ void Simulation::check_trains_distance()
     moving_trains.clear();
     for(int i = 0; i < next_backward; i++)
     {
-        if(backward_trains[i]->isRunning() && backward_trains[i]->get_current_velocity() != 80) //true se è in transito, false se si fermerà
+        if(backward_trains[i]->get_current_velocity() != 80  && backward_trains[i]->get_current_velocity() != 0) //true se è in transito, false se si fermerà
             moving_trains.push_back(backward_trains[i]);
     }
 
-    for(int i = 0; i < moving_trains.size()-1; i++)
+    size = moving_trains.size();
+    for(int i = 0; i < size-1; i++)
     {
-        for(int j = i+1; j < moving_trains.size(); j++)
+        for(int j = i+1; j < size; j++)
         {
             double position1 = moving_trains[i]->get_position();
             double position2 = moving_trains[j]->get_position();
             
-            if(std::abs(position1-position2) < 13) //da verificare il 10
+            if(std::abs(position1-position2) < 13)
             {
                 int min_velocity = std::min(moving_trains[i]->get_current_velocity(), moving_trains[j]->get_current_velocity());
                 moving_trains[i]->set_current_velocity(min_velocity);
@@ -514,9 +539,14 @@ void Simulation::check_trains_distance()
 
 void Simulation::update_position()
 {
+    //aggiorna la posizione dei treni
     for(int i = 0; i < next_forward; i++)
-        forward_trains[i]->update(); //dovrebbe bastar: position = position + cur_vel/60
+        forward_trains[i]->update();
 
     for(int i = 0; i < next_backward; i++)
-        backward_trains[i]->update(); //dovrebbe bastar: position = position + cur_vel/60
+        backward_trains[i]->update();
+
+    //per ogni stazione aggiorna il suo elenco di treni in transito
+    for(int i = 0; i < stations.size(); i++)
+        stations[i]->update_transit();
 }

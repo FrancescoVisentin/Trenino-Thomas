@@ -56,7 +56,7 @@ bool Train::has_arrived(int time)
 {
     if(position >= stations_distances.back() && state != -1)
     {
-        cout << time << ": Il treno "<< train_number << " è arrivato a destinazione con " << delay << " minuti di ritardo"; 
+        cout <<"\n"<< time << ": IL TRENO "<< train_number << " è ARRIVATO A DESTINAZIONE con " << delay << " minuti di ritardo\n\n"; 
         return true;
     }
     else
@@ -65,19 +65,10 @@ bool Train::has_arrived(int time)
     }
 }
 
-bool Train::past_station(int time)
+bool Train::past_station()
 {
     if((position >= stations_distances.at(station_index)) && (position < (stations_distances.at(station_index) + 3)))
     {
-        int mod_delay = prec_delay - delay;
-        if(mod_delay < 0)
-        {
-            cout << time << " : Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
-        }
-        else
-        {
-            cout << time << " : Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
-        }
         return true;
     }
     else
@@ -99,11 +90,10 @@ bool Train::past_five()
     }
 }
 
-bool Train::past_twenty(int time)
+bool Train::past_twenty()
 {
     if((position >= stations_distances.at(station_index) - 20) && (position < (stations_distances.at(station_index) - 5)))
-    {
-        cout << time << " : Il treno numero " << train_number << " è a 20 km dalla prossima stazione"; 
+    { 
         return true;
     }
     else
@@ -123,32 +113,53 @@ void Train::update()
         set_current_velocity(max_velocity);
         restarted = -1;
     }
-    position = position + (current_velocity/60);
+    position = position + (current_velocity/60.);
 }
 
 void Regional::update_delay(int time)
 {
     prec_delay = delay;
-    delay = time - arrival_times.at(station_index-1);
+    delay = time - arrival_times.at(station_index);
+
+    int mod_delay = prec_delay - delay;
+    if(mod_delay < 0)
+    {
+        cout << time << ": Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
+    }
+    else
+    {
+        cout << time << ": Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
+    }
 }
 void HighV::update_delay(int time)
 {
-    int arrival_index = (station_index-1) - count_prec_secondary();
+    int arrival_index = (station_index) - count_prec_secondary();
     delay = time - arrival_times.at(arrival_index);
+
+    int mod_delay = prec_delay - delay;
+    if(mod_delay < 0)
+    {
+        cout << time << ": Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
+    }
+    else
+    {
+        cout << time << ": Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
+    }
 }
 void HighV_s::update_delay(int time)
 {
-    int arrival_index = (station_index-1) - count_prec_secondary();
+    int arrival_index = (station_index) - count_prec_secondary();
     delay = time - arrival_times.at(arrival_index);
-}
 
-int Train::get_station_index()
-{
-    while(station_index < stations_distances.size() && position > stations_distances.at(station_index))
+    int mod_delay = prec_delay - delay;
+    if(mod_delay < 0)
     {
-        station_index++;
+        cout << time << ": Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
     }
-    return station_index;
+    else
+    {
+        cout << time << ": Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
+    }
 }
 
 int Train::count_prec_secondary()

@@ -16,9 +16,9 @@ public:
     void start();
     void has_restarted();
     bool has_arrived(int time);
-    bool past_station(int time);
+    bool past_station();
     bool past_five();
-    bool past_twenty(int time);
+    bool past_twenty();
     void update();
     virtual void update_delay(int time) = 0;
     void update_station_index();
@@ -38,15 +38,16 @@ public:
     const int get_max_velocity(){return max_velocity;}
     
     //altri getter
-    int get_station_index();
-    bool get_state(){return state;}
+    int get_station_index(){return station_index;}
+    int get_state(){return state;}
     int get_current_velocity(){return current_velocity;}
     int get_current_rail(){return current_rail;}
     
     //setter
+    void update_index(){station_index++;}
     void set_position(int pos){position = pos;}
     void set_delay(int del){delay = del;}
-    void set_state(bool sta){state = sta;}
+    void set_state(int sta){state = sta;}
     void set_current_velocity(int c_vel){current_velocity = c_vel;}
     void set_current_rail(int c_rai){current_rail = c_rai;}
     
@@ -79,7 +80,7 @@ protected:
     
     //altre (devono essere modificate in runtime)
     int station_index;      //indica la prossima stazione d'arrivo (deve aumentare anche quando si transita)
-    bool state;           //fermo = -1, box = 0, movimento/transita = 1
+    int state;           //fermo = -1, box = 0, movimento/transita = 1
     int current_velocity;
     int current_rail;         //-1 se non è su un binario
     int restarted;
