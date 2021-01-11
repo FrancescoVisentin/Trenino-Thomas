@@ -1,3 +1,5 @@
+//Visentin Francesco matricola 1216419
+
 #ifndef Simultaion_h
 #define Simulation_h
 
@@ -20,7 +22,7 @@ class Simulation
         Simulation(std::istream& timetable, std::istream& line);
 
 
-        //Copy constructors/assignment operator disabilitati. (DA VALUTARE) 
+        //Copy constructors/assignment operator disabilitati. Non sono ritenute operazioni valide. 
         Simulation(const Simulation&) = delete;
         Simulation& operator = (const Simulation&) = delete;
 
@@ -46,7 +48,8 @@ class Simulation
         static const int S_LOCALE = 1;
         static const int INVALID_STATION = -1; //usata per segnalare stazioni troppo vicine.
         static const int MIN_DISTANCE = 20; //distanza minima tra due stazioni.
-
+        static const int MIN_TRAIN_DIST = 13; //distanza minima tra due treni. Impostata a 13 per
+                                              //evitare errrori dovuti alla granularità del tempo.
 
         std::vector<Train*> forward_trains; //contiene tutti i treni che partono dall'origne
         std::vector<Train*> backward_trains; //contiene tutti i treni che partono dal capolinea
@@ -55,7 +58,7 @@ class Simulation
         std::vector<int> stations_distances;
         std::vector<bool> stations_type;
         int time = 0;
-        bool ready = true; //l'oggetto può effettuare una simulazione.
+        bool ready = true; //indica se l'oggetto può effettuare una simulazione.
 
 
         //indici dei prossimi treni che devono partire
