@@ -1,5 +1,10 @@
+//Roznowicz Simone matricola 1216375
+
 #include "Stazione.h"
 
+std::string Stazione::get_name() {
+	return nomeStaz;
+}
 Stazione_principale::Stazione_principale(std::string nomeStazione, int distanzaOrigine)
 {
 	Binario_standard bs1{ false, false };
@@ -9,7 +14,7 @@ Stazione_principale::Stazione_principale(std::string nomeStazione, int distanzaO
 	
 	nomeStaz = nomeStazione ;
 	distanzaOrig = distanzaOrigine;
-	
+	//riempio un vettore di binari standard che usero' in altre funzioni
 	vbs.push_back(bs1);
 	vbs.push_back(bs2);
 	vbs.push_back(bs3);
@@ -30,7 +35,7 @@ int Stazione_principale::handle_new_train(bool reverseDirection, Train* treno, i
 	for (int i = 0; i < vbs.size(); i++) {
 		if (vbs[i].isReverse() == reverseDirection && vbs[i].isFull() == false) {					//la direzione coincide con quella del treno? Il binario e' libero per la sosta?
 			vbs[i].set_fullness(true);
-			vbs[i].set_train(treno);															//allora pongo il binario disponibile pieno
+			vbs[i].set_train(treno);																//allora pongo il binario disponibile pieno
 			treno->set_current_rail(i + 1);
 			std::cout << time << ": Il treno numero " << treno->get_train_number() << " è a 20 km dalla prossima stazione "
 				<< nomeStaz << " dove occupera' il binario " << i + 1<<std::endl;
@@ -40,11 +45,15 @@ int Stazione_principale::handle_new_train(bool reverseDirection, Train* treno, i
 	return 0;																						// == 0 il treno deve fermarsi ma non essendoci posti DEVE SOSTARE AI BOX,
 }
 
+//libera un posto in stazione (libera un binario)
 void Stazione_principale::freePlace(Train* treno){
 	from_int_to_rail(treno)->set_fullness(false);
 }
 
-bool Stazione_principale::can_leave(bool reverseDirection, int time){								//restituisce TRUE se E' PASSATO ABBASTANZA TEMPO DALL'ULTIMA PARTENZA
+//metodo che controlla siano passati almeno 4 minuti dalla partenza dell'ultimo treno nella stessa direzione
+//Infatti per la granularita' del tempo 4 minuti e' il tempo minimo affinche' due treni appena usciti dalla stazione
+//mantengano la distanza di sicurezza di 10km
+bool Stazione_principale::can_leave(bool reverseDirection, int time) const{							//restituisce TRUE se E' PASSATO ABBASTANZA TEMPO DALL'ULTIMA PARTENZA
 	if (reverseDirection == true) {																	//caso in cui voglio far partire un treno dal capolinea
 		if (timeLastDepartureReverse < 0) {															//caso alla sola prima partenza dalla stazione selezionata
 			return true;
@@ -67,7 +76,7 @@ bool Stazione_principale::can_leave(bool reverseDirection, int time){								//r
 	}
 }
 
-//funzione viene chiamata quando si deve aggiornare il minuto in cui e' 
+//metodo viene chiamata quando si deve aggiornare il minuto in cui e' 
 //partito l'ultimo treno (per binari nella stessa direzione)
 void Stazione_principale::new_departure(bool reverseDirection, int time){
 	if (reverseDirection == true) {							//allora aggiorno timeLastDepartureReverse													
@@ -77,6 +86,8 @@ void Stazione_principale::new_departure(bool reverseDirection, int time){
 	timeLastDepartureAhead = time;
 }
 
+//metodo che viene chiamato interrogando la stazione se sia possibile liberare un treno dai box riservandogli
+//un binario in stazione
 bool Stazione_principale::can_arrive_from_box(bool reverseDirection, Train* treno){
 	for (int i = 0; i < vbs.size(); i++) {
 		if (vbs[i].isReverse() == reverseDirection && vbs[i].isFull() == false) {					//la direzione coincide con quella del treno? Il binario e' libero per la sosta?
@@ -90,6 +101,7 @@ bool Stazione_principale::can_arrive_from_box(bool reverseDirection, Train* tren
 	return false;
 }
 
+//restituisce true se un determinato treno puo' ripartire dalla stzione
 bool Stazione_principale::can_restart(Train* treno, int time){
 	//controllo che sia passato abbastanza tempo dall'ultima partenza (cosi' che due treni non partano troppo ravvicinati)
 	if (can_leave(treno->get_origin(), time) == false) {
@@ -114,6 +126,7 @@ bool Stazione_principale::can_restart(Train* treno, int time){
 		freePlace(treno);
 		return true;
 	}
+	//controllo la priorita' fra due treni che sono fermi: do la PRECEDENZA AI TRENI PIU' VELOCI
 	Train* other_train = get_other_rail(treno->get_current_rail())->get_train();
 	if (other_train == nullptr) {
 		from_int_to_rail(treno)->set_train(nullptr);
@@ -133,19 +146,22 @@ bool Stazione_principale::can_restart(Train* treno, int time){
 	return false;
 }
 
+//metodo chiamato all'arrivo di un nuovo treno in stazione: aggiorna l'orario d'arrivo
+void Stazione_principale::new_stopped_train(Train* treno, int time) {
+	from_int_to_rail(treno)->set_time_arrival(time);
+	std::cout << "     Il treno " << treno->get_train_number() << " e' giunto alla stazione " << nomeStaz
+		<< " e sosta al binario " << treno->get_current_rail() << std::endl;
+}
+
 //aggiornametno non necessario per le stazioni principali. 
 void Stazione_principale::update_transit()
 {
 	return;
 }
 
-void Stazione_principale::new_stopped_train(Train* treno, int time){
-	from_int_to_rail(treno)->set_time_arrival(time);
-	std::cout << "     Il treno " << treno->get_train_number() << " e' giunto alla stazione " << nomeStaz 
-			  << " e sosta al binario " << treno->get_current_rail() << std::endl;
-}
-
-Binario_standard* Stazione_principale::from_int_to_rail(Train* treno){
+//metodo di supporto che, a partire dalnumero di un binario, 
+//restituisce il binario corrispondente
+Binario_standard* Stazione_principale::from_int_to_rail(Train* treno) {
 	Binario_standard* ptr = nullptr;
 	switch (treno->get_current_rail()) {
 	case 1: ptr = &vbs[0]; break;
@@ -156,6 +172,7 @@ Binario_standard* Stazione_principale::from_int_to_rail(Train* treno){
 	return ptr;
 }
 
+//restituisce il binario nella stessa direzione di quello in qui si trova il treno
 Binario_standard* Stazione_principale::get_other_rail(int rail) {
 	Binario_standard* ptr = nullptr;
 	switch (rail) {
@@ -169,6 +186,24 @@ Binario_standard* Stazione_principale::get_other_rail(int rail) {
 
 
 
+
+Stazione_locale::Stazione_locale(std::string nomeStazione, int distanzaOrigine)
+{
+	Binario_standard bs1{ false, false };
+	Binario_standard bs2{ false, false };
+	Binario_standard bs3{ true, false };
+	Binario_standard bs4{ true, false };
+
+	nomeStaz = nomeStazione;
+	distanzaOrig = distanzaOrigine;
+
+	//riempio un vettore di binari standard che usero' in altre funzioni
+	vbs.push_back(bs1);
+	vbs.push_back(bs2);
+	vbs.push_back(bs3);
+	vbs.push_back(bs4);
+
+}
 
 //Essendo STAZIONE_LOCALE, se il treno fornito e' un regionale, si deve fermare, altrimenti (treno veloce o superv) transita soltanto (per la presenza dei binari di transito): 
 //numero >0 se NON DEVE FERMARSI, == 0 se deve fermarsi ma non essendoci posti DEVE SOSTARE AI BOX,
@@ -188,7 +223,7 @@ int Stazione_locale::handle_new_train(bool reverseDirection, Train* treno, int t
 	for (int i = 0; i < vbs.size(); i++) {
 		if (vbs[i].isReverse() == reverseDirection && vbs[i].isFull() == false) {					//la direzione coincide con quella del treno? Il binario e' libero per la sosta?
 			vbs[i].set_fullness(true);
-			vbs[i].set_train(treno);															//allora pongo il binario disponibile pieno
+			vbs[i].set_train(treno);																//allora pongo il binario disponibile pieno
 			treno->set_current_rail(i + 1);
 			std::cout << time << ": Il treno numero " << treno->get_train_number() << " è a 20 km dalla prossima stazione "
 				<< nomeStaz << " dove occupera' il binario " << i + 1<<std::endl;
@@ -198,12 +233,16 @@ int Stazione_locale::handle_new_train(bool reverseDirection, Train* treno, int t
 	return 0;																						// == 0 il treno deve fermarsi ma non essendoci posti DEVE SOSTARE AI BOX,
 }
 
+//libera un posto in stazione (libera un binario)
 void Stazione_locale::freePlace(Train* treno){
 	from_int_to_rail(treno)->set_fullness(false);
 }
 
 
-bool Stazione_locale::can_leave(bool reverseDirection, int time) {									//restituisce TRUE se E' PASSATO ABBASTANZA TEMPO DALL'ULTIMA PARTENZA
+//metodo che controlla siano passati almeno 4 minuti dalla partenza dell'ultimo treno nella stessa direzione
+//Infatti per la granularita' del tempo 4 minuti e' il tempo minimo affinche' due treni appena usciti dalla stazione
+//mantengano la distanza di sicurezza di 10km
+bool Stazione_locale::can_leave(bool reverseDirection, int time) const{								//restituisce TRUE se E' PASSATO ABBASTANZA TEMPO DALL'ULTIMA PARTENZA
 	if (reverseDirection == true) {																	//caso in cui voglio far partire un treno dal capolinea
 		if (timeLastDepartureReverse < 0) {															//caso alla sola prima partenza dalla stazione selezionata
 			return true;
@@ -226,6 +265,8 @@ bool Stazione_locale::can_leave(bool reverseDirection, int time) {									//res
 	}
 }
 
+//metodo viene chiamata quando si deve aggiornare il minuto in cui e' 
+//partito l'ultimo treno (per binari nella stessa direzione)
 void Stazione_locale::new_departure(bool reverseDirection, int time){
 	if (reverseDirection == true) {							//allora aggiorno timeLastDepartureReverse													
 		timeLastDepartureReverse = time;
@@ -233,6 +274,9 @@ void Stazione_locale::new_departure(bool reverseDirection, int time){
 	}
 	timeLastDepartureAhead = time;
 }
+
+//metodo che viene chiamato interrogando la stazione se sia possibile liberare un treno dai box riservandogli
+//un binario in stazione
 bool Stazione_locale::can_arrive_from_box(bool reverseDirection, Train* treno) {
 	for (int i = 0; i < vbs.size(); i++) {
 		if (vbs[i].isReverse() == reverseDirection && vbs[i].isFull() == false) {					//la direzione coincide con quella del treno? Il binario e' libero per la sosta?
@@ -246,6 +290,7 @@ bool Stazione_locale::can_arrive_from_box(bool reverseDirection, Train* treno) {
 	return false;
 }
 
+//restituisce true se un determinato treno puo' ripartire dalla stzione
 bool Stazione_locale::can_restart(Train* treno, int time){
 	
 	//controllo che sia passato abbastanza tempo dall'ultima partenza (cosi' che due treni non partano troppo ravvicinati)
@@ -277,6 +322,7 @@ bool Stazione_locale::can_restart(Train* treno, int time){
 		freePlace(treno);
 		return true;
 	}
+	//controllo la priorita' fra due treni che sono fermi: do la PRECEDENZA AI TRENI PIU' VELOCI
 	Train* other_train = get_other_rail(treno->get_current_rail())->get_train();
 	if (other_train == nullptr) {
 		from_int_to_rail(treno)->set_train(nullptr);
@@ -296,7 +342,8 @@ bool Stazione_locale::can_restart(Train* treno, int time){
 	return false;
 }
 
-
+//metodo di supporto che, a partire dalnumero di un binario, 
+//restituisce il binario corrispondente
 Binario_standard* Stazione_locale::from_int_to_rail(Train* treno){
 	Binario_standard* ptr = nullptr;
 	switch (treno->get_current_rail()) {
@@ -308,6 +355,7 @@ Binario_standard* Stazione_locale::from_int_to_rail(Train* treno){
 	return ptr;
 }
 
+//restituisce il binario nella stessa direzione di quello in qui si trova il treno
 Binario_standard* Stazione_locale::get_other_rail(int rail){
 	Binario_standard* ptr = nullptr;
 	switch (rail) {
@@ -319,29 +367,16 @@ Binario_standard* Stazione_locale::get_other_rail(int rail){
 	return ptr;
 }
 
+//metodo chiamato all'arrivo di un nuovo treno in stazione: aggiorna l'orario d'arrivo
 void Stazione_locale::new_stopped_train(Train* treno, int time) {
 	from_int_to_rail(treno)->set_time_arrival(time);
 	std::cout << "     Il treno " << treno->get_train_number() << " e' giunto alla stazione " << nomeStaz
 		<< " e sosta al binario " << treno->get_current_rail() << std::endl;
 }
 
-Stazione_locale::Stazione_locale(std::string nomeStazione, int distanzaOrigine)
-{
-	Binario_standard bs1{ false, false };
-	Binario_standard bs2{ false, false };
-	Binario_standard bs3{ true, false };
-	Binario_standard bs4{ true, false };
-
-	nomeStaz = nomeStazione;
-	distanzaOrig = distanzaOrigine;
-
-	vbs.push_back(bs1);
-	vbs.push_back(bs2);
-	vbs.push_back(bs3);
-	vbs.push_back(bs4);
-
-} 
-
+//in una stazione locale si puo' verificare il transito di un treno: e' opportuano gestire 
+//il vettore di treni in trnsito eliminando da esso gli elementi che hanno superato i 5 km oltre una
+//stazione o sono giunti alla destinazione finale
 void Stazione_locale::update_transit()
 {
 	for (int i = 0; i < vtt.size(); i++) {
@@ -351,13 +386,14 @@ void Stazione_locale::update_transit()
 			i--;
 		}
 
-		else if (!vtt[i]->get_origin() && vtt[i]->get_position() - distanzaOrig > 5) {						//treno va da origine a capolinea (reverse)
+		else if (!vtt[i]->get_origin() && vtt[i]->get_position() - distanzaOrig > 5) {						//treno va da origine a capolinea 
 			vtt.erase(vtt.begin() + i);
 			i--;
 		}
-		else if (vtt[i]->get_origin() && (vtt[i]->eol() - vtt[i]->get_position() < distanzaOrig - 5)) {						//treno va da capolinea a origine (reverse)
+		else if (vtt[i]->get_origin() && (vtt[i]->eol() - vtt[i]->get_position() < distanzaOrig - 5)) {		//treno va da capolinea a origine (reverse)
 			vtt.erase(vtt.begin() + i);
 			i--;
 		}
 	}
 }
+

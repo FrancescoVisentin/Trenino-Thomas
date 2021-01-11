@@ -1,3 +1,5 @@
+//Roznowicz Simone matricola 1216375
+
 #ifndef Binario_h
 #define Binario_h
 
@@ -19,7 +21,7 @@ public:
 	Binario_standard() {};
 	Binario_standard(const bool rev, bool full) : reverse{ rev }, fullness{ full } {
 	}
-	int speed() const;											//restituisce la velocita' limite del binario
+	int speed() const;											
 	bool isFull();
 	bool isReverse() const;
 	void set_fullness(bool changeFullness);
