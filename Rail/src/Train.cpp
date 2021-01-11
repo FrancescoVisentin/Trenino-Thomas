@@ -3,18 +3,16 @@
 #include <cmath>
 #include <iostream>
 
-Regional::Regional(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, vector<int> s_distances)
-//: Train(origin, 1, arrival_times, stations_type, stations_distances)
+Regional::Regional(int t_number, bool ori, const vector<int>& a_times, const vector<bool>& s_type, const vector<int>& s_distances)
 {
     origin = ori;
     train_number = t_number;
     train_type = 1;
+    position = 0;
     delay = 0;
     prec_delay = 0;
-    position = 0;
-    //position spostata in start()
     station_index = 0;
-    state = false;
+    state = STOPPED;
     current_velocity = 0;
     current_rail = -1;
     max_velocity = 160;
@@ -31,32 +29,26 @@ Regional::Regional(int t_number, bool ori, vector<int> a_times, vector<bool> s_t
 
     checkTwentyKilometres();        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
 
-    vector<int> dist;
-    createDistances(dist);      //creo il vettore Distances che contiene le distanze tra le varie stazioni
-    distances = dist;
+    createDistances();      //creo il vettore Distances che contiene le distanze tra le varie stazioni
     
-    int num_of_principal_stations = countPrincipalStations(stations_type);
-    
-    checkArrivalTimes(max_velocity, stations_distances.size());    //controllo che gli orari di arrivo della timetable abbiano senso
-                            //e che siano in giusta quantità
+    checkArrivalTimes(stations_distances.size());   //controllo che gli orari di arrivo della timetable abbiano senso
+                                                    //e che siano in giusta quantità
 
     vector<int> s_points;
     createSignalPoints(stations_distances, s_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
     signal_points = s_points;
 }
 
-HighV::HighV(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, vector<int> s_distances)
-//: Train(origin, 2, arrival_times, stations_type, stations_distances)
+HighV::HighV(int t_number, bool ori, const vector<int>& a_times, const vector<bool>& s_type, const vector<int>& s_distances)
 {
     origin = ori;
     train_number = t_number;
     train_type = 2;
+    position = 0;
     delay = 0;
     prec_delay = 0;
-    position = 0;
-    //position spostata in start()
     station_index = 0;
-    state = false;
+    state = STOPPED;
     current_velocity = 0;
     current_rail = -1;
     max_velocity = 240;
@@ -73,32 +65,28 @@ HighV::HighV(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, v
 
     checkTwentyKilometres();        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
 
-    vector<int> dist;
-    createDistances(dist);      //creo il vettore Distances che contiene le distanze tra le varie stazioni
-    distances = dist;
+    createDistances();      //creo il vettore Distances che contiene le distanze tra le varie stazioni
     
     int num_of_principal_stations = countPrincipalStations(stations_type);
     
-    checkArrivalTimes(max_velocity, num_of_principal_stations);    //controllo che gli orari di arrivo della timetable abbiano senso
-                            //e che siano in giusta quantità
+    checkArrivalTimes(num_of_principal_stations);   //controllo che gli orari di arrivo della timetable abbiano senso
+                                                    //e che siano in giusta quantità
 
     vector<int> s_points;
     createSignalPoints(stations_distances, s_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
     signal_points = s_points;
 }
 
-HighV_s::HighV_s(int t_number, bool ori, vector<int> a_times, vector<bool> s_type, vector<int> s_distances)
-//: Train(origin, 3, arrival_times, stations_type, stations_distances)
+HighV_s::HighV_s(int t_number, bool ori, const vector<int>& a_times, const vector<bool>& s_type, const vector<int>& s_distances)
 {
     origin = ori;
     train_number = t_number;
     train_type = 3;
+    position = 0;
     delay = 0;
     prec_delay = 0;
-    position = 0;
-    //position spostata in start()
     station_index = 0;
-    state = false;
+    state = STOPPED;
     current_velocity = 0;
     current_rail = -1;
     max_velocity = 300;
@@ -115,22 +103,19 @@ HighV_s::HighV_s(int t_number, bool ori, vector<int> a_times, vector<bool> s_typ
 
     checkTwentyKilometres();        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
 
-    vector<int> dist;
-    createDistances(dist);      //creo il vettore Distances che contiene le distanze tra le varie stazioni
-    distances = dist;
-    
+    createDistances();      //creo il vettore Distances che contiene le distanze tra le varie stazioni
+
     int num_of_principal_stations = countPrincipalStations(stations_type);
     
-
-    checkArrivalTimes(max_velocity, num_of_principal_stations);    //controllo che gli orari di arrivo della timetable abbiano senso
-                            //e che siano in giusta quantità
+    checkArrivalTimes(num_of_principal_stations);   //controllo che gli orari di arrivo della timetable abbiano senso
+                                                    //e che siano in giusta quantità
 
     vector<int> s_points;
     createSignalPoints(stations_distances, s_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
     signal_points = s_points;
 }
 
-int Train::countPrincipalStations(vector<bool>& stations_type)
+int countPrincipalStations(const vector<bool>& stations_type)
 {
     int num_of_principal_stations = 0;
     for(int i=0; i<stations_type.size(); i++)
@@ -143,7 +128,7 @@ int Train::countPrincipalStations(vector<bool>& stations_type)
     return num_of_principal_stations;
 }
 
-void Train::invertStations(vector<int>& stations_distances, vector<bool>& stations_type)
+void invertStations(vector<int>& stations_distances, vector<bool>& stations_type)
 {
     vector<int> tmp;
     int last = stations_distances.back();
@@ -244,14 +229,14 @@ void HighV_s::checkTwentyKilometres()
     }
 }
 
-void Regional::createDistances(vector<int>& distances)
+void Regional::createDistances()
 {
     for(int i=0; i<stations_distances.size()-1; i++)        //aggiungo tutte le distanze tra due stazioni successive
     {
         distances.push_back(stations_distances.at(i+1)-stations_distances.at(i));
     }
 }
-void HighV::createDistances(vector<int>& distances)
+void HighV::createDistances()
 {    
     for(int i=0; i<stations_distances.size()-1; i++)        //aggiungo tutte le distanze tra due stazioni successive
     {
@@ -267,7 +252,7 @@ void HighV::createDistances(vector<int>& distances)
     }
 }
 
-void HighV_s::createDistances(vector<int>& distances)
+void HighV_s::createDistances()
 {    
     for(int i=0; i<stations_distances.size()-1; i++)        //aggiungo tutte le distanze tra due stazioni successive
     {
@@ -283,10 +268,12 @@ void HighV_s::createDistances(vector<int>& distances)
     }
 }
 
-
-void Train::checkArrivalTimes(int velocity, int num_of_stations)
+void Train::checkArrivalTimes(int num_of_stations)   //controllo che gli orari di arrivo della timetable abbiano senso  
 {
+    int velocity = max_velocity;
+
     int min_time = ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);
+    //ceil(((((distances.at(i)-10)*1.)/160)*60)+13);
     
     if(arrival_times.size() == num_of_stations)
     {
@@ -350,7 +337,7 @@ void Train::checkArrivalTimes(int velocity, int num_of_stations)
     }
 }
 
-void Train::createSignalPoints(vector<int>& stations_distances, vector<int>& signal_points)
+void createSignalPoints(const vector<int>& stations_distances, vector<int>& signal_points)
 {
     for(int i=1; i<stations_distances.size(); i++)          //aggiungo posizioni a 20 km prima di ogni stazione
     {

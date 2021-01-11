@@ -389,7 +389,7 @@ bool Simulation::at_twenty(Train* train)
 //Verifica se un treno è arrivato a fine corsa.
 bool Simulation::at_destination(std::vector<Train*>& vec, int index, int& counter)
 {
-    if(vec[index]->has_arrived(time)) //true se pos >= pos_ultima_stazione && state != -1;
+    if(vec[index]->has_arrived()) //true se pos >= pos_ultima_stazione && state != -1;
     {
         //elimino quel treno dalla lista
         delete vec[index];
