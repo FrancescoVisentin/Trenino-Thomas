@@ -55,7 +55,7 @@ void Train::has_restarted()
 bool Train::has_arrived(int time)
 {
     if(position >= stations_distances.back() && state != -1)
-    { 
+    {
         return true;
     }
     else
@@ -123,11 +123,11 @@ void Regional::update_delay(int time)
     int mod_delay = prec_delay - delay;
     if(mod_delay < 0)
     {
-        cout << time << " : Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
+        cout << time << ": Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
     }
     else
     {
-        cout << time << " : Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
+        cout << time << ": Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
     }
 }
 void HighV::update_delay(int time)
