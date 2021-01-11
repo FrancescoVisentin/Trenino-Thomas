@@ -5,32 +5,32 @@
 
 //functions
 
-int Train::start_time()
+int Train::start_time() const
 {
     return arrival_times.at(0);
 }
 
-int Train::eol()
+int Train::eol() const
 {
     return stations_distances.back();
 }
 
-bool Regional::isRegional()
+bool Regional::isRegional() const
 {
     return true;
 }
-bool HighV::isRegional()
+bool HighV::isRegional() const
 {
     return false;
 }
-bool HighV_s::isRegional()
+bool HighV_s::isRegional() const
 {
     return false;
 }
 
-bool Train::isRunning()
+bool Train::isRunning() const
 {
-    if(state == 1)
+    if(state == RUNNING)
     {
         return true;
     }
@@ -39,12 +39,10 @@ bool Train::isRunning()
 
 void Train::start()
 {
-    //il trenino thomas è pronto a schiantarsi
     set_delay(0);
-    state = 1;
+    state = RUNNING;
     station_index++;
-    set_current_velocity(80);   
-    //set_current_rail(1);      //il set penso sia fatto da Station
+    set_current_velocity(80);
 }
 
 void Train::has_restarted()
@@ -52,9 +50,9 @@ void Train::has_restarted()
     restarted = 0;
 }
 
-bool Train::has_arrived(int time)
+bool Train::has_arrived() const
 {
-    if(position >= stations_distances.back() && state != -1)
+    if(position >= stations_distances.back() && state != STOPPED)
     {
         return true;
     }
@@ -64,7 +62,7 @@ bool Train::has_arrived(int time)
     }
 }
 
-bool Train::past_station()
+bool Train::past_station() const
 {
     if((position >= stations_distances.at(station_index)) && (position < (stations_distances.at(station_index) + 3)))
     {
@@ -77,7 +75,7 @@ bool Train::past_station()
     
 }
 
-bool Train::past_five()
+bool Train::past_five() const
 {
     if((position >= stations_distances.at(station_index) - 5) && (position < (stations_distances.at(station_index))))
     {
@@ -89,7 +87,7 @@ bool Train::past_five()
     }
 }
 
-bool Train::past_twenty()
+bool Train::past_twenty() const
 {
     if((position >= stations_distances.at(station_index) - 20) && (position < (stations_distances.at(station_index) - 5)))
     {
@@ -161,7 +159,7 @@ void HighV_s::update_delay(int time)
     }
 }
 
-int Train::count_prec_secondary()
+int Train::count_prec_secondary() const
 {
     int c = 0;
     for(int i=0; i < station_index; i++)
