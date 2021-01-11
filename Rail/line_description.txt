@@ -1,0 +1,9 @@
+Verona Porta Nuova
+S. Bonifaccio 0 27
+Lonigo 1 56
+Altavilla 1 80
+Vicenza 0 102
+Lerino 1 145
+Padova 0 200
+Mira 1  256
+Venezia Santa Lucia 0 300
