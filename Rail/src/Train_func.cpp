@@ -1,7 +1,6 @@
-#include "Train.h"
-#include <iostream>
+//Christian Marchiori matr. 1218317
 
-#include <cmath>
+#include "Train.h"
 
 //functions
 
@@ -101,46 +100,54 @@ bool Train::past_twenty() const
 
 void Train::update()
 {
-    if(restarted >= 0)
+    if(restarted >= 0)      //se il treno si trova entro i 5km successivi ad una stazione restarted viene incrementato
     {
         restarted++;
     }
-    if(restarted > 4)
+    if(restarted > 4)       //se il treno è uscito dal limite
     {
         set_current_velocity(max_velocity);
         restarted = -1;
     }
-    position = position + (current_velocity/60.);
+    position = position + (current_velocity/60.);       //aggiorno la posizione in base alla velocità
 }
 
 void Regional::update_delay(int time)
 {
-    prec_delay = delay;
-    delay = time - arrival_times.at(station_index);
+    prec_delay = delay;         //memorizzo il ritardo alla stazione precedente in prec_delay
+    delay = time - arrival_times.at(station_index);     //calcolo il nuovo delay
     
-    int mod_delay = prec_delay - delay;
-    if(mod_delay < 0)
+    int mod_delay = prec_delay - delay;         //calcolo la variazione del delay
+    if(mod_delay == 0)      //stampe output in base alla variazione di ritardo
     {
-        cout << time << ": Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' variato di 0 minuti.\n";
+    }
+    else if(mod_delay < 0)
+    {
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' aumentato di " << std::abs(mod_delay) << " minuti.\n";
     }
     else
     {
-        cout << time << ": Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' diminuito di " << mod_delay << " minuti.\n";
     }
 }
 void HighV::update_delay(int time)
 {
     int arrival_index = station_index - count_prec_secondary();
-    delay = time - arrival_times.at(arrival_index);
+    delay = time - arrival_times.at(arrival_index);     //calcolo il nuovo delay
 
-    int mod_delay = prec_delay - delay;
-    if(mod_delay < 0)
+    int mod_delay = prec_delay - delay;         //calcolo la variazione del delay
+    if(mod_delay == 0)      //stampe output in base alla variazione di ritardo
     {
-        cout << time << ": Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' variato di 0 minuti.\n";
+    }
+    else if(mod_delay < 0)
+    {
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' aumentato di " << abs(mod_delay) << " minuti.\n";
     }
     else
     {
-        cout << time << ": Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' diminuito di " << mod_delay << " minuti.\n";
     }
 }
 void HighV_s::update_delay(int time)
@@ -149,13 +156,17 @@ void HighV_s::update_delay(int time)
     delay = time - arrival_times.at(arrival_index);
 
     int mod_delay = prec_delay - delay;
-    if(mod_delay < 0)
+    if(mod_delay == 0)      //stampe output in base alla variazione di ritardo
     {
-        cout << time << ": Il ritardo del treno " << train_number << " è aumentato di " << abs(mod_delay) << " minuti.\n";
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' variato di 0 minuti.\n";
+    }
+    else if(mod_delay < 0)
+    {
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' aumentato di " << abs(mod_delay) << " minuti.\n";
     }
     else
     {
-        cout << time << ": Il ritardo del treno " << train_number << " è diminuito di " << mod_delay << " minuti.\n";
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' diminuito di " << mod_delay << " minuti.\n";
     }
 }
 

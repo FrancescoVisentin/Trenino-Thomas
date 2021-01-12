@@ -8,6 +8,8 @@ SIMONE ROZNOWICZ
 
 Il progetto permette la gestione dei treni in una linea ferroviaria: vengono importati i dati relativi alla timetable
 dal file timetables.txt e i quelli relativi alla conformazione della linea ferroviaria dal file line_description.txt.
+Le timetables.txt, timetables_2.txt sono associate alla line_description.txt.
+Le timetables_1.txt, timetables_3.txt sono associate alla line_description_1.txt
 
 Struttura generale dell'elaborato:
 Sono state realizzate tre classi per la gestione dei treni, dei binari e delle stazioni. In aggiunta ad esse abbiamo deciso di creare 

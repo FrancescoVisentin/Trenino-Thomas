@@ -1,0 +1,284 @@
+302: Il treno 17176 e' PARTITO DA Venezia Santa Lucia
+313: Il treno numero 17176 e' a 20 km dalla prossima stazione Mira dove occupera' il binario 3
+322: Il treno 3477 e' PARTITO DA Verona Porta Nuova
+323: Il ritardo del treno 17176 e' variato di 0 minuti.
+     Il treno 17176 e' giunto alla stazione Mira e sosta al binario 3
+327: Il treno numero 3477 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 1
+328: Il treno 17176 e' ripartito dalla stazione Mira
+335: Il ritardo del treno 3477 e' variato di 0 minuti.
+     Il treno 3477 e' giunto alla stazione S. Bonifaccio e sosta al binario 1
+340: Il treno 3477 e' ripartito dalla stazione S. Bonifaccio
+341: Il treno 17259 e' PARTITO DA Verona Porta Nuova
+344: Il treno numero 17176 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 3
+346: Il treno numero 17259 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 1
+354: Il ritardo del treno 17176 e' variato di 0 minuti.
+     Il treno 17176 e' giunto alla stazione Padova e sosta al binario 3
+356: Il ritardo del treno 17259 e' variato di 0 minuti.
+     Il treno 17259 e' giunto alla stazione S. Bonifaccio e sosta al binario 1
+357: Il treno numero 3477 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 1
+359: Il treno 17176 e' ripartito dalla stazione Padova
+361: Il treno 17259 e' ripartito dalla stazione S. Bonifaccio
+364: Il treno 3465 e' PARTITO DA Venezia Santa Lucia
+365: Il ritardo del treno 3477 e' variato di 0 minuti.
+     Il treno 3477 e' giunto alla stazione Vicenza e sosta al binario 1
+367: Il treno numero 17259 e' a 20 km dalla prossima stazione Lonigo dove occupera' il binario 1
+370: Il treno 3477 e' ripartito dalla stazione Vicenza
+370: Il treno 3478 e' PARTITO DA Venezia Santa Lucia
+375: Il treno numero 17176 e' a 20 km dalla prossima stazione Lerino dove occupera' il binario 3
+377: Il ritardo del treno 17259 e' diminuito di 8 minuti.
+     Il treno 17259 e' giunto alla stazione Lonigo e sosta al binario 1
+378: Il treno 9702 e' PARTITO DA Venezia Santa Lucia
+382: Il treno 17259 e' ripartito dalla stazione Lonigo
+382: Il treno 3479 e' PARTITO DA Verona Porta Nuova
+384: Il ritardo del treno 17176 e' variato di 0 minuti.
+     Il treno 17176 e' giunto alla stazione Lerino e sosta al binario 3
+385: Il treno numero 17259 e' a 20 km dalla prossima stazione Altavilla dove occupera' il binario 1
+387: Il treno numero 3479 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 1
+387: Il treno numero 3465 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 3
+389: Il treno 17176 e' ripartito dalla stazione Lerino
+393: Il treno numero 3477 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 1
+393: Il treno numero 3478 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 4
+394: Il treno 17177 e' PARTITO DA Verona Porta Nuova
+394: Il treno 3416 e' PARTITO DA Venezia Santa Lucia
+395: Il ritardo del treno 3479 e' variato di 0 minuti.
+     Il treno 3479 e' giunto alla stazione S. Bonifaccio e sosta al binario 1
+395: Il ritardo del treno 3465 e' variato di 0 minuti.
+     Il treno 3465 e' giunto alla stazione Padova e sosta al binario 3
+396: Il ritardo del treno 17259 e' variato di 0 minuti.
+     Il treno 17259 e' giunto alla stazione Altavilla e sosta al binario 1
+397: Il treno numero 9702 e' a 20 km dalla prossima stazione Padova. Dovra' sostare ai box.
+399: Il treno numero 17177 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 2
+400: Il ritardo del treno 3477 e' variato di 0 minuti.
+     Il treno 3477 e' giunto alla stazione Padova e sosta al binario 1
+400: Il treno 3479 e' ripartito dalla stazione S. Bonifaccio
+400: Il treno numero 17176 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 3
+400: Il treno 3465 e' ripartito dalla stazione Padova
+400: Il treno 9702 e' ENTRATO AI BOX
+     Il treno 9702 sta arrivando dal posteggio alla stazione Padova dove occupera' il binario 3
+401: Il treno 17259 e' ripartito dalla stazione Altavilla
+401: Il ritardo del treno 3478 e' variato di 0 minuti.
+     Il treno 3478 e' giunto alla stazione Padova e sosta al binario 4
+403: Il treno numero 17259 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 1
+405: Il treno 3477 e' ripartito dalla stazione Padova
+405: Il ritardo del treno 9702 e' aumentato di 1 minuti.
+     Il treno 9702 e' giunto alla stazione Padova e sosta al binario 3
+406: Il treno 3478 e' ripartito dalla stazione Padova
+409: Il ritardo del treno 17177 e' variato di 0 minuti.
+     Il treno 17177 e' giunto alla stazione S. Bonifaccio e sosta al binario 2
+410: Il ritardo del treno 17176 e' variato di 0 minuti.
+     Il treno 17176 e' giunto alla stazione Vicenza e sosta al binario 3
+410: Il treno 9702 e' ripartito dalla stazione Padova
+413: Il treno numero 3416 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 3
+414: Il ritardo del treno 17259 e' variato di 0 minuti.
+     Il treno 17259 e' giunto alla stazione Vicenza e sosta al binario 1
+414: Il treno 17177 e' ripartito dalla stazione S. Bonifaccio
+414: Il treno 3483 e' PARTITO DA Verona Porta Nuova
+415: Il treno 17176 e' ripartito dalla stazione Vicenza
+417: Il treno numero 3479 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 2
+417: Il treno numero 17176 e' a 20 km dalla prossima stazione Altavilla dove occupera' il binario 3
+419: Il treno numero 3483 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 1
+420: Il treno numero 17177 e' a 20 km dalla prossima stazione Lonigo dove occupera' il binario 1
+420: Il ritardo del treno 3416 e' variato di 0 minuti.
+     Il treno 3416 e' giunto alla stazione Padova e sosta al binario 3
+423: Il treno numero 3465 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 3
+425: Il ritardo del treno 3479 e' variato di 0 minuti.
+     Il treno 3479 e' giunto alla stazione Vicenza e sosta al binario 2
+425: Il treno 3416 e' ripartito dalla stazione Padova
+426: Il ritardo del treno 3483 e' variato di 0 minuti.
+     Il treno 3483 e' giunto alla stazione S. Bonifaccio e sosta al binario 1
+426: Il treno 17181 e' PARTITO DA Verona Porta Nuova
+428: Il treno numero 3477 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+428: Il ritardo del treno 17176 e' variato di 0 minuti.
+     Il treno 17176 e' giunto alla stazione Altavilla e sosta al binario 3
+429: Il treno numero 3478 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 4
+430: Il treno 3479 e' ripartito dalla stazione Vicenza
+430: Il ritardo del treno 17177 e' diminuito di 8 minuti.
+     Il treno 17177 e' giunto alla stazione Lonigo e sosta al binario 1
+430: Il ritardo del treno 3465 e' variato di 0 minuti.
+     Il treno 3465 e' giunto alla stazione Vicenza e sosta al binario 3
+431: Il treno 3483 e' ripartito dalla stazione S. Bonifaccio
+431: Il treno numero 17181 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 1
+432: Il treno numero 9702 e' a 20 km dalla prossima stazione Vicenza. Dovra' sostare ai box.
+433: Il treno 17176 e' ripartito dalla stazione Altavilla
+434: Il treno 17259 e' ripartito dalla stazione Vicenza
+435: Il treno 17177 e' ripartito dalla stazione Lonigo
+435: Il treno 3465 e' ripartito dalla stazione Vicenza
+435: Il treno 9702 e' ENTRATO AI BOX
+     Il treno 9702 sta arrivando dal posteggio alla stazione Vicenza dove occupera' il binario 3
+436: Il ritardo del treno 3477 e' variato di 0 minuti.
+     Il treno 3477 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+436: Il treno 3477 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo
+
+436: Il treno numero 17176 e' a 20 km dalla prossima stazione Lonigo dove occupera' il binario 3
+436: Il ritardo del treno 3478 e' variato di 0 minuti.
+     Il treno 3478 e' giunto alla stazione Vicenza e sosta al binario 4
+438: Il treno numero 17177 e' a 20 km dalla prossima stazione Altavilla dove occupera' il binario 1
+440: Il ritardo del treno 9702 e' aumentato di 5 minuti.
+     Il treno 9702 e' giunto alla stazione Vicenza e sosta al binario 3
+441: Il ritardo del treno 17181 e' variato di 0 minuti.
+     Il treno 17181 e' giunto alla stazione S. Bonifaccio e sosta al binario 1
+441: Il treno 3478 e' ripartito dalla stazione Vicenza
+444: Il treno numero 3416 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 4
+445: Il treno numero 17259 e' a 20 km dalla prossima stazione Lerino dove occupera' il binario 1
+445: Il treno 9702 e' ripartito dalla stazione Vicenza
+446: Il treno 17181 e' ripartito dalla stazione S. Bonifaccio
+447: Il ritardo del treno 17176 e' variato di 0 minuti.
+     Il treno 17176 e' giunto alla stazione Lonigo e sosta al binario 3
+449: Il ritardo del treno 17177 e' variato di 0 minuti.
+     Il treno 17177 e' giunto alla stazione Altavilla e sosta al binario 1
+450: Il treno numero 3483 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 1
+451: Il ritardo del treno 3416 e' variato di 0 minuti.
+     Il treno 3416 e' giunto alla stazione Vicenza e sosta al binario 4
+452: Il treno numero 17181 e' a 20 km dalla prossima stazione Lonigo dove occupera' il binario 1
+452: Il treno numero 3465 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 3
+453: Il treno numero 3479 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 1
+454: Il treno 17177 e' ripartito dalla stazione Altavilla
+455: Il ritardo del treno 17259 e' aumentato di 15 minuti.
+     Il treno 17259 e' giunto alla stazione Lerino e sosta al binario 1
+456: Il treno numero 17177 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 2
+456: Il treno 3416 e' ripartito dalla stazione Vicenza
+458: Il treno numero 3478 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 4
+459: Il ritardo del treno 3483 e' aumentato di 7 minuti.
+     Il treno 3483 e' giunto alla stazione Vicenza e sosta al binario 1
+460: Il treno 17259 e' ripartito dalla stazione Lerino
+460: Il ritardo del treno 3479 e' variato di 0 minuti.
+     Il treno 3479 e' giunto alla stazione Padova e sosta al binario 1
+460: Il treno 17176 e' ripartito dalla stazione Lonigo
+460: Il ritardo del treno 3465 e' variato di 0 minuti.
+     Il treno 3465 e' giunto alla stazione S. Bonifaccio e sosta al binario 3
+461: Il treno numero 9702 e' a 20 km dalla prossima stazione S. Bonifaccio. Dovra' sostare ai box.
+462: Il ritardo del treno 17181 e' diminuito di 8 minuti.
+     Il treno 17181 e' giunto alla stazione Lonigo e sosta al binario 1
+464: Il treno 3483 e' ripartito dalla stazione Vicenza
+465: Il treno 3479 e' ripartito dalla stazione Padova
+465: Il treno 3465 e' ripartito dalla stazione S. Bonifaccio
+465: Il treno 9702 e' ENTRATO AI BOX
+     Il treno 9702 sta arrivando dal posteggio alla stazione S. Bonifaccio dove occupera' il binario 3
+466: Il treno numero 17176 e' a 20 km dalla prossima stazione S. Bonifaccio. Dovra' sostare ai box.
+466: Il ritardo del treno 3478 e' variato di 0 minuti.
+     Il treno 3478 e' giunto alla stazione S. Bonifaccio e sosta al binario 4
+467: Il ritardo del treno 17177 e' variato di 0 minuti.
+     Il treno 17177 e' giunto alla stazione Vicenza e sosta al binario 2
+467: Il treno 17181 e' ripartito dalla stazione Lonigo
+470: Il treno numero 17181 e' a 20 km dalla prossima stazione Altavilla dove occupera' il binario 1
+470: Il treno numero 3465 e' a 20 km dalla prossima stazione Verona Porta Nuova dove occupera' il binario 3
+470: Il ritardo del treno 9702 e' aumentato di 9 minuti.
+     Il treno 9702 e' giunto alla stazione S. Bonifaccio e sosta al binario 3
+470: Il treno numero 3416 e' a 20 km dalla prossima stazione S. Bonifaccio. Dovra' sostare ai box.
+471: Il treno 17176 e' ENTRATO AI BOX
+471: Il treno 3478 e' ripartito dalla stazione S. Bonifaccio
+471: Il treno numero 3416 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 4
+472: Il treno 17177 e' ripartito dalla stazione Vicenza
+475: Il treno 9702 e' ripartito dalla stazione S. Bonifaccio
+     Il treno 17176 sta arrivando dal posteggio alla stazione S. Bonifaccio dove occupera' il binario 3
+476: Il treno numero 17259 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 1
+476: Il treno numero 3478 e' a 20 km dalla prossima stazione Verona Porta Nuova dove occupera' il binario 4
+478: Il ritardo del treno 3465 e' variato di 0 minuti.
+     Il treno 3465 e' giunto alla stazione Verona Porta Nuova e sosta al binario 3
+
+478: Il treno 3465 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo
+
+480: Il ritardo del treno 17176 e' aumentato di 4 minuti.
+     Il treno 17176 e' giunto alla stazione S. Bonifaccio e sosta al binario 3
+480: Il treno numero 9702 e' a 20 km dalla prossima stazione Verona Porta Nuova. Dovra' sostare ai box.
+480: Il ritardo del treno 3416 e' aumentato di 3 minuti.
+     Il treno 3416 e' giunto alla stazione S. Bonifaccio e sosta al binario 4
+481: Il ritardo del treno 17181 e' variato di 0 minuti.
+     Il treno 17181 e' giunto alla stazione Altavilla e sosta al binario 1
+483: Il treno numero 17177 e' a 20 km dalla prossima stazione Lerino dove occupera' il binario 1
+483: Il treno numero 3483 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 2
+483: Il treno 9702 e' ENTRATO AI BOX
+     Il treno 9702 sta arrivando dal posteggio alla stazione Verona Porta Nuova dove occupera' il binario 3
+485: Il ritardo del treno 17259 e' variato di 0 minuti.
+     Il treno 17259 e' giunto alla stazione Padova e sosta al binario 1
+485: Il ritardo del treno 3478 e' aumentato di 1 minuti.
+     Il treno 3478 e' giunto alla stazione Verona Porta Nuova e sosta al binario 4
+
+485: Il treno 3478 è ARRIVATO A DESTINAZIONE con 1 minuti di ritardo
+
+485: Il treno 3416 e' ripartito dalla stazione S. Bonifaccio
+486: Il treno 17181 e' ripartito dalla stazione Altavilla
+488: Il treno numero 3479 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+488: Il treno numero 17181 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 1
+488: Il ritardo del treno 9702 e' aumentato di 10 minuti.
+     Il treno 9702 e' giunto alla stazione Verona Porta Nuova e sosta al binario 3
+
+488: Il treno 9702 è ARRIVATO A DESTINAZIONE con 10 minuti di ritardo
+
+489: Il treno 17176 e' ripartito dalla stazione S. Bonifaccio
+490: Il ritardo del treno 3483 e' aumentato di 7 minuti.
+     Il treno 3483 e' giunto alla stazione Padova e sosta al binario 2
+490: Il treno numero 3416 e' a 20 km dalla prossima stazione Verona Porta Nuova dove occupera' il binario 4
+493: Il ritardo del treno 17177 e' variato di 0 minuti.
+     Il treno 17177 e' giunto alla stazione Lerino e sosta al binario 1
+494: Il treno numero 17176 e' a 20 km dalla prossima stazione Verona Porta Nuova. Dovra' sostare ai box.
+495: Il treno 3483 e' ripartito dalla stazione Padova
+495: Il treno numero 17176 e' a 20 km dalla prossima stazione Verona Porta Nuova dove occupera' il binario 3
+496: Il ritardo del treno 3479 e' variato di 0 minuti.
+     Il treno 3479 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+496: Il treno 3479 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo
+
+497: Il ritardo del treno 3416 e' aumentato di 3 minuti.
+     Il treno 3416 e' giunto alla stazione Verona Porta Nuova e sosta al binario 4
+
+497: Il treno 3416 è ARRIVATO A DESTINAZIONE con 3 minuti di ritardo
+
+498: Il treno 17177 e' ripartito dalla stazione Lerino
+499: Il treno 17259 e' ripartito dalla stazione Padova
+499: Il ritardo del treno 17181 e' variato di 0 minuti.
+     Il treno 17181 e' giunto alla stazione Vicenza e sosta al binario 1
+504: Il treno 17181 e' ripartito dalla stazione Vicenza
+504: Il ritardo del treno 17176 e' aumentato di 4 minuti.
+     Il treno 17176 e' giunto alla stazione Verona Porta Nuova e sosta al binario 3
+
+504: Il treno 17176 è ARRIVATO A DESTINAZIONE con 8 minuti di ritardo
+
+514: Il treno numero 17177 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 1
+514: Il treno numero 3483 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+515: Il treno numero 17259 e' a 20 km dalla prossima stazione Mira dove occupera' il binario 1
+515: Il treno numero 17181 e' a 20 km dalla prossima stazione Lerino dove occupera' il binario 1
+521: Il ritardo del treno 3483 e' aumentato di 7 minuti.
+     Il treno 3483 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+521: Il treno 3483 è ARRIVATO A DESTINAZIONE con 7 minuti di ritardo
+
+523: Il ritardo del treno 17177 e' variato di 0 minuti.
+     Il treno 17177 e' giunto alla stazione Padova e sosta al binario 1
+525: Il ritardo del treno 17259 e' aumentato di 9 minuti.
+     Il treno 17259 e' giunto alla stazione Mira e sosta al binario 1
+525: Il ritardo del treno 17181 e' variato di 0 minuti.
+     Il treno 17181 e' giunto alla stazione Lerino e sosta al binario 1
+528: Il treno 17177 e' ripartito dalla stazione Padova
+530: Il treno 17259 e' ripartito dalla stazione Mira
+530: Il treno 17181 e' ripartito dalla stazione Lerino
+541: Il treno numero 17259 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+544: Il treno numero 17177 e' a 20 km dalla prossima stazione Mira dove occupera' il binario 1
+546: Il treno numero 17181 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 1
+551: Il ritardo del treno 17259 e' variato di 0 minuti.
+     Il treno 17259 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+551: Il treno 17259 è ARRIVATO A DESTINAZIONE con 16 minuti di ritardo
+
+554: Il ritardo del treno 17177 e' variato di 0 minuti.
+     Il treno 17177 e' giunto alla stazione Mira e sosta al binario 1
+555: Il ritardo del treno 17181 e' variato di 0 minuti.
+     Il treno 17181 e' giunto alla stazione Padova e sosta al binario 1
+559: Il treno 17177 e' ripartito dalla stazione Mira
+560: Il treno 17181 e' ripartito dalla stazione Padova
+570: Il treno numero 17177 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+576: Il treno numero 17181 e' a 20 km dalla prossima stazione Mira dove occupera' il binario 1
+580: Il ritardo del treno 17177 e' variato di 0 minuti.
+     Il treno 17177 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+580: Il treno 17177 è ARRIVATO A DESTINAZIONE con 8 minuti di anticipo
+
+587: Il ritardo del treno 17181 e' aumentato di 1 minuti.
+     Il treno 17181 e' giunto alla stazione Mira e sosta al binario 1
+592: Il treno 17181 e' ripartito dalla stazione Mira
+603: Il treno numero 17181 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+613: Il ritardo del treno 17181 e' variato di 0 minuti.
+     Il treno 17181 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+613: Il treno 17181 è ARRIVATO A DESTINAZIONE con 7 minuti di anticipo

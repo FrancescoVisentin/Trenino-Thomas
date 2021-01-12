@@ -1,0 +1,238 @@
+100: Il treno 12569 e' PARTITO DA Verona Porta Nuova
+104: Il treno 12484 e' PARTITO DA Verona Porta Nuova
+105: Il treno numero 12569 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 1
+109: Il treno numero 12484 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 2
+113: Il ritardo del treno 12569 e' variato di 0 minuti.
+     Il treno 12569 e' giunto alla stazione S. Bonifaccio e sosta al binario 1
+118: Il treno 12569 e' ripartito dalla stazione S. Bonifaccio
+119: Il ritardo del treno 12484 e' aumentato di 4 minuti.
+     Il treno 12484 e' giunto alla stazione S. Bonifaccio e sosta al binario 2
+120: Il treno 16846 e' PARTITO DA Verona Porta Nuova
+124: Il treno 12484 e' ripartito dalla stazione S. Bonifaccio
+125: Il treno numero 16846 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 1
+130: Il treno numero 12484 e' a 20 km dalla prossima stazione Lonigo dove occupera' il binario 1
+135: Il treno numero 12569 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 1
+135: Il ritardo del treno 16846 e' variato di 0 minuti.
+     Il treno 16846 e' giunto alla stazione S. Bonifaccio e sosta al binario 1
+140: Il ritardo del treno 12484 e' variato di 0 minuti.
+     Il treno 12484 e' giunto alla stazione Lonigo e sosta al binario 1
+140: Il treno 16846 e' ripartito dalla stazione S. Bonifaccio
+143: Il ritardo del treno 12569 e' variato di 0 minuti.
+     Il treno 12569 e' giunto alla stazione Vicenza e sosta al binario 1
+145: Il treno 12484 e' ripartito dalla stazione Lonigo
+146: Il treno numero 16846 e' a 20 km dalla prossima stazione Lonigo dove occupera' il binario 1
+148: Il treno 12569 e' ripartito dalla stazione Vicenza
+148: Il treno numero 12484 e' a 20 km dalla prossima stazione Altavilla dove occupera' il binario 1
+156: Il ritardo del treno 16846 e' variato di 0 minuti.
+     Il treno 16846 e' giunto alla stazione Lonigo e sosta al binario 1
+159: Il ritardo del treno 12484 e' variato di 0 minuti.
+     Il treno 12484 e' giunto alla stazione Altavilla e sosta al binario 1
+160: Il treno 16965 e' PARTITO DA Verona Porta Nuova
+161: Il treno 16846 e' ripartito dalla stazione Lonigo
+164: Il treno 12484 e' ripartito dalla stazione Altavilla
+164: Il treno numero 16846 e' a 20 km dalla prossima stazione Altavilla dove occupera' il binario 1
+165: Il treno numero 16965 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 1
+166: Il treno numero 12484 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 1
+171: Il treno numero 12569 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 1
+172: Il ritardo del treno 16965 e' variato di 0 minuti.
+     Il treno 16965 e' giunto alla stazione S. Bonifaccio e sosta al binario 1
+175: Il ritardo del treno 16846 e' variato di 0 minuti.
+     Il treno 16846 e' giunto alla stazione Altavilla e sosta al binario 1
+177: Il ritardo del treno 12484 e' variato di 0 minuti.
+     Il treno 12484 e' giunto alla stazione Vicenza e sosta al binario 1
+177: Il treno 16965 e' ripartito dalla stazione S. Bonifaccio
+178: Il ritardo del treno 12569 e' variato di 0 minuti.
+     Il treno 12569 e' giunto alla stazione Padova e sosta al binario 1
+180: Il treno 16846 e' ripartito dalla stazione Altavilla
+180: Il treno 25485 e' PARTITO DA Verona Porta Nuova
+182: Il treno 12484 e' ripartito dalla stazione Vicenza
+182: Il treno numero 16846 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 1
+183: Il treno 12569 e' ripartito dalla stazione Padova
+185: Il treno numero 25485 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 1
+191: Il treno numero 16965 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 2
+192: Il ritardo del treno 25485 e' variato di 0 minuti.
+     Il treno 25485 e' giunto alla stazione S. Bonifaccio e sosta al binario 1
+193: Il treno numero 12484 e' a 20 km dalla prossima stazione Lerino dove occupera' il binario 1
+193: Il ritardo del treno 16846 e' variato di 0 minuti.
+     Il treno 16846 e' giunto alla stazione Vicenza e sosta al binario 1
+197: Il treno 25485 e' ripartito dalla stazione S. Bonifaccio
+198: Il ritardo del treno 16965 e' variato di 0 minuti.
+     Il treno 16965 e' giunto alla stazione Vicenza e sosta al binario 2
+203: Il ritardo del treno 12484 e' variato di 0 minuti.
+     Il treno 12484 e' giunto alla stazione Lerino e sosta al binario 1
+203: Il treno 16965 e' ripartito dalla stazione Vicenza
+206: Il treno numero 12569 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+207: Il treno 16846 e' ripartito dalla stazione Vicenza
+208: Il treno 12484 e' ripartito dalla stazione Lerino
+211: Il treno numero 25485 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 1
+214: Il ritardo del treno 12569 e' variato di 0 minuti.
+     Il treno 12569 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+214: Il treno 12569 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo
+
+218: Il treno numero 16846 e' a 20 km dalla prossima stazione Lerino dove occupera' il binario 1
+218: Il ritardo del treno 25485 e' variato di 0 minuti.
+     Il treno 25485 e' giunto alla stazione Vicenza e sosta al binario 1
+223: Il treno 25485 e' ripartito dalla stazione Vicenza
+224: Il treno numero 12484 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 1
+228: Il ritardo del treno 16846 e' aumentato di 9 minuti.
+     Il treno 16846 e' giunto alla stazione Lerino e sosta al binario 1
+228: Il treno numero 16965 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 2
+233: Il ritardo del treno 12484 e' variato di 0 minuti.
+     Il treno 12484 e' giunto alla stazione Padova e sosta al binario 1
+236: Il treno 16846 e' ripartito dalla stazione Lerino
+237: Il ritardo del treno 16965 e' aumentato di 8 minuti.
+     Il treno 16965 e' giunto alla stazione Padova e sosta al binario 2
+242: Il treno 16965 e' ripartito dalla stazione Padova
+242: Il treno numero 25485 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 2
+249: Il ritardo del treno 25485 e' variato di 0 minuti.
+     Il treno 25485 e' giunto alla stazione Padova e sosta al binario 2
+252: Il treno numero 16846 e' a 20 km dalla prossima stazione Padova. Dovra' sostare ai box.
+254: Il treno 25485 e' ripartito dalla stazione Padova
+255: Il treno numero 16846 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 2
+258: Il treno 12484 e' ripartito dalla stazione Padova
+261: Il ritardo del treno 16846 e' aumentato di 3 minuti.
+     Il treno 16846 e' giunto alla stazione Padova e sosta al binario 2
+261: Il treno numero 16965 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+266: Il treno 16846 e' ripartito dalla stazione Padova
+268: Il ritardo del treno 16965 e' aumentato di 8 minuti.
+     Il treno 16965 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+268: Il treno 16965 è ARRIVATO A DESTINAZIONE con 8 minuti di ritardo
+
+273: Il treno numero 25485 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+274: Il treno numero 12484 e' a 20 km dalla prossima stazione Mira dove occupera' il binario 1
+280: Il ritardo del treno 25485 e' variato di 0 minuti.
+     Il treno 25485 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+280: Il treno 25485 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo
+
+282: Il treno numero 16846 e' a 20 km dalla prossima stazione Mira dove occupera' il binario 2
+284: Il ritardo del treno 12484 e' aumentato di 20 minuti.
+     Il treno 12484 e' giunto alla stazione Mira e sosta al binario 1
+289: Il treno 12484 e' ripartito dalla stazione Mira
+292: Il ritardo del treno 16846 e' variato di 0 minuti.
+     Il treno 16846 e' giunto alla stazione Mira e sosta al binario 2
+297: Il treno 16846 e' ripartito dalla stazione Mira
+300: Il treno numero 12484 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+308: Il treno numero 16846 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 2
+310: Il ritardo del treno 12484 e' variato di 0 minuti.
+     Il treno 12484 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+310: Il treno 12484 è ARRIVATO A DESTINAZIONE con 24 minuti di ritardo
+
+318: Il ritardo del treno 16846 e' variato di 0 minuti.
+     Il treno 16846 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 2
+
+318: Il treno 16846 è ARRIVATO A DESTINAZIONE con 12 minuti di ritardo
+
+400: Il treno 25548 e' PARTITO DA Venezia Santa Lucia
+411: Il treno numero 25548 e' a 20 km dalla prossima stazione Mira dove occupera' il binario 3
+421: Il ritardo del treno 25548 e' variato di 0 minuti.
+     Il treno 25548 e' giunto alla stazione Mira e sosta al binario 3
+426: Il treno 25548 e' ripartito dalla stazione Mira
+442: Il treno numero 25548 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 3
+452: Il ritardo del treno 25548 e' variato di 0 minuti.
+     Il treno 25548 e' giunto alla stazione Padova e sosta al binario 3
+457: Il treno 25548 e' ripartito dalla stazione Padova
+473: Il treno numero 25548 e' a 20 km dalla prossima stazione Lerino dove occupera' il binario 3
+482: Il ritardo del treno 25548 e' variato di 0 minuti.
+     Il treno 25548 e' giunto alla stazione Lerino e sosta al binario 3
+487: Il treno 25548 e' ripartito dalla stazione Lerino
+498: Il treno numero 25548 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 3
+500: Il treno 45654 e' PARTITO DA Venezia Santa Lucia
+508: Il ritardo del treno 25548 e' variato di 0 minuti.
+     Il treno 25548 e' giunto alla stazione Vicenza e sosta al binario 3
+513: Il treno 25548 e' ripartito dalla stazione Vicenza
+515: Il treno numero 25548 e' a 20 km dalla prossima stazione Altavilla dove occupera' il binario 3
+523: Il treno numero 45654 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 3
+526: Il ritardo del treno 25548 e' variato di 0 minuti.
+     Il treno 25548 e' giunto alla stazione Altavilla e sosta al binario 3
+531: Il treno 25548 e' ripartito dalla stazione Altavilla
+531: Il ritardo del treno 45654 e' variato di 0 minuti.
+     Il treno 45654 e' giunto alla stazione Padova e sosta al binario 3
+534: Il treno numero 25548 e' a 20 km dalla prossima stazione Lonigo dove occupera' il binario 3
+536: Il treno 45654 e' ripartito dalla stazione Padova
+545: Il ritardo del treno 25548 e' variato di 0 minuti.
+     Il treno 25548 e' giunto alla stazione Lonigo e sosta al binario 3
+550: Il treno 25548 e' ripartito dalla stazione Lonigo
+556: Il treno numero 25548 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 3
+559: Il treno numero 45654 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 3
+565: Il ritardo del treno 25548 e' diminuito di 1 minuti.
+     Il treno 25548 e' giunto alla stazione S. Bonifaccio e sosta al binario 3
+566: Il ritardo del treno 45654 e' variato di 0 minuti.
+     Il treno 45654 e' giunto alla stazione Vicenza e sosta al binario 3
+570: Il treno 25548 e' ripartito dalla stazione S. Bonifaccio
+571: Il treno 45654 e' ripartito dalla stazione Vicenza
+575: Il treno numero 25548 e' a 20 km dalla prossima stazione Verona Porta Nuova dove occupera' il binario 3
+585: Il ritardo del treno 25548 e' variato di 0 minuti.
+     Il treno 25548 e' giunto alla stazione Verona Porta Nuova e sosta al binario 3
+
+585: Il treno 25548 è ARRIVATO A DESTINAZIONE con 1 minuti di anticipo
+
+588: Il treno numero 45654 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 3
+596: Il ritardo del treno 45654 e' variato di 0 minuti.
+     Il treno 45654 e' giunto alla stazione S. Bonifaccio e sosta al binario 3
+601: Il treno 45654 e' ripartito dalla stazione S. Bonifaccio
+606: Il treno numero 45654 e' a 20 km dalla prossima stazione Verona Porta Nuova dove occupera' il binario 3
+614: Il ritardo del treno 45654 e' variato di 0 minuti.
+     Il treno 45654 e' giunto alla stazione Verona Porta Nuova e sosta al binario 3
+
+614: Il treno 45654 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo
+
+650: Il treno 58646 e' PARTITO DA Venezia Santa Lucia
+669: Il treno numero 58646 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 3
+676: Il ritardo del treno 58646 e' variato di 0 minuti.
+     Il treno 58646 e' giunto alla stazione Padova e sosta al binario 3
+681: Il treno 58646 e' ripartito dalla stazione Padova
+700: Il treno numero 58646 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 3
+707: Il ritardo del treno 58646 e' variato di 0 minuti.
+     Il treno 58646 e' giunto alla stazione Vicenza e sosta al binario 3
+712: Il treno 58646 e' ripartito dalla stazione Vicenza
+726: Il treno numero 58646 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 3
+733: Il ritardo del treno 58646 e' variato di 0 minuti.
+     Il treno 58646 e' giunto alla stazione S. Bonifaccio e sosta al binario 3
+738: Il treno 58646 e' ripartito dalla stazione S. Bonifaccio
+743: Il treno numero 58646 e' a 20 km dalla prossima stazione Verona Porta Nuova dove occupera' il binario 3
+750: Il ritardo del treno 58646 e' variato di 0 minuti.
+     Il treno 58646 e' giunto alla stazione Verona Porta Nuova e sosta al binario 3
+
+750: Il treno 58646 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo
+
+780: Il treno 65156 e' PARTITO DA Venezia Santa Lucia
+803: Il treno numero 65156 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 3
+811: Il ritardo del treno 65156 e' variato di 0 minuti.
+     Il treno 65156 e' giunto alla stazione Padova e sosta al binario 3
+816: Il treno 65156 e' ripartito dalla stazione Padova
+839: Il treno numero 65156 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 3
+846: Il ritardo del treno 65156 e' variato di 0 minuti.
+     Il treno 65156 e' giunto alla stazione Vicenza e sosta al binario 3
+851: Il treno 65156 e' ripartito dalla stazione Vicenza
+868: Il treno numero 65156 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 3
+876: Il ritardo del treno 65156 e' variato di 0 minuti.
+     Il treno 65156 e' giunto alla stazione S. Bonifaccio e sosta al binario 3
+881: Il treno 65156 e' ripartito dalla stazione S. Bonifaccio
+886: Il treno numero 65156 e' a 20 km dalla prossima stazione Verona Porta Nuova dove occupera' il binario 3
+894: Il ritardo del treno 65156 e' variato di 0 minuti.
+     Il treno 65156 e' giunto alla stazione Verona Porta Nuova e sosta al binario 3
+
+894: Il treno 65156 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo
+
+900: Il treno 96413 e' PARTITO DA Venezia Santa Lucia
+919: Il treno numero 96413 e' a 20 km dalla prossima stazione Padova dove occupera' il binario 3
+926: Il ritardo del treno 96413 e' variato di 0 minuti.
+     Il treno 96413 e' giunto alla stazione Padova e sosta al binario 3
+931: Il treno 96413 e' ripartito dalla stazione Padova
+950: Il treno numero 96413 e' a 20 km dalla prossima stazione Vicenza dove occupera' il binario 3
+957: Il ritardo del treno 96413 e' variato di 0 minuti.
+     Il treno 96413 e' giunto alla stazione Vicenza e sosta al binario 3
+962: Il treno 96413 e' ripartito dalla stazione Vicenza
+976: Il treno numero 96413 e' a 20 km dalla prossima stazione S. Bonifaccio dove occupera' il binario 3
+983: Il ritardo del treno 96413 e' variato di 0 minuti.
+     Il treno 96413 e' giunto alla stazione S. Bonifaccio e sosta al binario 3
+988: Il treno 96413 e' ripartito dalla stazione S. Bonifaccio
+993: Il treno numero 96413 e' a 20 km dalla prossima stazione Verona Porta Nuova dove occupera' il binario 3
+1000: Il ritardo del treno 96413 e' variato di 0 minuti.
+     Il treno 96413 e' giunto alla stazione Verona Porta Nuova e sosta al binario 3
+
+1000: Il treno 96413 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo

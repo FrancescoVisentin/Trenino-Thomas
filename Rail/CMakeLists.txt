@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 
 project(Rail VERSION 1.0 LANGUAGES CXX)
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set(CMAKE_CXX_FLAGS_RELEASE "-O2")
+
 add_library(lib
     include/Simulation.h
     src/Simulation.cpp

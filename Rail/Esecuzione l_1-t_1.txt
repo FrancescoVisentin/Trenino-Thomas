@@ -1,0 +1,854 @@
+Nella timetable del treno 12412 sono stati modificati 1 tempi di arrivo.
+300 Il treno 24170 e' PARTITO DA Adria
+305 Il treno numero 24170 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1     
+315 Il ritardo del treno 24170 e' variato di 0 minuti.
+     Il treno 24170 e' giunto alla stazione Cavarzere e sosta al binario 1
+320 Il treno 24170 e' ripartito dalla stazione Cavarzere
+323 Il treno numero 24170 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 1    
+333 Il ritardo del treno 24170 e' diminuito di 1 minuti.
+     Il treno 24170 e' giunto alla stazione Arzegrande e sosta al binario 1
+338 Il treno 24170 e' ripartito dalla stazione Arzegrande
+343 Il treno numero 24170 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+350 Il treno 53291 e' PARTITO DA Adria
+352 Il ritardo del treno 24170 e' variato di 0 minuti.
+     Il treno 24170 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+355 Il treno numero 53291 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1     
+357 Il treno 24170 e' ripartito dalla stazione Piove di Sacco
+360 Il treno numero 24170 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 1
+362 Il ritardo del treno 53291 e' variato di 0 minuti.
+     Il treno 53291 e' giunto alla stazione Cavarzere e sosta al binario 1
+367 Il treno 53291 e' ripartito dalla stazione Cavarzere
+370 Il ritardo del treno 24170 e' variato di 0 minuti.
+     Il treno 24170 e' giunto alla stazione Campolongo Maggiore e sosta al binario 1
+375 Il treno 24170 e' ripartito dalla stazione Campolongo Maggiore
+375 Il treno 12412 e' PARTITO DA Venezia Santa Lucia
+376 Il treno numero 53291 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+378 Il treno numero 12412 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 3
+379 Il treno 54774 e' PARTITO DA Venezia Santa Lucia
+382 Il treno numero 24170 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 1
+382 Il treno numero 54774 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 4
+383 Il ritardo del treno 53291 e' diminuito di 1 minuti.
+     Il treno 53291 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+387 Il ritardo del treno 12412 e' variato di 0 minuti.
+     Il treno 12412 e' giunto alla stazione Venezia Mestre e sosta al binario 3
+388 Il treno 53291 e' ripartito dalla stazione Piove di Sacco
+391 Il ritardo del treno 24170 e' variato di 0 minuti.
+     Il treno 24170 e' giunto alla stazione Bojon e sosta al binario 1
+392 Il treno 12412 e' ripartito dalla stazione Venezia Mestre
+392 Il ritardo del treno 54774 e' aumentato di 4 minuti.
+     Il treno 54774 e' giunto alla stazione Venezia Mestre e sosta al binario 4
+396 Il treno 24170 e' ripartito dalla stazione Bojon
+397 Il treno numero 12412 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 3
+397 Il treno 54774 e' ripartito dalla stazione Venezia Mestre
+400 Il treno numero 24170 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+400 Il treno 12414 e' PARTITO DA Adria
+403 Il treno numero 54774 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 4
+405 Il treno numero 53291 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 2
+405 Il treno numero 12414 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1
+405 Il ritardo del treno 12412 e' variato di 0 minuti.
+     Il treno 12412 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 3
+410 Il ritardo del treno 24170 e' variato di 0 minuti.
+     Il treno 24170 e' giunto alla stazione Mira Buse e sosta al binario 1
+410 Il treno 12412 e' ripartito dalla stazione Oriago Porta Ovest
+412 Il ritardo del treno 54774 e' variato di 0 minuti.
+     Il treno 54774 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 4
+414 Il ritardo del treno 53291 e' aumentato di 3 minuti.
+     Il treno 53291 e' giunto alla stazione Mira Buse e sosta al binario 2
+415 Il ritardo del treno 12414 e' variato di 0 minuti.
+     Il treno 12414 e' giunto alla stazione Cavarzere e sosta al binario 1
+415 Il treno numero 12412 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 3
+417 Il treno 54774 e' ripartito dalla stazione Oriago Porta Ovest
+419 Il treno 53291 e' ripartito dalla stazione Mira Buse
+420 Il treno 12414 e' ripartito dalla stazione Cavarzere
+422 Il treno numero 54774 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 4
+423 Il treno 24170 e' ripartito dalla stazione Mira Buse
+423 Il treno numero 12414 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 1
+423 Il ritardo del treno 12412 e' variato di 0 minuti.
+     Il treno 12412 e' giunto alla stazione Mira Buse e sosta al binario 3
+424 Il treno numero 53291 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+428 Il treno numero 24170 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 2
+428 Il treno 12412 e' ripartito dalla stazione Mira Buse
+431 Il ritardo del treno 53291 e' aumentato di 3 minuti.
+     Il treno 53291 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+432 Il ritardo del treno 54774 e' diminuito di 1 minuti.
+     Il treno 54774 e' giunto alla stazione Mira Buse e sosta al binario 4
+433 Il ritardo del treno 12414 e' diminuito di 1 minuti.
+     Il treno 12414 e' giunto alla stazione Arzegrande e sosta al binario 1
+436 Il treno 53291 e' ripartito dalla stazione Oriago Porta Ovest
+437 Il treno 54774 e' ripartito dalla stazione Mira Buse
+438 Il ritardo del treno 24170 e' aumentato di 7 minuti.
+     Il treno 24170 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 2
+438 Il treno 12414 e' ripartito dalla stazione Arzegrande
+441 Il treno numero 53291 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+441 Il treno numero 54774 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 3
+443 Il treno 24170 e' ripartito dalla stazione Oriago Porta Ovest
+443 Il treno numero 12414 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+446 Il treno numero 12412 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+448 Il treno numero 24170 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 2
+448 Il ritardo del treno 53291 e' aumentato di 3 minuti.
+     Il treno 53291 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+450 Il treno 25462 e' PARTITO DA Adria
+451 Il ritardo del treno 54774 e' variato di 0 minuti.
+     Il treno 54774 e' giunto alla stazione Bojon e sosta al binario 3
+452 Il ritardo del treno 12414 e' variato di 0 minuti.
+     Il treno 12414 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+453 Il treno 53291 e' ripartito dalla stazione Venezia Mestre
+454 Il ritardo del treno 12412 e' diminuito di 1 minuti.
+     Il treno 12412 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+455 Il treno numero 25462 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1
+456 Il treno numero 53291 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+456 Il treno 54774 e' ripartito dalla stazione Bojon
+457 Il treno 12414 e' ripartito dalla stazione Piove di Sacco
+458 Il ritardo del treno 24170 e' variato di 0 minuti.
+     Il treno 24170 e' giunto alla stazione Venezia Mestre e sosta al binario 2
+459 Il treno 12412 e' ripartito dalla stazione Piove di Sacco
+460 Il treno numero 12414 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 1
+462 Il ritardo del treno 25462 e' variato di 0 minuti.
+     Il treno 25462 e' giunto alla stazione Cavarzere e sosta al binario 1
+463 Il treno 24170 e' ripartito dalla stazione Venezia Mestre
+463 Il treno numero 54774 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 3
+464 Il ritardo del treno 53291 e' aumentato di 3 minuti.
+     Il treno 53291 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+464 Il treno 53291 è ARRIVATO A DESTINAZIONE con 3 minuti di ritardo
+
+466 Il treno numero 24170 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 2
+467 Il treno 25462 e' ripartito dalla stazione Cavarzere
+469 Il treno numero 12412 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+471 Il ritardo del treno 12414 e' aumentato di 1 minuti.
+     Il treno 12414 e' giunto alla stazione Campolongo Maggiore e sosta al binario 1
+472 Il ritardo del treno 54774 e' variato di 0 minuti.
+     Il treno 54774 e' giunto alla stazione Campolongo Maggiore e sosta al binario 3
+475 Il treno 57477 e' PARTITO DA Venezia Santa Lucia
+476 Il ritardo del treno 24170 e' variato di 0 minuti.
+     Il treno 24170 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 2
+
+476 Il treno 24170 è ARRIVATO A DESTINAZIONE con 6 minuti di ritardo
+
+476 Il treno 12414 e' ripartito dalla stazione Campolongo Maggiore
+476 Il treno numero 25462 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+477 Il ritardo del treno 12412 e' diminuito di 2 minuti.
+     Il treno 12412 e' giunto alla stazione Cavarzere e sosta al binario 3
+477 Il treno 54774 e' ripartito dalla stazione Campolongo Maggiore
+478 Il treno numero 57477 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 3
+479 Il treno 23523 e' PARTITO DA Venezia Santa Lucia
+480 Il treno numero 54774 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+482 Il treno 12412 e' ripartito dalla stazione Cavarzere
+482 Il treno numero 23523 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 4
+483 Il treno numero 12414 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 1
+483 Il ritardo del treno 25462 e' diminuito di 1 minuti.
+     Il treno 25462 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+486 Il ritardo del treno 57477 e' variato di 0 minuti.
+     Il treno 57477 e' giunto alla stazione Venezia Mestre e sosta al binario 3
+487 Il treno numero 12412 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+488 Il treno 25462 e' ripartito dalla stazione Piove di Sacco
+490 Il ritardo del treno 54774 e' variato di 0 minuti.
+     Il treno 54774 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+491 Il treno 57477 e' ripartito dalla stazione Venezia Mestre
+491 Il ritardo del treno 23523 e' aumentato di 4 minuti.
+     Il treno 23523 e' giunto alla stazione Venezia Mestre e sosta al binario 4
+492 Il ritardo del treno 12414 e' variato di 0 minuti.
+     Il treno 12414 e' giunto alla stazione Bojon e sosta al binario 1
+495 Il ritardo del treno 12412 e' diminuito di 2 minuti.
+     Il treno 12412 e' giunto alla stazione Adria e sosta al binario 3
+
+495 Il treno 12412 è ARRIVATO A DESTINAZIONE con 2 minuti di anticipo
+
+495 Il treno 54774 e' ripartito dalla stazione Piove di Sacco
+496 Il treno numero 57477 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 3
+496 Il treno 23523 e' ripartito dalla stazione Venezia Mestre
+497 Il treno 12414 e' ripartito dalla stazione Bojon
+500 Il treno numero 54774 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 3
+500 Il treno 25627 e' PARTITO DA Adria
+501 Il treno numero 12414 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+501 Il treno numero 23523 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 4
+503 Il ritardo del treno 57477 e' variato di 0 minuti.
+     Il treno 57477 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 3
+504 Il treno numero 25462 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 2
+505 Il treno numero 25627 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1
+508 Il treno 57477 e' ripartito dalla stazione Oriago Porta Ovest
+509 Il ritardo del treno 54774 e' variato di 0 minuti.
+     Il treno 54774 e' giunto alla stazione Arzegrande e sosta al binario 3
+509 Il ritardo del treno 23523 e' aumentato di 4 minuti.
+     Il treno 23523 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 4
+511 Il ritardo del treno 12414 e' variato di 0 minuti.
+     Il treno 12414 e' giunto alla stazione Mira Buse e sosta al binario 1
+513 Il ritardo del treno 25627 e' variato di 0 minuti.
+     Il treno 25627 e' giunto alla stazione Cavarzere e sosta al binario 1
+513 Il treno numero 57477 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 3
+514 Il ritardo del treno 25462 e' aumentato di 3 minuti.
+     Il treno 25462 e' giunto alla stazione Mira Buse e sosta al binario 2
+514 Il treno 54774 e' ripartito dalla stazione Arzegrande
+514 Il treno 23523 e' ripartito dalla stazione Oriago Porta Ovest
+517 Il treno numero 54774 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+518 Il treno 25627 e' ripartito dalla stazione Cavarzere
+519 Il treno 25462 e' ripartito dalla stazione Mira Buse
+519 Il treno numero 23523 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 4
+520 Il ritardo del treno 57477 e' variato di 0 minuti.
+     Il treno 57477 e' giunto alla stazione Mira Buse e sosta al binario 3
+523 Il treno 12414 e' ripartito dalla stazione Mira Buse
+524 Il treno numero 25462 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+525 Il treno 57477 e' ripartito dalla stazione Mira Buse
+525 Il treno 25316 e' PARTITO DA Adria
+527 Il ritardo del treno 54774 e' diminuito di 1 minuti.
+     Il treno 54774 e' giunto alla stazione Cavarzere e sosta al binario 3
+527 Il ritardo del treno 23523 e' aumentato di 4 minuti.
+     Il treno 23523 e' giunto alla stazione Mira Buse e sosta al binario 4
+528 Il treno numero 12414 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 2
+528 Il treno numero 25627 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+530 Il treno numero 25316 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1
+531 Il ritardo del treno 25462 e' aumentato di 3 minuti.
+     Il treno 25462 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+532 Il treno 54774 e' ripartito dalla stazione Cavarzere
+532 Il treno 23523 e' ripartito dalla stazione Mira Buse
+536 Il treno 25462 e' ripartito dalla stazione Oriago Porta Ovest
+536 Il ritardo del treno 25627 e' diminuito di 1 minuti.
+     Il treno 25627 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+537 Il treno numero 54774 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+538 Il ritardo del treno 12414 e' aumentato di 6 minuti.
+     Il treno 12414 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 2
+540 Il ritardo del treno 25316 e' variato di 0 minuti.
+     Il treno 25316 e' giunto alla stazione Cavarzere e sosta al binario 1
+540 Il treno numero 57477 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+541 Il treno numero 25462 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+541 Il treno 25627 e' ripartito dalla stazione Piove di Sacco
+543 Il treno 12414 e' ripartito dalla stazione Oriago Porta Ovest
+545 Il treno 25316 e' ripartito dalla stazione Cavarzere
+547 Il ritardo del treno 54774 e' variato di 0 minuti.
+     Il treno 54774 e' giunto alla stazione Adria e sosta al binario 3
+
+547 Il treno 54774 è ARRIVATO A DESTINAZIONE con 2 minuti di ritardo
+
+547 Il ritardo del treno 57477 e' variato di 0 minuti.
+     Il treno 57477 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+548 Il treno numero 12414 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 2
+548 Il ritardo del treno 25462 e' aumentato di 3 minuti.
+     Il treno 25462 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+548 Il treno numero 25316 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 1
+550 Il treno numero 23523 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 4
+550 Il treno 85886 e' PARTITO DA Venezia Santa Lucia
+552 Il treno 57477 e' ripartito dalla stazione Piove di Sacco
+553 Il treno 25462 e' ripartito dalla stazione Venezia Mestre
+553 Il treno numero 85886 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 3
+556 Il treno numero 25462 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+558 Il ritardo del treno 12414 e' variato di 0 minuti.
+     Il treno 12414 e' giunto alla stazione Venezia Mestre e sosta al binario 2
+558 Il ritardo del treno 25316 e' diminuito di 1 minuti.
+     Il treno 25316 e' giunto alla stazione Arzegrande e sosta al binario 1
+558 Il ritardo del treno 23523 e' aumentato di 3 minuti.
+     Il treno 23523 e' giunto alla stazione Piove di Sacco e sosta al binario 4
+559 Il treno numero 25627 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+561 Il treno numero 57477 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+561 Il ritardo del treno 85886 e' variato di 0 minuti.
+     Il treno 85886 e' giunto alla stazione Venezia Mestre e sosta al binario 3
+563 Il treno 12414 e' ripartito dalla stazione Venezia Mestre
+563 Il treno 25316 e' ripartito dalla stazione Arzegrande
+563 Il treno 23523 e' ripartito dalla stazione Piove di Sacco
+564 Il ritardo del treno 25462 e' aumentato di 3 minuti.
+     Il treno 25462 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+564 Il treno 25462 è ARRIVATO A DESTINAZIONE con 3 minuti di ritardo
+
+566 Il treno numero 12414 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 2
+566 Il treno 85886 e' ripartito dalla stazione Venezia Mestre
+567 Il ritardo del treno 25627 e' diminuito di 2 minuti.
+     Il treno 25627 e' giunto alla stazione Mira Buse e sosta al binario 1
+568 Il treno numero 25316 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+568 Il ritardo del treno 57477 e' diminuito di 1 minuti.
+     Il treno 57477 e' giunto alla stazione Cavarzere e sosta al binario 3
+571 Il treno numero 85886 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 3
+572 Il treno 25627 e' ripartito dalla stazione Mira Buse
+573 Il treno 57477 e' ripartito dalla stazione Cavarzere
+573 Il treno numero 23523 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+575 Il treno 12418 e' PARTITO DA Venezia Santa Lucia
+576 Il ritardo del treno 12414 e' variato di 0 minuti.
+     Il treno 12414 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 2
+
+576 Il treno 12414 è ARRIVATO A DESTINAZIONE con 6 minuti di ritardo
+
+577 Il treno numero 25627 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+577 Il ritardo del treno 25316 e' variato di 0 minuti.
+     Il treno 25316 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+578 Il treno numero 57477 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+578 Il ritardo del treno 85886 e' variato di 0 minuti.
+     Il treno 85886 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 3
+578 Il treno numero 12418 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 3
+581 Il ritardo del treno 23523 e' aumentato di 2 minuti.
+     Il treno 23523 e' giunto alla stazione Cavarzere e sosta al binario 3
+582 Il treno 25316 e' ripartito dalla stazione Piove di Sacco
+583 Il treno 85886 e' ripartito dalla stazione Oriago Porta Ovest
+585 Il ritardo del treno 25627 e' diminuito di 2 minuti.
+     Il treno 25627 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+585 Il treno numero 25316 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 1
+585 Il ritardo del treno 57477 e' diminuito di 1 minuti.
+     Il treno 57477 e' giunto alla stazione Adria e sosta al binario 3
+
+585 Il treno 57477 è ARRIVATO A DESTINAZIONE con 1 minuti di anticipo
+
+586 Il treno 23523 e' ripartito dalla stazione Cavarzere
+586 Il ritardo del treno 12418 e' variato di 0 minuti.
+     Il treno 12418 e' giunto alla stazione Venezia Mestre e sosta al binario 3
+588 Il treno numero 85886 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 3
+590 Il treno 25627 e' ripartito dalla stazione Oriago Porta Ovest
+591 Il treno 12418 e' ripartito dalla stazione Venezia Mestre
+592 Il treno numero 23523 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+595 Il treno numero 25627 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+595 Il ritardo del treno 25316 e' variato di 0 minuti.
+     Il treno 25316 e' giunto alla stazione Campolongo Maggiore e sosta al binario 1
+595 Il ritardo del treno 85886 e' variato di 0 minuti.
+     Il treno 85886 e' giunto alla stazione Mira Buse e sosta al binario 3
+596 Il treno numero 12418 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 3
+599 Il ritardo del treno 23523 e' aumentato di 2 minuti.
+     Il treno 23523 e' giunto alla stazione Adria e sosta al binario 3
+
+599 Il treno 23523 è ARRIVATO A DESTINAZIONE con 2 minuti di ritardo
+
+600 Il treno 25316 e' ripartito dalla stazione Campolongo Maggiore
+600 Il treno 85886 e' ripartito dalla stazione Mira Buse
+600 Il treno 25329 e' PARTITO DA Adria
+603 Il ritardo del treno 25627 e' diminuito di 2 minuti.
+     Il treno 25627 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+603 Il ritardo del treno 12418 e' variato di 0 minuti.
+     Il treno 12418 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 3
+604 Il treno 36436 e' PARTITO DA Adria
+605 Il treno numero 25329 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1
+607 Il treno numero 25316 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 1
+608 Il treno 25627 e' ripartito dalla stazione Venezia Mestre
+608 Il treno 12418 e' ripartito dalla stazione Oriago Porta Ovest
+609 Il treno numero 36436 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 2
+611 Il treno numero 25627 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+612 Il ritardo del treno 25329 e' variato di 0 minuti.
+     Il treno 25329 e' giunto alla stazione Cavarzere e sosta al binario 1
+613 Il treno numero 12418 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 3
+615 Il treno numero 85886 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+616 Il ritardo del treno 25316 e' variato di 0 minuti.
+     Il treno 25316 e' giunto alla stazione Bojon e sosta al binario 1
+617 Il treno 25329 e' ripartito dalla stazione Cavarzere
+617 Il ritardo del treno 36436 e' aumentato di 4 minuti.
+     Il treno 36436 e' giunto alla stazione Cavarzere e sosta al binario 2
+620 Il ritardo del treno 25627 e' diminuito di 2 minuti.
+     Il treno 25627 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+620 Il treno 25627 è ARRIVATO A DESTINAZIONE con 2 minuti di anticipo
+
+620 Il ritardo del treno 12418 e' variato di 0 minuti.
+     Il treno 12418 e' giunto alla stazione Mira Buse e sosta al binario 3
+621 Il treno 25316 e' ripartito dalla stazione Bojon
+622 Il treno 36436 e' ripartito dalla stazione Cavarzere
+622 Il ritardo del treno 85886 e' variato di 0 minuti.
+     Il treno 85886 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+625 Il treno numero 25316 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+625 Il treno 12418 e' ripartito dalla stazione Mira Buse
+626 Il treno numero 25329 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+627 Il treno 85886 e' ripartito dalla stazione Piove di Sacco
+632 Il treno numero 36436 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 2
+633 Il ritardo del treno 25329 e' diminuito di 1 minuti.
+     Il treno 25329 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+635 Il ritardo del treno 25316 e' variato di 0 minuti.
+     Il treno 25316 e' giunto alla stazione Mira Buse e sosta al binario 1
+636 Il treno numero 85886 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+638 Il treno 25329 e' ripartito dalla stazione Piove di Sacco
+640 Il treno 25316 e' ripartito dalla stazione Mira Buse
+640 Il ritardo del treno 36436 e' aumentato di 3 minuti.
+     Il treno 36436 e' giunto alla stazione Piove di Sacco e sosta al binario 2
+640 Il treno numero 12418 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+643 Il ritardo del treno 85886 e' diminuito di 1 minuti.
+     Il treno 85886 e' giunto alla stazione Cavarzere e sosta al binario 3
+645 Il treno numero 25316 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+645 Il treno 36436 e' ripartito dalla stazione Piove di Sacco
+647 Il ritardo del treno 12418 e' variato di 0 minuti.
+     Il treno 12418 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+648 Il treno 85886 e' ripartito dalla stazione Cavarzere
+650 Il treno 57478 e' PARTITO DA Venezia Santa Lucia
+652 Il treno 12418 e' ripartito dalla stazione Piove di Sacco
+653 Il treno numero 25329 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+653 Il treno numero 85886 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+653 Il treno numero 57478 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 3
+654 Il treno 25325 e' PARTITO DA Venezia Santa Lucia
+655 Il ritardo del treno 25316 e' diminuito di 1 minuti.
+     Il treno 25316 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+657 Il treno numero 25325 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 4
+660 Il treno 25316 e' ripartito dalla stazione Oriago Porta Ovest
+660 Il ritardo del treno 25329 e' diminuito di 1 minuti.
+     Il treno 25329 e' giunto alla stazione Mira Buse e sosta al binario 1
+660 Il ritardo del treno 85886 e' diminuito di 1 minuti.
+     Il treno 85886 e' giunto alla stazione Adria e sosta al binario 3
+
+660 Il treno 85886 è ARRIVATO A DESTINAZIONE con 1 minuti di anticipo
+
+661 Il treno numero 12418 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+663 Il treno numero 36436 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 2
+663 Il ritardo del treno 57478 e' variato di 0 minuti.
+     Il treno 57478 e' giunto alla stazione Venezia Mestre e sosta al binario 3
+665 Il treno numero 25316 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+665 Il treno 25329 e' ripartito dalla stazione Mira Buse
+667 Il ritardo del treno 25325 e' aumentato di 4 minuti.
+     Il treno 25325 e' giunto alla stazione Venezia Mestre e sosta al binario 4
+668 Il ritardo del treno 12418 e' diminuito di 1 minuti.
+     Il treno 12418 e' giunto alla stazione Cavarzere e sosta al binario 3
+668 Il treno 57478 e' ripartito dalla stazione Venezia Mestre
+670 Il treno numero 25329 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+671 Il ritardo del treno 36436 e' aumentato di 2 minuti.
+     Il treno 36436 e' giunto alla stazione Mira Buse e sosta al binario 2
+672 Il treno 25325 e' ripartito dalla stazione Venezia Mestre
+673 Il treno 12418 e' ripartito dalla stazione Cavarzere
+674 Il treno numero 57478 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 3
+675 Il ritardo del treno 25316 e' variato di 0 minuti.
+     Il treno 25316 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+676 Il treno 36436 e' ripartito dalla stazione Mira Buse
+677 Il ritardo del treno 25329 e' diminuito di 1 minuti.
+     Il treno 25329 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+678 Il treno numero 12418 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+678 Il treno numero 25325 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 4
+680 Il treno 25316 e' ripartito dalla stazione Venezia Mestre
+681 Il treno numero 36436 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 2
+682 Il treno 25329 e' ripartito dalla stazione Oriago Porta Ovest
+683 Il treno numero 25316 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+683 Il ritardo del treno 57478 e' variato di 0 minuti.
+     Il treno 57478 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 3
+685 Il ritardo del treno 12418 e' diminuito di 1 minuti.
+     Il treno 12418 e' giunto alla stazione Adria e sosta al binario 3
+
+685 Il treno 12418 è ARRIVATO A DESTINAZIONE con 1 minuti di anticipo
+
+687 Il treno numero 25329 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+687 Il ritardo del treno 25325 e' variato di 0 minuti.
+     Il treno 25325 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 4
+688 Il treno 57478 e' ripartito dalla stazione Oriago Porta Ovest
+689 Il ritardo del treno 36436 e' aumentato di 2 minuti.
+     Il treno 36436 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 2
+692 Il treno 25325 e' ripartito dalla stazione Oriago Porta Ovest
+693 Il ritardo del treno 25316 e' variato di 0 minuti.
+     Il treno 25316 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+693 Il treno 25316 è ARRIVATO A DESTINAZIONE con 2 minuti di anticipo
+
+693 Il treno numero 57478 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 3
+694 Il ritardo del treno 25329 e' diminuito di 1 minuti.
+     Il treno 25329 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+694 Il treno 36436 e' ripartito dalla stazione Oriago Porta Ovest
+697 Il treno numero 25325 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 4
+699 Il treno numero 36436 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 2
+700 Il treno 25329 e' ripartito dalla stazione Venezia Mestre
+700 Il treno 14314 e' PARTITO DA Venezia Santa Lucia
+703 Il treno numero 25329 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+703 Il ritardo del treno 57478 e' diminuito di 1 minuti.
+     Il treno 57478 e' giunto alla stazione Mira Buse e sosta al binario 3
+703 Il treno numero 14314 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 3
+704 Il treno 74754 e' PARTITO DA Venezia Santa Lucia
+707 Il ritardo del treno 36436 e' aumentato di 2 minuti.
+     Il treno 36436 e' giunto alla stazione Venezia Mestre e sosta al binario 2
+707 Il ritardo del treno 25325 e' diminuito di 1 minuti.
+     Il treno 25325 e' giunto alla stazione Mira Buse e sosta al binario 4
+707 Il treno numero 74754 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 4
+708 Il treno 57478 e' ripartito dalla stazione Mira Buse
+711 Il ritardo del treno 25329 e' variato di 0 minuti.
+     Il treno 25329 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+711 Il treno 25329 è ARRIVATO A DESTINAZIONE con 0 minuti di ritardo
+
+711 Il ritardo del treno 14314 e' variato di 0 minuti.
+     Il treno 14314 e' giunto alla stazione Venezia Mestre e sosta al binario 3
+712 Il treno 36436 e' ripartito dalla stazione Venezia Mestre
+712 Il treno numero 57478 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 3
+712 Il treno 25325 e' ripartito dalla stazione Mira Buse
+715 Il treno numero 36436 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 2
+716 Il treno numero 25325 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 4
+716 Il treno 14314 e' ripartito dalla stazione Venezia Mestre
+716 Il ritardo del treno 74754 e' aumentato di 4 minuti.
+     Il treno 74754 e' giunto alla stazione Venezia Mestre e sosta al binario 4
+721 Il treno numero 14314 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 3
+721 Il treno 74754 e' ripartito dalla stazione Venezia Mestre
+722 Il ritardo del treno 57478 e' variato di 0 minuti.
+     Il treno 57478 e' giunto alla stazione Bojon e sosta al binario 3
+724 Il ritardo del treno 36436 e' aumentato di 2 minuti.
+     Il treno 36436 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 2
+
+724 Il treno 36436 è ARRIVATO A DESTINAZIONE con 2 minuti di ritardo
+
+726 Il ritardo del treno 25325 e' variato di 0 minuti.
+     Il treno 25325 e' giunto alla stazione Bojon e sosta al binario 4
+726 Il treno numero 74754 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 4
+727 Il treno 57478 e' ripartito dalla stazione Bojon
+728 Il ritardo del treno 14314 e' variato di 0 minuti.
+     Il treno 14314 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 3
+731 Il treno 25325 e' ripartito dalla stazione Bojon
+733 Il treno 14314 e' ripartito dalla stazione Oriago Porta Ovest
+734 Il treno numero 57478 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 3
+734 Il ritardo del treno 74754 e' aumentato di 4 minuti.
+     Il treno 74754 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 4
+738 Il treno numero 25325 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 4
+738 Il treno numero 14314 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 3
+739 Il treno 74754 e' ripartito dalla stazione Oriago Porta Ovest
+743 Il ritardo del treno 57478 e' variato di 0 minuti.
+     Il treno 57478 e' giunto alla stazione Campolongo Maggiore e sosta al binario 3
+744 Il treno numero 74754 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 4
+745 Il ritardo del treno 14314 e' variato di 0 minuti.
+     Il treno 14314 e' giunto alla stazione Mira Buse e sosta al binario 3
+747 Il ritardo del treno 25325 e' variato di 0 minuti.
+     Il treno 25325 e' giunto alla stazione Campolongo Maggiore e sosta al binario 4
+748 Il treno 57478 e' ripartito dalla stazione Campolongo Maggiore
+750 Il treno 14314 e' ripartito dalla stazione Mira Buse
+750 Il treno 54743 e' PARTITO DA Adria
+751 Il treno numero 57478 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+752 Il treno 25325 e' ripartito dalla stazione Campolongo Maggiore
+752 Il ritardo del treno 74754 e' aumentato di 4 minuti.
+     Il treno 74754 e' giunto alla stazione Mira Buse e sosta al binario 4
+754 Il treno 12415 e' PARTITO DA Adria
+755 Il treno numero 54743 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1
+755 Il treno numero 25325 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 4
+757 Il treno 74754 e' ripartito dalla stazione Mira Buse
+758 Il treno 12463 e' PARTITO DA Adria
+759 Il treno numero 12415 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 2
+761 Il ritardo del treno 57478 e' variato di 0 minuti.
+     Il treno 57478 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+762 Il treno 31255 e' PARTITO DA Adria
+763 Il ritardo del treno 54743 e' variato di 0 minuti.
+     Il treno 54743 e' giunto alla stazione Cavarzere e sosta al binario 1
+763 Il treno numero 12463 e' a 20 km dalla prossima stazione Cavarzere. Dovra' sostare ai box.
+765 Il ritardo del treno 25325 e' variato di 0 minuti.
+     Il treno 25325 e' giunto alla stazione Piove di Sacco e sosta al binario 4
+765 Il treno numero 14314 e' a 20 km dalla prossima stazione Piove di Sacco. Dovra' sostare ai box.
+766 Il treno 57478 e' ripartito dalla stazione Piove di Sacco
+766 Il treno numero 14314 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+767 Il ritardo del treno 12415 e' aumentato di 4 minuti.
+     Il treno 12415 e' giunto alla stazione Cavarzere e sosta al binario 2
+767 Il treno 12463 e' ENTRATO AI BOX
+767 Il treno numero 31255 e' a 20 km dalla prossima stazione Cavarzere. Dovra' sostare ai box.
+768 Il treno 54743 e' ripartito dalla stazione Cavarzere
+768 Il treno numero 31255 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1
+771 Il treno numero 57478 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 3
+772 Il treno 12415 e' ripartito dalla stazione Cavarzere
+772 Il ritardo del treno 14314 e' variato di 0 minuti.
+     Il treno 14314 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+     Il treno 12463 sta arrivando dal posteggio alla stazione Cavarzere dove occupera' il binario 2
+775 Il treno numero 74754 e' a 20 km dalla prossima stazione Piove di Sacco. Dovra' sostare ai box.
+777 Il ritardo del treno 12463 e' aumentato di 14 minuti.
+     Il treno 12463 e' giunto alla stazione Cavarzere e sosta al binario 2
+777 Il ritardo del treno 31255 e' aumentato di 12 minuti.
+     Il treno 31255 e' giunto alla stazione Cavarzere e sosta al binario 1
+777 Il treno 14314 e' ripartito dalla stazione Piove di Sacco
+777 Il treno numero 74754 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+778 Il treno numero 54743 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+780 Il ritardo del treno 57478 e' variato di 0 minuti.
+     Il treno 57478 e' giunto alla stazione Arzegrande e sosta al binario 3
+782 Il treno numero 12415 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 2
+782 Il treno 12463 e' ripartito dalla stazione Cavarzere
+783 Il ritardo del treno 74754 e' aumentato di 3 minuti.
+     Il treno 74754 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+786 Il ritardo del treno 54743 e' diminuito di 1 minuti.
+     Il treno 54743 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+786 Il treno 31255 e' ripartito dalla stazione Cavarzere
+786 Il treno numero 14314 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+787 Il treno 57478 e' ripartito dalla stazione Arzegrande
+788 Il treno 74754 e' ripartito dalla stazione Piove di Sacco
+789 Il treno numero 31255 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 1
+790 Il ritardo del treno 12415 e' aumentato di 3 minuti.
+     Il treno 12415 e' giunto alla stazione Piove di Sacco e sosta al binario 2
+790 Il treno numero 57478 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 4
+791 Il treno 54743 e' ripartito dalla stazione Piove di Sacco
+792 Il treno numero 12463 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+792 Il treno 25325 e' ripartito dalla stazione Piove di Sacco
+793 Il ritardo del treno 14314 e' diminuito di 1 minuti.
+     Il treno 14314 e' giunto alla stazione Cavarzere e sosta al binario 3
+795 Il treno 12415 e' ripartito dalla stazione Piove di Sacco
+797 Il treno numero 25325 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 3
+798 Il treno 14314 e' ripartito dalla stazione Cavarzere
+798 Il treno numero 74754 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+799 Il ritardo del treno 31255 e' aumentato di 3 minuti.
+     Il treno 31255 e' giunto alla stazione Arzegrande e sosta al binario 1
+800 Il ritardo del treno 12463 e' aumentato di 13 minuti.
+     Il treno 12463 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+800 Il ritardo del treno 57478 e' aumentato di 1 minuti.
+     Il treno 57478 e' giunto alla stazione Cavarzere e sosta al binario 4
+803 Il treno numero 14314 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+804 Il treno 31255 e' ripartito dalla stazione Arzegrande
+805 Il treno 12463 e' ripartito dalla stazione Piove di Sacco
+806 Il ritardo del treno 25325 e' aumentato di 22 minuti.
+     Il treno 25325 e' giunto alla stazione Arzegrande e sosta al binario 3
+806 Il ritardo del treno 74754 e' aumentato di 2 minuti.
+     Il treno 74754 e' giunto alla stazione Cavarzere e sosta al binario 3
+809 Il treno numero 54743 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+809 Il treno numero 31255 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+810 Il ritardo del treno 14314 e' diminuito di 1 minuti.
+     Il treno 14314 e' giunto alla stazione Adria e sosta al binario 3
+
+810 Il treno 14314 è ARRIVATO A DESTINAZIONE con 1 minuti di anticipo
+
+811 Il treno 25325 e' ripartito dalla stazione Arzegrande
+811 Il treno 74754 e' ripartito dalla stazione Cavarzere
+813 Il treno numero 12415 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 2
+814 Il treno numero 25325 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+815 Il treno 57478 e' ripartito dalla stazione Cavarzere
+817 Il ritardo del treno 54743 e' diminuito di 2 minuti.
+     Il treno 54743 e' giunto alla stazione Mira Buse e sosta al binario 1
+817 Il treno numero 74754 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+818 Il ritardo del treno 31255 e' variato di 0 minuti.
+     Il treno 31255 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+820 Il treno numero 57478 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 4
+821 Il ritardo del treno 12415 e' aumentato di 2 minuti.
+     Il treno 12415 e' giunto alla stazione Mira Buse e sosta al binario 2
+822 Il treno 54743 e' ripartito dalla stazione Mira Buse
+823 Il treno numero 12463 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+823 Il treno 31255 e' ripartito dalla stazione Piove di Sacco
+824 Il ritardo del treno 25325 e' diminuito di 1 minuti.
+     Il treno 25325 e' giunto alla stazione Cavarzere e sosta al binario 3
+824 Il ritardo del treno 74754 e' aumentato di 2 minuti.
+     Il treno 74754 e' giunto alla stazione Adria e sosta al binario 3
+
+824 Il treno 74754 è ARRIVATO A DESTINAZIONE con 2 minuti di ritardo
+
+826 Il treno 12415 e' ripartito dalla stazione Mira Buse
+826 Il treno numero 31255 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 1
+827 Il treno numero 54743 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+829 Il treno 25325 e' ripartito dalla stazione Cavarzere
+830 Il ritardo del treno 57478 e' aumentato di 10 minuti.
+     Il treno 57478 e' giunto alla stazione Adria e sosta al binario 4
+
+830 Il treno 57478 è ARRIVATO A DESTINAZIONE con 10 minuti di ritardo
+
+831 Il treno numero 12415 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 2
+831 Il ritardo del treno 12463 e' aumentato di 12 minuti.
+     Il treno 12463 e' giunto alla stazione Mira Buse e sosta al binario 1
+834 Il treno numero 25325 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+835 Il ritardo del treno 54743 e' diminuito di 2 minuti.
+     Il treno 54743 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+836 Il treno 12463 e' ripartito dalla stazione Mira Buse
+836 Il ritardo del treno 31255 e' variato di 0 minuti.
+     Il treno 31255 e' giunto alla stazione Campolongo Maggiore e sosta al binario 1
+839 Il ritardo del treno 12415 e' aumentato di 2 minuti.
+     Il treno 12415 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 2
+840 Il treno 54743 e' ripartito dalla stazione Oriago Porta Ovest
+841 Il treno numero 12463 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+841 Il treno 31255 e' ripartito dalla stazione Campolongo Maggiore
+844 Il treno 12415 e' ripartito dalla stazione Oriago Porta Ovest
+844 Il ritardo del treno 25325 e' variato di 0 minuti.
+     Il treno 25325 e' giunto alla stazione Adria e sosta al binario 3
+
+844 Il treno 25325 è ARRIVATO A DESTINAZIONE con 24 minuti di ritardo
+
+845 Il treno numero 54743 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+848 Il treno numero 31255 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 1
+849 Il treno numero 12415 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 2
+849 Il ritardo del treno 12463 e' aumentato di 12 minuti.
+     Il treno 12463 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+853 Il ritardo del treno 54743 e' diminuito di 2 minuti.
+     Il treno 54743 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+854 Il treno 12463 e' ripartito dalla stazione Oriago Porta Ovest
+857 Il ritardo del treno 12415 e' aumentato di 2 minuti.
+     Il treno 12415 e' giunto alla stazione Venezia Mestre e sosta al binario 2
+857 Il ritardo del treno 31255 e' variato di 0 minuti.
+     Il treno 31255 e' giunto alla stazione Bojon e sosta al binario 1
+858 Il treno 54743 e' ripartito dalla stazione Venezia Mestre
+859 Il treno numero 12463 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+861 Il treno numero 54743 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+862 Il treno 12415 e' ripartito dalla stazione Venezia Mestre
+862 Il treno 31255 e' ripartito dalla stazione Bojon
+865 Il treno numero 12415 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 2
+866 Il treno numero 31255 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+867 Il ritardo del treno 12463 e' aumentato di 12 minuti.
+     Il treno 12463 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+870 Il ritardo del treno 54743 e' diminuito di 2 minuti.
+     Il treno 54743 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+870 Il treno 54743 è ARRIVATO A DESTINAZIONE con 2 minuti di anticipo
+
+872 Il treno 12463 e' ripartito dalla stazione Venezia Mestre
+874 Il ritardo del treno 12415 e' aumentato di 2 minuti.
+     Il treno 12415 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 2
+
+874 Il treno 12415 è ARRIVATO A DESTINAZIONE con 2 minuti di ritardo
+
+875 Il treno numero 12463 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+876 Il ritardo del treno 31255 e' variato di 0 minuti.
+     Il treno 31255 e' giunto alla stazione Mira Buse e sosta al binario 1
+881 Il ritardo del treno 12463 e' aumentato di 9 minuti.
+     Il treno 12463 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+881 Il treno 12463 è ARRIVATO A DESTINAZIONE con 9 minuti di ritardo
+
+881 Il treno 31255 e' ripartito dalla stazione Mira Buse
+886 Il treno numero 31255 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+896 Il ritardo del treno 31255 e' diminuito di 1 minuti.
+     Il treno 31255 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+901 Il treno 31255 e' ripartito dalla stazione Oriago Porta Ovest
+906 Il treno numero 31255 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+916 Il ritardo del treno 31255 e' variato di 0 minuti.
+     Il treno 31255 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+921 Il treno 31255 e' ripartito dalla stazione Venezia Mestre
+924 Il treno numero 31255 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+934 Il ritardo del treno 31255 e' variato di 0 minuti.
+     Il treno 31255 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+934 Il treno 31255 è ARRIVATO A DESTINAZIONE con 14 minuti di ritardo
+
+1200 Il treno 14156 e' PARTITO DA Venezia Santa Lucia
+1203 Il treno numero 14156 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 3
+1211 Il ritardo del treno 14156 e' variato di 0 minuti.
+     Il treno 14156 e' giunto alla stazione Venezia Mestre e sosta al binario 3
+1216 Il treno 14156 e' ripartito dalla stazione Venezia Mestre
+1221 Il treno numero 14156 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 3
+1228 Il ritardo del treno 14156 e' variato di 0 minuti.
+     Il treno 14156 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 3
+1233 Il treno 14156 e' ripartito dalla stazione Oriago Porta Ovest
+1238 Il treno numero 14156 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 3
+1245 Il ritardo del treno 14156 e' variato di 0 minuti.
+     Il treno 14156 e' giunto alla stazione Mira Buse e sosta al binario 3
+1250 Il treno 14156 e' ripartito dalla stazione Mira Buse
+1250 Il treno 26433 e' PARTITO DA Venezia Santa Lucia
+1253 Il treno numero 26433 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 3
+1262 Il ritardo del treno 26433 e' variato di 0 minuti.
+     Il treno 26433 e' giunto alla stazione Venezia Mestre e sosta al binario 3
+1265 Il treno numero 14156 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+1267 Il treno 26433 e' ripartito dalla stazione Venezia Mestre
+1272 Il ritardo del treno 14156 e' variato di 0 minuti.
+     Il treno 14156 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+1272 Il treno numero 26433 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 3
+1277 Il treno 14156 e' ripartito dalla stazione Piove di Sacco
+1280 Il ritardo del treno 26433 e' variato di 0 minuti.
+     Il treno 26433 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 3
+1285 Il treno 26433 e' ripartito dalla stazione Oriago Porta Ovest
+1286 Il treno numero 14156 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+1290 Il treno numero 26433 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 3
+1293 Il ritardo del treno 14156 e' diminuito di 1 minuti.
+     Il treno 14156 e' giunto alla stazione Cavarzere e sosta al binario 3
+1298 Il treno 14156 e' ripartito dalla stazione Cavarzere
+1298 Il ritardo del treno 26433 e' variato di 0 minuti.
+     Il treno 26433 e' giunto alla stazione Mira Buse e sosta al binario 3
+1300 Il treno 12441 e' PARTITO DA Adria
+1303 Il treno numero 14156 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+1303 Il treno 26433 e' ripartito dalla stazione Mira Buse
+1305 Il treno numero 12441 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1
+1310 Il ritardo del treno 14156 e' diminuito di 1 minuti.
+     Il treno 14156 e' giunto alla stazione Adria e sosta al binario 3
+
+1310 Il treno 14156 è ARRIVATO A DESTINAZIONE con 1 minuti di anticipo
+
+1315 Il ritardo del treno 12441 e' variato di 0 minuti.
+     Il treno 12441 e' giunto alla stazione Cavarzere e sosta al binario 1
+1320 Il treno 12441 e' ripartito dalla stazione Cavarzere
+1321 Il treno numero 26433 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+1323 Il treno numero 12441 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 1
+1329 Il ritardo del treno 26433 e' diminuito di 1 minuti.
+     Il treno 26433 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+1333 Il ritardo del treno 12441 e' diminuito di 1 minuti.
+     Il treno 12441 e' giunto alla stazione Arzegrande e sosta al binario 1
+1334 Il treno 26433 e' ripartito dalla stazione Piove di Sacco
+1338 Il treno 12441 e' ripartito dalla stazione Arzegrande
+1343 Il treno numero 12441 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+1344 Il treno numero 26433 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+1350 Il treno 34632 e' PARTITO DA Adria
+1352 Il ritardo del treno 12441 e' variato di 0 minuti.
+     Il treno 12441 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+1352 Il ritardo del treno 26433 e' diminuito di 2 minuti.
+     Il treno 26433 e' giunto alla stazione Cavarzere e sosta al binario 3
+1355 Il treno numero 34632 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 1
+1357 Il treno 12441 e' ripartito dalla stazione Piove di Sacco
+1357 Il treno 26433 e' ripartito dalla stazione Cavarzere
+1360 Il treno numero 12441 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 1
+1362 Il treno numero 26433 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+1365 Il ritardo del treno 34632 e' variato di 0 minuti.
+     Il treno 34632 e' giunto alla stazione Cavarzere e sosta al binario 1
+1370 Il ritardo del treno 12441 e' variato di 0 minuti.
+     Il treno 12441 e' giunto alla stazione Campolongo Maggiore e sosta al binario 1
+1370 Il treno 34632 e' ripartito dalla stazione Cavarzere
+1370 Il ritardo del treno 26433 e' diminuito di 2 minuti.
+     Il treno 26433 e' giunto alla stazione Adria e sosta al binario 3
+
+1370 Il treno 26433 è ARRIVATO A DESTINAZIONE con 2 minuti di anticipo
+
+1373 Il treno numero 34632 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 1
+1375 Il treno 12441 e' ripartito dalla stazione Campolongo Maggiore
+1382 Il treno numero 12441 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 1
+1383 Il ritardo del treno 34632 e' diminuito di 1 minuti.
+     Il treno 34632 e' giunto alla stazione Arzegrande e sosta al binario 1
+1388 Il treno 34632 e' ripartito dalla stazione Arzegrande
+1391 Il ritardo del treno 12441 e' variato di 0 minuti.
+     Il treno 12441 e' giunto alla stazione Bojon e sosta al binario 1
+1393 Il treno numero 34632 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 1
+1396 Il treno 12441 e' ripartito dalla stazione Bojon
+1400 Il treno numero 12441 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+1400 Il treno 36343 e' PARTITO DA Venezia Santa Lucia
+1402 Il ritardo del treno 34632 e' variato di 0 minuti.
+     Il treno 34632 e' giunto alla stazione Piove di Sacco e sosta al binario 1
+1403 Il treno numero 36343 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 3
+1407 Il treno 34632 e' ripartito dalla stazione Piove di Sacco
+1410 Il ritardo del treno 12441 e' variato di 0 minuti.
+     Il treno 12441 e' giunto alla stazione Mira Buse e sosta al binario 1
+1410 Il treno numero 34632 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 1
+1413 Il ritardo del treno 36343 e' variato di 0 minuti.
+     Il treno 36343 e' giunto alla stazione Venezia Mestre e sosta al binario 3
+1415 Il treno 12441 e' ripartito dalla stazione Mira Buse
+1418 Il treno 36343 e' ripartito dalla stazione Venezia Mestre
+1420 Il treno numero 12441 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+1420 Il ritardo del treno 34632 e' variato di 0 minuti.
+     Il treno 34632 e' giunto alla stazione Campolongo Maggiore e sosta al binario 1
+1424 Il treno numero 36343 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 3
+1425 Il treno 34632 e' ripartito dalla stazione Campolongo Maggiore
+1430 Il ritardo del treno 12441 e' diminuito di 1 minuti.
+     Il treno 12441 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+1432 Il treno numero 34632 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 1
+1433 Il ritardo del treno 36343 e' variato di 0 minuti.
+     Il treno 36343 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 3
+1435 Il treno 12441 e' ripartito dalla stazione Oriago Porta Ovest
+1438 Il treno 36343 e' ripartito dalla stazione Oriago Porta Ovest
+1440 Il treno numero 12441 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+1441 Il ritardo del treno 34632 e' variato di 0 minuti.
+     Il treno 34632 e' giunto alla stazione Bojon e sosta al binario 1
+1443 Il treno numero 36343 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 3
+1446 Il treno 34632 e' ripartito dalla stazione Bojon
+1450 Il ritardo del treno 12441 e' variato di 0 minuti.
+     Il treno 12441 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+1450 Il treno numero 34632 e' a 20 km dalla prossima stazione Mira Buse dove occupera' il binario 1
+1453 Il ritardo del treno 36343 e' diminuito di 1 minuti.
+     Il treno 36343 e' giunto alla stazione Mira Buse e sosta al binario 3
+1455 Il treno 12441 e' ripartito dalla stazione Venezia Mestre
+1458 Il treno numero 12441 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+1458 Il treno 36343 e' ripartito dalla stazione Mira Buse
+1460 Il ritardo del treno 34632 e' variato di 0 minuti.
+     Il treno 34632 e' giunto alla stazione Mira Buse e sosta al binario 1
+1462 Il treno numero 36343 e' a 20 km dalla prossima stazione Bojon dove occupera' il binario 3
+1465 Il treno 34632 e' ripartito dalla stazione Mira Buse
+1468 Il ritardo del treno 12441 e' variato di 0 minuti.
+     Il treno 12441 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+1468 Il treno 12441 è ARRIVATO A DESTINAZIONE con 2 minuti di anticipo
+
+1470 Il treno numero 34632 e' a 20 km dalla prossima stazione Oriago Porta Ovest dove occupera' il binario 1
+1472 Il ritardo del treno 36343 e' variato di 0 minuti.
+     Il treno 36343 e' giunto alla stazione Bojon e sosta al binario 3
+1477 Il treno 36343 e' ripartito dalla stazione Bojon
+1480 Il ritardo del treno 34632 e' diminuito di 1 minuti.
+     Il treno 34632 e' giunto alla stazione Oriago Porta Ovest e sosta al binario 1
+1484 Il treno numero 36343 e' a 20 km dalla prossima stazione Campolongo Maggiore dove occupera' il binario 3
+1485 Il treno 34632 e' ripartito dalla stazione Oriago Porta Ovest
+1490 Il treno numero 34632 e' a 20 km dalla prossima stazione Venezia Mestre dove occupera' il binario 1
+1493 Il ritardo del treno 36343 e' variato di 0 minuti.
+     Il treno 36343 e' giunto alla stazione Campolongo Maggiore e sosta al binario 3
+1498 Il treno 36343 e' ripartito dalla stazione Campolongo Maggiore
+1500 Il ritardo del treno 34632 e' variato di 0 minuti.
+     Il treno 34632 e' giunto alla stazione Venezia Mestre e sosta al binario 1
+1501 Il treno numero 36343 e' a 20 km dalla prossima stazione Piove di Sacco dove occupera' il binario 3
+1505 Il treno 34632 e' ripartito dalla stazione Venezia Mestre
+1508 Il treno numero 34632 e' a 20 km dalla prossima stazione Venezia Santa Lucia dove occupera' il binario 1
+1511 Il ritardo del treno 36343 e' variato di 0 minuti.
+     Il treno 36343 e' giunto alla stazione Piove di Sacco e sosta al binario 3
+1516 Il treno 36343 e' ripartito dalla stazione Piove di Sacco
+1518 Il ritardo del treno 34632 e' variato di 0 minuti.
+     Il treno 34632 e' giunto alla stazione Venezia Santa Lucia e sosta al binario 1
+
+1518 Il treno 34632 è ARRIVATO A DESTINAZIONE con 2 minuti di anticipo
+
+1521 Il treno numero 36343 e' a 20 km dalla prossima stazione Arzegrande dove occupera' il binario 3
+1530 Il ritardo del treno 36343 e' variato di 0 minuti.
+     Il treno 36343 e' giunto alla stazione Arzegrande e sosta al binario 3
+1535 Il treno 36343 e' ripartito dalla stazione Arzegrande
+1538 Il treno numero 36343 e' a 20 km dalla prossima stazione Cavarzere dove occupera' il binario 3
+1548 Il ritardo del treno 36343 e' diminuito di 1 minuti.
+     Il treno 36343 e' giunto alla stazione Cavarzere e sosta al binario 3
+1553 Il treno 36343 e' ripartito dalla stazione Cavarzere
+1558 Il treno numero 36343 e' a 20 km dalla prossima stazione Adria dove occupera' il binario 3
+1568 Il ritardo del treno 36343 e' variato di 0 minuti.
+     Il treno 36343 e' giunto alla stazione Adria e sosta al binario 3
+
+1568 Il treno 36343 è ARRIVATO A DESTINAZIONE con 2 minuti di anticipo

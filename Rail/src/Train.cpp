@@ -1,10 +1,10 @@
+//Christian Marchiori matr. 1218317
+
 #include "Train.h"
 
-#include <cmath>
-#include <iostream>
-
-Regional::Regional(int t_number, bool ori, const vector<int>& a_times, const vector<bool>& s_type, const vector<int>& s_distances)
+Regional::Regional(int t_number, bool ori, const std::vector<int>& a_times, const std::vector<bool>& s_type, const std::vector<int>& s_distances)
 {
+    //inizializzazione variabili membro
     origin = ori;
     train_number = t_number;
     train_type = 1;
@@ -29,18 +29,19 @@ Regional::Regional(int t_number, bool ori, const vector<int>& a_times, const vec
 
     checkTwentyKilometres();        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
 
-    createDistances();      //creo il vettore Distances che contiene le distanze tra le varie stazioni
+    createDistances();              //creo il vettore Distances che contiene le distanze TRA le varie stazioni
     
-    checkArrivalTimes(stations_distances.size());   //controllo che gli orari di arrivo della timetable abbiano senso
-                                                    //e che siano in giusta quantità
+    checkArrivalTimes(stations_distances.size());       //controllo che gli orari di arrivo della timetable 
+                                                        //abbiano senso e che siano in giusta quantità
 
-    vector<int> s_points;
-    createSignalPoints(stations_distances, s_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
+    std::vector<int> s_points;
+    createSignalPoints(stations_distances, s_points);   //creo il vettore segnalation_point che contiene i punti di segnalazione
     signal_points = s_points;
 }
 
-HighV::HighV(int t_number, bool ori, const vector<int>& a_times, const vector<bool>& s_type, const vector<int>& s_distances)
+HighV::HighV(int t_number, bool ori, const std::vector<int>& a_times, const std::vector<bool>& s_type, const std::vector<int>& s_distances)
 {
+    //inizializzazione variabili membro
     origin = ori;
     train_number = t_number;
     train_type = 2;
@@ -65,20 +66,21 @@ HighV::HighV(int t_number, bool ori, const vector<int>& a_times, const vector<bo
 
     checkTwentyKilometres();        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
 
-    createDistances();      //creo il vettore Distances che contiene le distanze tra le varie stazioni
+    createDistances();              //creo il vettore Distances che contiene le distanze tra le varie stazioni
     
     int num_of_principal_stations = countPrincipalStations(stations_type);
     
-    checkArrivalTimes(num_of_principal_stations);   //controllo che gli orari di arrivo della timetable abbiano senso
-                                                    //e che siano in giusta quantità
+    checkArrivalTimes(num_of_principal_stations);       //controllo che gli orari di arrivo della timetable 
+                                                        //abbiano senso e che siano in giusta quantità
 
-    vector<int> s_points;
-    createSignalPoints(stations_distances, s_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
+    std::vector<int> s_points;
+    createSignalPoints(stations_distances, s_points);   //creo il vettore segnalation_point che contiene i punti di segnalazione
     signal_points = s_points;
 }
 
-HighV_s::HighV_s(int t_number, bool ori, const vector<int>& a_times, const vector<bool>& s_type, const vector<int>& s_distances)
+HighV_s::HighV_s(int t_number, bool ori, const std::vector<int>& a_times, const std::vector<bool>& s_type, const std::vector<int>& s_distances)
 {
+    //inizializzazione variabili membro
     origin = ori;
     train_number = t_number;
     train_type = 3;
@@ -103,21 +105,23 @@ HighV_s::HighV_s(int t_number, bool ori, const vector<int>& a_times, const vecto
 
     checkTwentyKilometres();        //gestisco le stazioni a distanza minore di 20km da quelle precedenti
 
-    createDistances();      //creo il vettore Distances che contiene le distanze tra le varie stazioni
+    createDistances();              //creo il vettore distances che contiene le distanze tra le varie stazioni
+                                    //utile alla funzione checkArrivalTimes
 
     int num_of_principal_stations = countPrincipalStations(stations_type);
     
-    checkArrivalTimes(num_of_principal_stations);   //controllo che gli orari di arrivo della timetable abbiano senso
-                                                    //e che siano in giusta quantità
+    checkArrivalTimes(num_of_principal_stations);       //controllo che gli orari di arrivo della timetable abbiano senso
+                                                        //e che siano in giusta quantità
 
-    vector<int> s_points;
-    createSignalPoints(stations_distances, s_points);        //creo il vettore segnalation_point che contiene i punti di segnalazione
+    std::vector<int> s_points;
+    createSignalPoints(stations_distances, s_points);   //creo il vettore segnalation_point che contiene i punti di segnalazione
     signal_points = s_points;
 }
 
-int countPrincipalStations(const vector<bool>& stations_type)
+//funzione che conta le stazioni principali
+int countPrincipalStations(const std::vector<bool>& stations_type)
 {
-    int num_of_principal_stations = 0;
+    int num_of_principal_stations = 0;      //contatore
     for(int i=0; i<stations_type.size(); i++)
     {
         if(stations_type.at(i) == 0)
@@ -128,14 +132,16 @@ int countPrincipalStations(const vector<bool>& stations_type)
     return num_of_principal_stations;
 }
 
-void invertStations(vector<int>& stations_distances, vector<bool>& stations_type)
+//funzione che inverte le distanze del vettore stations_distances solamente se il treno parte dal capolinea
+void invertStations(std::vector<int>& stations_distances, std::vector<bool>& stations_type)
 {
-    vector<int> tmp;
-    int last = stations_distances.back();
+    //inverto stations_distances
+    std::vector<int> tmp;
+    int last = stations_distances.back();       //distanza del capolinea dall'origine
     for(int i=stations_distances.size()-1; i>=0; i--)
     {
-        if(stations_distances.at(i) == -1)
-        {
+        if(stations_distances.at(i) == -1)      //se la stazione non è valida non calcolo la distanza
+        {                                       //dal capolinea ma inserisco -1
             tmp.push_back(-1);
         }
         else
@@ -145,7 +151,8 @@ void invertStations(vector<int>& stations_distances, vector<bool>& stations_type
     }
     stations_distances = tmp;
     
-    vector<bool> tmp1;
+    //inverto stations_type (non serve gestire quelle non valide perchè saranno gestite successivamente)
+    std::vector<bool> tmp1;
     for(int i=stations_type.size()-1; i>=0; i--)
     {
         tmp1.push_back(stations_type.at(i));
@@ -163,8 +170,12 @@ void Regional::checkTwentyKilometres()
             stations_type.erase(stations_type.begin() + i);
 
             if(i < arrival_times.size())            //elimino il tempo di arrivo solo se è presente inizialmente
-            {
+            {                                       //la timetables potrebbe contenere meno tempi di arrivo del dovuto
                 arrival_times.erase(arrival_times.begin() + i);
+                //il seguente ciclo for è neccessario per aggiustare i tempi di arrivo successivi ad una stazione non valida
+                //il treno, non passando per la stazione non valida, impiega meno tempo del dovuto ad arrivare alle successive
+                //il tempo totale per fermarsi è 13 minuti (4+5+4), il tempo per transitare è in questo caso (10/160)*60 = 4 min
+                //quindi il treno recupera 13-4 = 9 minuti 
                 for(int j=i; j < arrival_times.size(); j++)
                 {
                     arrival_times.at(j) = arrival_times.at(j) - 9;
@@ -177,7 +188,7 @@ void Regional::checkTwentyKilometres()
 
 void HighV::checkTwentyKilometres()
 {
-    int skipped_stations {0};           //contiene le stazioni valide secondarie(saltate dai treni veloci)
+    int skipped_stations {0};           //contiene le stazioni valide secondarie (saltate dai treni veloci)
     for(int i=0; i< stations_distances.size(); i++)
     {
         if(stations_type.at(i) == 1 && stations_distances.at(i) != -1)
@@ -190,6 +201,10 @@ void HighV::checkTwentyKilometres()
                                                                                             //con le secondarie perchè non ci sono inizialemente)
             {
                 arrival_times.erase(arrival_times.begin() + (i-skipped_stations));
+                //il seguente ciclo for è neccessario per aggiustare i tempi di arrivo successivi ad una stazione non valida
+                //Il treno, non passando per la stazione non valida, impiega meno tempo del dovuto ad arrivare alle successive
+                //il tempo totale per fermarsi è 13 minuti (4+5+4), il tempo per transitare è in questo caso (10/240)*60 = 3 min
+                //quindi il treno recupera 13-3 = 10 minuti 
                 for(int j=i-skipped_stations; j < arrival_times.size(); j++)
                 {
                     arrival_times.at(j) = arrival_times.at(j) - 10;
@@ -217,6 +232,10 @@ void HighV_s::checkTwentyKilometres()
                                                                                             //con le secondarie perchè non ci sono inizialemente)
             {
                 arrival_times.erase(arrival_times.begin() + (i-skipped_stations));
+                //il seguente ciclo for è neccessario per aggiustare i tempi di arrivo successivi ad una stazione non valida
+                //il treno, non passando per la stazione non valida, impiega meno tempo del dovuto ad arrivare alle successive
+                //il tempo totale per fermarsi è 13 minuti (4+5+4), il tempo per transitare è in questo caso (10/300)*60 = 2 min
+                //quindi il treno recupera 13-2 = 11 minuti 
                 for(int j=i-skipped_stations; j < arrival_times.size(); j++)
                 {
                     arrival_times.at(j) = arrival_times.at(j) - 11;
@@ -229,6 +248,7 @@ void HighV_s::checkTwentyKilometres()
     }
 }
 
+//createDistances inizializza il vettore distances (utile alla funzione checkArrivalTimes)
 void Regional::createDistances()
 {
     for(int i=0; i<stations_distances.size()-1; i++)        //aggiungo tutte le distanze tra due stazioni successive
@@ -236,9 +256,10 @@ void Regional::createDistances()
         distances.push_back(stations_distances.at(i+1)-stations_distances.at(i));
     }
 }
+
 void HighV::createDistances()
 {    
-    for(int i=0; i<stations_distances.size()-1; i++)        //aggiungo tutte le distanze tra due stazioni successive
+    for(int i=0; i<stations_distances.size()-1; i++)
     {
         if(stations_type.at(i) == 0)        //aggiungo tutte le distanze tra due stazioni principali successive
         {
@@ -254,7 +275,7 @@ void HighV::createDistances()
 
 void HighV_s::createDistances()
 {    
-    for(int i=0; i<stations_distances.size()-1; i++)        //aggiungo tutte le distanze tra due stazioni successive
+    for(int i=0; i<stations_distances.size()-1; i++)
     {
         if(stations_type.at(i) == 0)        //aggiungo tutte le distanze tra due stazioni principali successive
         {
@@ -268,76 +289,101 @@ void HighV_s::createDistances()
     }
 }
 
-void Train::checkArrivalTimes(int num_of_stations)   //controllo che gli orari di arrivo della timetable abbiano senso  
+//controllo che gli orari di arrivo della timetable abbiano senso e siano in giunta quantità
+//in queste situazioni viene impostato un tempo minimo di percorrenza tra una stazione e l'altra
+//i tempi minimi vengono calcolati in questo modo:
+//- primo tratto --> 4 min per uscire dal limite della stazione + x min per arrivare al limite della seconda stazione
+//                  + 4 min per arrivare al centro della stazione = x + 8 min
+//- altri tratti --> 5 min di fermata + 4 min per uscire dal limite della stazione + x min per arrivare 
+//                  al limite della seconda stazione + 4 min per arrivare al centro della stazione = x + 13 min
+void Train::checkArrivalTimes(int num_of_stations)     
 {
     int velocity = max_velocity;
 
-    int min_time = ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);
-    //ceil(((((distances.at(i)-10)*1.)/160)*60)+13);
+    int min_time = ceil(((((distances.at(0)-10)*1.)/velocity)*60)+8);   //tempo minimo per arrivare alla seconda stazione
     
-    if(arrival_times.size() == num_of_stations)
+    if(arrival_times.size() == num_of_stations)     //se il numero di tempi di arrivo nella timetable è corretto
     {
-        if((arrival_times.at(1) - arrival_times.at(0)) < min_time)       //se l'orario è scorretto lo imposto al minimo possibile
+        int c = 0;
+        if((arrival_times.at(1) - arrival_times.at(0)) < min_time)      //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = arrival_times.at(0) + min_time;
-            cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";  
+            arrival_times.at(1) = arrival_times.at(0) + min_time; 
+            c++;
         }
-        for(int i=1; i<arrival_times.size()-1; i++)
+        for(int i=1; i<arrival_times.size()-1; i++)                     //se l'orario è scorretto lo imposto al minimo possibile
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13))       //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13))
             {
                 arrival_times.at(i+1) = arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);
-                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";      
+                c++;   
             }
         }
-    }
-    else if(arrival_times.size() < num_of_stations)
-    {   
-        if((arrival_times.at(1) - arrival_times.at(0)) < min_time)       //se l'orario è scorretto lo imposto al minimo possibile
+        if(c != 0)
         {
-            arrival_times.at(1) = arrival_times.at(0) + min_time;         //vale solo per l'orario della seconda stazione
-            cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";  
+            std::cout << "Nella timetable del treno " << train_number << " sono stati modificati "<< c <<" tempi di arrivo.\n"; 
         }
-        for(int i=1; i<arrival_times.size()-1; i++)             //se l'orario è scorretto lo imposto al minimo possibile
+    }
+    else if(arrival_times.size() < num_of_stations)         //se il numero di tempi di arrivo nella timetable è minore del dovuto
+    {   
+        int c = 0;
+        if((arrival_times.at(1) - arrival_times.at(0)) < min_time)      //se l'orario è scorretto lo imposto al minimo possibile
+        {
+            arrival_times.at(1) = arrival_times.at(0) + min_time;
+            c++;  
+        }
+        for(int i=1; i<arrival_times.size()-1; i++)                     //se l'orario è scorretto lo imposto al minimo possibile
         {
             if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13))         
             {
-                arrival_times.at(i+1) = arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);            //vale dalla terza stazione in poi
-                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";
+                arrival_times.at(i+1) = arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);
+                c++;
             }
         }
-        
+        if(c != 0)
+        {
+            std::cout << "Nella timetable del treno " << train_number << " sono stati modificati "<< c <<" tempi di arrivo.\n"; 
+        }
+        int c2 = 0;
         for(int i = arrival_times.size(); i < num_of_stations; i++)        //completa tutte gli orari delle stazioni mancanti
         {
-            arrival_times.push_back(arrival_times.at(i) + ceil(((((distances.at(i-1)-10)*1.)/velocity)*60)+23));
-            cout << "Nella timetable del treno " << train_number << " sono state aggiunti alcuni orari di arrivo\n";
+            arrival_times.push_back(arrival_times.at(i-1) + ceil(((((distances.at(i-1)-10)*1.)/velocity)*60)+23));
+            c2++;
         }
+        std::cout << "Nella timetable del treno " << train_number << " sono state aggiunti "<< c << " orari di arrivo\n";
     }
-    else
+    else        //se il numero di tempi di arrivo nella timetable è maggiore del dovuto
     {
+        int c2 = 0;
         while(arrival_times.size() == num_of_stations)        //elimina tutte le stazioni in eccesso
         {
             arrival_times.pop_back();
-            cout << "Nella timetable del treno " << train_number << " sono state eliminati alcuni orari di arrivo\n";
+            
         }
-
+        std::cout << "Nella timetable del treno " << train_number << " sono state eliminati "<< c2 <<" orari di arrivo\n";
+        
+        int c = 0;
         if((arrival_times.at(1) - arrival_times.at(0)) < min_time)       //se l'orario è scorretto lo imposto al minimo possibile
         {
-            arrival_times.at(1) = arrival_times.at(0) + min_time;         //vale solo per l'orario della seconda stazione
-            cout << "Nella timetable del treno " << train_number << " è stato modificato il tempo di arrivo alla seconda stazione.\n";
+            arrival_times.at(1) = arrival_times.at(0) + min_time;
+            c++;
         }
-        for(int i=0; i<arrival_times.size()-1; i++)
+        for(int i=0; i<arrival_times.size()-1; i++)                     //se l'orario è scorretto lo imposto al minimo possibile
         {
-            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13))      //se l'orario è scorretto lo imposto al minimo possibile
+            if((arrival_times.at(i+1) - arrival_times.at(i)) < ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13))      
             {
-                arrival_times.at(i+1) = arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);            //vale dalla terza stazione in poi    
-                cout << "Nella timetable del treno " << train_number << " sono stati modificati alcuni tempi di arrivo.\n";
+                arrival_times.at(i+1) = arrival_times.at(i) + ceil(((((distances.at(i)-10)*1.)/velocity)*60)+13);
+                c++;
             }
+        }
+        if(c != 0)
+        {
+            std::cout << "Nella timetable del treno " << train_number << " sono stati modificati "<< c <<" tempi di arrivo.\n"; 
         }
     }
 }
 
-void createSignalPoints(const vector<int>& stations_distances, vector<int>& signal_points)
+//funzione che inserisce in un vettore tutte le posizioni in cui il treno invierà un segnale alla prossima stazione
+void createSignalPoints(const std::vector<int>& stations_distances, std::vector<int>& signal_points)
 {
     for(int i=1; i<stations_distances.size(); i++)          //aggiungo posizioni a 20 km prima di ogni stazione
     {
