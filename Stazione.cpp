@@ -92,7 +92,7 @@ bool Stazione_principale::can_arrive_from_box(bool reverseDirection, Train* tren
 		if (vbs[i].isReverse() == reverseDirection && vbs[i].isFull() == false) {					//la direzione coincide con quella del treno? Il binario e' libero per la sosta?
 			vbs[i].set_fullness(true);																//allora riempio il binario disponibile
 			treno->set_current_rail(i + 1);
-			std::cout << "Il treno " << treno->get_train_number() << " sta arrivando dal posteggio alla stazione "
+			std::cout << "     Il treno " << treno->get_train_number() << " sta arrivando dal posteggio alla stazione "
 					  << nomeStaz << " dove occupera' il binario " << i + 1 << std::endl;
 			return true;																				
 		}
@@ -279,7 +279,7 @@ bool Stazione_locale::can_arrive_from_box(bool reverseDirection, Train* treno) {
 		if (vbs[i].isReverse() == reverseDirection && vbs[i].isFull() == false) {					//la direzione coincide con quella del treno? Il binario e' libero per la sosta?
 			vbs[i].set_fullness(true);																//allora riempio il binario disponibile
 			treno->set_current_rail(i + 1);
-			std::cout << "Il treno " << treno->get_train_number() << " sta arrivando dal posteggio alla stazione "
+			std::cout << "     Il treno " << treno->get_train_number() << " sta arrivando dal posteggio alla stazione "
 					  << nomeStaz << " dove occupera' il binario " << i + 1 << std::endl;
 			return true;
 		}

@@ -288,8 +288,17 @@ bool Simulation::at_station(Train* train, int train_state)
 
             if(train->get_position() >= train->eol()) //true se è al capolinea.
             {
-                std::cout<<"\n"<< time << ": IL TRENO "<< train->get_train_number()
-                    <<" è ARRIVATO A DESTINAZIONE con " << train->get_delay() << " minuti di ritardo\n\n";
+                if(train->get_delay() >= 0)
+                {
+                    std::cout<<"\n"<< time << ": Il treno "<< train->get_train_number()
+                        <<" è ARRIVATO A DESTINAZIONE con " << train->get_delay() << " minuti di ritardo\n\n";
+                }
+                else
+                {
+                    std::cout<<"\n"<< time << ": Il treno "<< train->get_train_number()
+                        <<" è ARRIVATO A DESTINAZIONE con " << std::abs(train->get_delay()) << " minuti di anticipo\n\n";
+                }
+                
             }
         }
         else if(stations[station_index]->can_restart(train, time)) //controlla che siano passati minimo 5 minuti e che il treno possa ripartire
@@ -346,7 +355,7 @@ bool Simulation::at_five(Train* train, int train_state)
                     train->set_position(get_distance(station_index, origin) - 5); //correzzione sulla posizione del treno.
                     train->set_current_velocity(0); //essendo la velocità a zero l'update sulla sua posizione non crea problemi.
 
-                    std::cout<<time<<":\t\tIl treno "<< train->get_train_number() <<" e' entrato ai box\n";
+                    std::cout<<time<<": Il treno "<< train->get_train_number() <<" e' ENTRATO AI BOX\n";
 
                 }
                 break;
@@ -373,6 +382,13 @@ bool Simulation::at_twenty(Train* train)
         bool origin = train->get_origin();
 
         int train_state = stations[station_index]->handle_new_train(origin, train, time); //comunica al treno cosa dovrà fare alla prossima stazione.
+        
+        if(train_state == 0 && train->get_state() != 0) //prima volta che viene comunicato che deve fermarsi ai box
+        {
+            std::cout << time << ": Il treno numero " << train->get_train_number() << " e' a 20 km dalla prossima stazione "
+				<< stations[station_index]->get_name() << ". Dovra' sostare ai box.\n";
+        }
+        
         train->set_state(train_state); //-1 se dovrà fermarsi, 0 se andrà nei box, 1 se transiterà
 
         //se un treno deve transitare "punta" già alla stazione successiva
@@ -466,7 +482,7 @@ void Simulation::check_new_trains()
             stations[0]->new_departure(false, time);
 
             std::cout<< time << ": Il treno " << forward_trains[next_forward]->get_train_number()
-                << " e' partito da " << stations[0]->get_name() << "\n";
+                << " e' PARTITO DA " << stations[0]->get_name() << "\n";
             next_forward++;
         }
     }
@@ -487,7 +503,7 @@ void Simulation::check_new_trains()
             stations.back()->new_departure(true, time);
             
             std::cout<< time << ": Il treno " << backward_trains[next_backward]->get_train_number()
-                << " e' partito da " << stations.back()->get_name() << "\n";
+                << " e' PARTITO DA " << stations.back()->get_name() << "\n";
             next_backward++;
         }    
     }
