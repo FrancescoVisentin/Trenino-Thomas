@@ -124,7 +124,7 @@ void Regional::update_delay(int time)
     }
     else if(mod_delay < 0)
     {
-        std::cout << time << ": Il ritardo del treno " << train_number << " e' aumentato di " << abs(mod_delay) << " minuti.\n";
+        std::cout << time << ": Il ritardo del treno " << train_number << " e' aumentato di " << std::abs(mod_delay) << " minuti.\n";
     }
     else
     {
