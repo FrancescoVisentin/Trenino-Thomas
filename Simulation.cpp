@@ -291,12 +291,12 @@ bool Simulation::at_station(Train* train, int train_state)
                 if(train->get_delay() >= 0)
                 {
                     std::cout<<"\n"<< time << ": Il treno "<< train->get_train_number()
-                        <<" è ARRIVATO A DESTINAZIONE con " << train->get_delay() << " minuti di ritardo\n\n";
+                        <<" e' ARRIVATO A DESTINAZIONE con " << train->get_delay() << " minuti di ritardo\n\n";
                 }
                 else
                 {
                     std::cout<<"\n"<< time << ": Il treno "<< train->get_train_number()
-                        <<" è ARRIVATO A DESTINAZIONE con " << std::abs(train->get_delay()) << " minuti di anticipo\n\n";
+                        <<" e' ARRIVATO A DESTINAZIONE con " << std::abs(train->get_delay()) << " minuti di anticipo\n\n";
                 }
                 
             }
