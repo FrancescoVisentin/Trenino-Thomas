@@ -43,7 +43,7 @@ public:
     std::vector<int> get_distances() const{return distances;}
     std::vector<int> get_arrival_times() const{return arrival_times;}
     std::vector<int> get_signal_points() const{return signal_points;}
-    int get_max_velocity() const{return max_velocity;};
+    int get_max_velocity() const{return max_velocity;}
     int get_station_index() const{return station_index;}
     int get_state() const{return state;}
     int get_current_velocity() const{return current_velocity;}

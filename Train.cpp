@@ -52,7 +52,7 @@ HighV::HighV(int t_number, bool ori, const std::vector<int>& a_times, const std:
     state = STOPPED;
     current_velocity = 0;
     current_rail = -1;
-    //max_velocity = 240;
+    max_velocity = 240;
     restarted = -1;
 
     arrival_times = a_times;
@@ -91,7 +91,7 @@ HighV_s::HighV_s(int t_number, bool ori, const std::vector<int>& a_times, const 
     state = STOPPED;
     current_velocity = 0;
     current_rail = -1;
-    //max_velocity = 300;
+    max_velocity = 300;
     restarted = -1;
 
     arrival_times = a_times;
