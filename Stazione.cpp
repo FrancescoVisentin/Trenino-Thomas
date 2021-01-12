@@ -8,17 +8,16 @@ std::string Stazione::get_name() {
 Stazione_principale::Stazione_principale(std::string nomeStazione, int distanzaOrigine)
 {
 	Binario_standard bs1{ false, false };
-	Binario_standard bs2{ false, false };
-	Binario_standard bs3{ true, false };
-	Binario_standard bs4{ true, false };
+	Binario_standard bs2{ true, false };
+
 	
 	nomeStaz = nomeStazione ;
 	distanzaOrig = distanzaOrigine;
 	//riempio un vettore di binari standard che usero' in altre funzioni
 	vbs.push_back(bs1);
+	vbs.push_back(bs1);
 	vbs.push_back(bs2);
-	vbs.push_back(bs3);
-	vbs.push_back(bs3);
+	vbs.push_back(bs2);
 }
 
 
@@ -37,7 +36,7 @@ int Stazione_principale::handle_new_train(bool reverseDirection, Train* treno, i
 			vbs[i].set_fullness(true);
 			vbs[i].set_train(treno);																//allora pongo il binario disponibile pieno
 			treno->set_current_rail(i + 1);
-			std::cout << time << ": Il treno numero " << treno->get_train_number() << " è a 20 km dalla prossima stazione "
+			std::cout << time << ": Il treno numero " << treno->get_train_number() << " e' a 20 km dalla prossima stazione "
 				<< nomeStaz << " dove occupera' il binario " << i + 1<<std::endl;
 			return -1;																				//>0 perche' il treno DEVE E PUO' FERMARSI
 		}
@@ -190,18 +189,16 @@ Binario_standard* Stazione_principale::get_other_rail(int rail) {
 Stazione_locale::Stazione_locale(std::string nomeStazione, int distanzaOrigine)
 {
 	Binario_standard bs1{ false, false };
-	Binario_standard bs2{ false, false };
-	Binario_standard bs3{ true, false };
-	Binario_standard bs4{ true, false };
+	Binario_standard bs2{ true, false };
 
 	nomeStaz = nomeStazione;
 	distanzaOrig = distanzaOrigine;
 
 	//riempio un vettore di binari standard che usero' in altre funzioni
 	vbs.push_back(bs1);
+	vbs.push_back(bs1);
 	vbs.push_back(bs2);
-	vbs.push_back(bs3);
-	vbs.push_back(bs4);
+	vbs.push_back(bs2);
 
 }
 
@@ -225,7 +222,7 @@ int Stazione_locale::handle_new_train(bool reverseDirection, Train* treno, int t
 			vbs[i].set_fullness(true);
 			vbs[i].set_train(treno);																//allora pongo il binario disponibile pieno
 			treno->set_current_rail(i + 1);
-			std::cout << time << ": Il treno numero " << treno->get_train_number() << " è a 20 km dalla prossima stazione "
+			std::cout << time << ": Il treno numero " << treno->get_train_number() << " e' a 20 km dalla prossima stazione "
 				<< nomeStaz << " dove occupera' il binario " << i + 1<<std::endl;
 			return -1;
 		}
@@ -255,8 +252,8 @@ bool Stazione_locale::can_leave(bool reverseDirection, int time) const{								/
 		return true;																				//sono passati piu' di 4 minuti, il treno puo' partire
 	}
 	else {																							//caso in cui voglio far partire un treno dalla stazione di origine verso il capolinea
-		if (timeLastDepartureAhead < 0) {															//caso alla sola prima partenza dalla stazione selezionata
 			return true;
+		if (timeLastDepartureAhead < 0) {															//caso alla sola prima partenza dalla stazione selezionata
 		}
 		if (time - timeLastDepartureAhead < 4) {
 			return false;

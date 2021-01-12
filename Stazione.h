@@ -23,6 +23,9 @@ public:
 	virtual void new_stopped_train(Train*, int time) = 0;
 	virtual void update_transit() = 0;
 	std::string get_name();
+	Stazione(const Stazione&) = delete;
+	Stazione& operator = (const Stazione&) = delete;
+	virtual ~Stazione() {};			//verra' sovrascritto dai distruttori di default delle classi derivate
 protected:
 	
 	Stazione() {};
